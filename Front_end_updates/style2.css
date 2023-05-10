@@ -1,0 +1,146 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-image: url(images/seafaring.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to right, #26475f, #111e27);
+}
+
+.navbar {
+    overflow: hidden;
+    text-align: center;
+}
+
+.navbar #mobile-navbar {
+    display: none;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: #F5F9FF;
+    padding: 14px 20px;
+    font-weight: 300;
+    text-decoration: none;
+}
+
+.navbar a:hover,
+#logout-button:hover {
+    background-color: #A8CEFB;
+    color: #142029;
+}
+
+.navbar-right {
+    float: right;
+}
+
+#logout-button {
+    display: block;
+    background-color: transparent;
+    color: #F5F9FF;
+    border: none;
+    text-align: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1em;
+    padding: 14px 16px;
+    cursor: pointer;
+}
+
+.content {
+    overflow: scroll;
+    line-height: 1.5;
+    padding: 20%;
+}
+
+.wrapper {
+    background-image: url(images/paper.png);
+    background-repeat: no-repeat;
+    width: 990px;
+    height: 743px;
+    display: flex;
+}
+
+.side {
+    background-color: #ffffff00;
+    flex: 1;
+    margin: 50px;
+    padding: 20px 10px;
+    text-align: left;
+    border-right: 2px solid #90855b;
+}
+
+.side h1 {
+    font-weight: 300;
+    margin: 0 0.2em 0 -0.5em;
+    padding-left: 10px;
+    border-bottom: 2px solid #90855b;
+}
+
+.main {
+    background-color: #cccccc00;
+    flex: 2;
+    margin: 50px;
+    padding: 20px 10px;
+    text-align: center;
+}
+
+.main h1 {
+    font-weight: 300;
+    margin-left: -2.8em;
+    margin-right: -0.7em;
+    border-bottom: 2px solid #90855b;
+}
+
+.navbar > a.hamburger-icon {
+    float: right;
+    display: none;
+    font-size: 1.9em;
+    font-weight: 900;
+    padding: 1%;
+    transform: translateX(-3%)
+}
+
+.navbar > a, #mobile-menubar {
+    display: none;
+}
+
+
+@media print, (max-width: 501px) {
+    .navbar #desktop-navbar {
+        display: none;
+    }
+
+    .navbar > a.hamburger-icon {
+        float: right;
+        display: block;
+    }
+
+    .navbar > a, #mobile-menubar {
+        display: block;
+    }
+
+    .navbar a:hover {
+        background-color: #A8CEFB;
+        color: #142029;
+    }
+}
+
