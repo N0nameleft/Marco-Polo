@@ -29,6 +29,10 @@ header {
     text-align: center;
 }
 
+.navbar #mobile-navbar {
+    display: none;
+}
+
 .navbar a {
     float: left;
     display: block;
@@ -62,7 +66,7 @@ header {
 }
 
 .content {
-    overflow: hidden;
+    overflow: scroll;
     line-height: 1.5;
     padding: 20%;
 }
@@ -105,3 +109,38 @@ header {
     margin-right: -0.7em;
     border-bottom: 2px solid #90855b;
 }
+
+.navbar > a.hamburger-icon {
+    float: right;
+    display: none;
+    font-size: 1.9em;
+    font-weight: 900;
+    padding: 1%;
+    transform: translateX(-3%)
+}
+
+.navbar > a, #mobile-menubar {
+    display: none;
+}
+
+
+@media print, (max-width: 501px) {
+    .navbar #desktop-navbar {
+        display: none;
+    }
+
+    .navbar > a.hamburger-icon {
+        float: right;
+        display: block;
+    }
+
+    .navbar > a, #mobile-menubar {
+        display: block;
+    }
+
+    .navbar a:hover {
+        background-color: #A8CEFB;
+        color: #142029;
+    }
+}
+
