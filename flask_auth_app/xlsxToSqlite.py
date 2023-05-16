@@ -26,7 +26,11 @@ for sheet in sheets:
 	for row in next(ws.rows):
 		if(row.value==None):
 			continue
-		query += ', ' + slugify(row.value) + ' TEXT'
+		key = "country"
+		if key in slugify(row.value):    #do not use country as column name!!!!!1
+			query += ', ' + slugify(row.value) + ' TEXT'
+		else:
+			query += ', ' + slugify(row.value) + ' INTEGER'
 		columns.append(slugify(row.value))
 	query += ');'
 
