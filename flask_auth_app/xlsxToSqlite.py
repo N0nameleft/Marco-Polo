@@ -11,7 +11,7 @@ def slugify(text, lower=1):
 	return text
 
 #Replace with a database name
-con = sqlite3.connect('t.db')
+con = sqlite3.connect('countries.db')
 #replace with the complete path to youe excel workbook
 filename="/Users/zach/Desktop/Aus/UWA/CITS3403/Project/Project 2/Akinator-clone/flask_auth_app/backupdb.xlsx"
 wb = load_workbook(filename)
