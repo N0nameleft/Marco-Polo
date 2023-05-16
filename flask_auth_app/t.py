@@ -13,7 +13,8 @@ def slugify(text, lower=1):
 #Replace with a database name
 con = sqlite3.connect('t.db')
 #replace with the complete path to youe excel workbook
-wb = load_workbook(filename=r'backupdb.xls')
+filename="/Users/zach/Desktop/Aus/UWA/CITS3403/Project/Project 2/Akinator-clone/flask_auth_app/backupdb.xlsx"
+wb = load_workbook(filename)
 
 sheets = wb.get_sheet_names()
 
@@ -35,7 +36,7 @@ for sheet in sheets:
 		if i == 0:
 			continue
 		for row in rows:
-			tuprow.append(unicode(row.value).strip()) if unicode(row.value).strip() != 'None' else tuprow.append('')
+			tuprow.append(str(row.value).strip()) if str(row.value).strip() != 'None' else tuprow.append('')
 		tup.append(tuple(tuprow))
 		
 
