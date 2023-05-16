@@ -24,6 +24,8 @@ for sheet in sheets:
 	columns= []
 	query = 'CREATE TABLE ' + str(slugify(sheet)) + '(ID INTEGER PRIMARY KEY AUTOINCREMENT'
 	for row in next(ws.rows):
+		if(row.value==None):
+			continue
 		query += ', ' + slugify(row.value) + ' TEXT'
 		columns.append(slugify(row.value))
 	query += ');'
@@ -36,10 +38,13 @@ for sheet in sheets:
 		if i == 0:
 			continue
 		for row in rows:
-			tuprow.append(str(row.value).strip()) if str(row.value).strip() != 'None' else tuprow.append('')
+			if str(row.value).strip() != 'None':
+				tuprow.append(str(row.value).strip())
+			else:
+				continue
 		tup.append(tuple(tuprow))
 		
-
+	tup = [tuprow for tuprow in tup if tuprow]
 	insQuery1 = 'INSERT INTO ' + str(slugify(sheet)) + '('
 	insQuery2 = ''
 	for col in columns:

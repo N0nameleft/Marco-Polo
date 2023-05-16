@@ -9,7 +9,7 @@
 body {
     margin: 0;
     min-height: 100vh;
-    background-image: url(images/seafaring.jpg);
+    background-image: url(../images/seafaring.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -72,7 +72,7 @@ header {
 }
 
 .wrapper {
-    background-image: url(images/paper.png);
+    background-image: url(../images/paper.png);
     background-repeat: no-repeat;
     width: 990px;
     height: 743px;
