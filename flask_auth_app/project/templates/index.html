@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1 class="title">
+<h1 class="title" style="font-size: 24px;">
   Marco Polo
 </h1>
 <h2 class="subtitle">
@@ -19,6 +19,7 @@
     proceed to
     the game.
 </p>
+<br>
 <a href="{{ url_for('auth.login') }}"><button class="button">Login</button></a>
 <a href="{{ url_for('auth.signup') }}"><button class="button">Signup</button></a>
 <br>
