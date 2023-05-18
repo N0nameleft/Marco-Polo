@@ -1,31 +1,28 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1 class="title" style="font-size: 24px;">
-  Marco Polo
-</h1>
-<h2 class="subtitle">
-    Can you hide from one of the greatest explorers in history?
-</h2>
-<br>
-<p class="subtitle">
-    Start by thinking of a country to hide in.
-    Marco Polo will then ask you a few questions that you will have to answer as truthfully as possible.
-    After that, he will guess which country you were hiding in.
-</p>
-<br>
-<p class="subtitle">
-    But hold on, you’ll need an account before you can play. Click on log in or sign up down below to
-    proceed to
-    the game.
-</p>
-<br>
-<a href="{{ url_for('auth.login') }}"><button class="button">Login</button></a>
-<a href="{{ url_for('auth.signup') }}"><button class="button">Signup</button></a>
-<br>
-<br>
-<p class="subtitle">
-    Are you ready to set sail?
-</p>
+
+<!-- Wrap your text in a div with the class "text-box" -->
+<div class="text-box">
+    <h1 class="title" style="font-size: 24px;">Marco Polo</h1>
+    <h2 class="subtitle">Can you hide from one of the greatest explorers in history?</h2>
+    <br>
+    <p class="subtitle">
+        Start by thinking of a country to hide in.
+        Marco Polo will then ask you a few questions that you will have to answer as truthfully as possible.
+        After that, he will guess which country you were hiding in.
+    </p>
+    <br>
+    <p class="subtitle">
+        But hold on, you’ll need an account before you can play. Click on log in or sign up down below to
+        proceed to the game.
+    </p>
+    <br>
+    <a href="{{ url_for('auth.login') }}"><button class="button">Login</button></a>
+    <a href="{{ url_for('auth.signup') }}"><button class="button">Signup</button></a>
+    <br>
+    <br>
+    <p class="subtitle">Are you ready to set sail?</p>
+</div>
 
 {% endblock %}
