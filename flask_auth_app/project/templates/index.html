@@ -1,11 +1,22 @@
 {% extends "base.html" %}
 
 {% block content %}
-
+<style>
+    .button {
+        font-size: 1em; /* Decreased the font size */
+        padding: 8px 15px; /* Decreased padding */
+        border-radius: 10px; /* Rounded corners */
+        margin-top: 10px; /* Added margin at the top */
+    }
+    
+    .text-box {
+        position: relative;
+    }
+</style>
 <!-- Wrap your text in a div with the class "text-box" -->
 <div class="text-box">
-    <h1 class="title" style="font-size: 24px;">Marco Polo</h1>
-    <h2 class="subtitle">Can you hide from one of the greatest explorers in history?</h2>
+    <h1 class="title" style="font-size: 26px;">Marco Polo</h1>
+    <h2 class="subtitle" style="font-size: 20px;font-weight: 400;">Can you hide from one of the greatest explorers in history?</h2>
     <br>
     <p class="subtitle">
         Start by thinking of a country to hide in.
@@ -19,7 +30,7 @@
     </p>
     <br>
     <a href="{{ url_for('auth.login') }}"><button class="button">Login</button></a>
-    <a href="{{ url_for('auth.signup') }}"><button class="button">Signup</button></a>
+    <a href="{{ url_for('auth.signup') }}"><button class="button">Sign Up</button></a>
     <br>
     <br>
     <p class="subtitle">Are you ready to set sail?</p>
