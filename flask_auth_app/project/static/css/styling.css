@@ -1,0 +1,97 @@
+/* Global styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    line-height: 1.5;
+    background: url({{ url_for('static', filename='images/background.jpg')}});
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: transparent;
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0; /* Add this */
+    right: 0; /* Add this */
+    z-index: 100;
+    transition: background-color 0.3s ease-out;
+}
+
+.navbar-item {
+    color: #fff;
+    padding: 1rem;
+    text-decoration: none;
+}
+
+.navbar-item:hover {
+    background-color: transparent;
+}
+
+.navbar-burger {
+    display: none; /* Burger is hidden by default */
+    margin-right: 1rem;
+}
+
+.navbar-burger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin-bottom: 5px;
+    transition: all 0.1s;
+}
+
+/* Hero styles */
+.hero {
+    color: black;
+}
+
+.hero-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Added styles for the text box */
+.text-box {
+    background: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+    border-radius: 15px; /* Rounded corners */
+    padding: 20px;
+    max-width: 80%; /* You can adjust this value */
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .navbar-menu {
+        background-color: transparent;
+        color: #fff;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-out;
+    }
+
+    .navbar-burger {
+        display: block; /* Burger is shown on smaller screens */
+    }
+
+    .navbar-menu.is-active {
+        transform: translateX(0);
+    }
+}
