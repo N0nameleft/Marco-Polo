@@ -1,8 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1 class="title">
-  <!-- Welcome, Adventurer! -->
-  Welcome, {{name}}!
-</h1>
+<div class="text-box">
+  <h1 class="title">
+    Welcome, {{name}}!
+  </h1>
+  <div class="button-container">
+    <button class="custom-button">Now Go Hide</button>
+  </div>
+</div>
 {% endblock %}

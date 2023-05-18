@@ -62,7 +62,6 @@ body {
     border-radius: 2px; /* Add rounded corners */
 }
 
-
 /* Hero styles */
 .hero {
     color: black;
@@ -77,13 +76,33 @@ body {
 
 /* Added styles for the text box */
 .text-box {
-    background: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
-    border-radius: 15px; /* Rounded corners */
-    padding: 20px;
-    max-width: 80%; /* You can adjust this value */
+    /* Existing styles */
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    padding: 40px;
+    max-width: 80%;
     text-align: center;
     margin: 0 auto;
-}
+  }
+  
+.button-container {
+    margin-top: 20px; /* Adjust the margin as needed */
+  }
+  
+.custom-button {
+    /* Existing styles */
+    background-color: #fff;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 300; /* Adjust the font weight */
+    border: none;
+    cursor: pointer;
+  }
+  
+.custom-button:hover {
+    background-color: #eee;
+  }
 
 /* Responsive styles */
 @media screen and (max-width: 768px) {
