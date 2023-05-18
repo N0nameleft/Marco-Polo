@@ -1,8 +1,7 @@
-<<<<<<< HEAD:flask_auth_app/project/static/css/style.css
 * {
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
+    font-family: "Gill Sans", sans-serif;
+    font-weight: 400;
     margin: 0;
     padding: 0;
 }
@@ -46,7 +45,6 @@ header {
 .navbar {
     overflow: hidden;
     text-align: center;
-   
 }
 /* .navbar {
     overflow: hidden;
@@ -782,5 +780,3 @@ header {
 .game-buttons button:nth-child(2) {
     margin-right: -250px;
 }
-=======
->>>>>>> 6c912dc2c8fc9e78073d94e411cf4094adad4404:flask_auth_app/project/templates/style.css
