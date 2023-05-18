@@ -7,33 +7,37 @@
     <title>Marco Polo</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styling.css') }}">
 
-      <!--Font-->
+    <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    <!--Favicon-->
+
+    <!-- Favicon -->
     <link rel="Shortcut Icon" href="../images/favicon.png">
+
     <style>
         body {
-            background: url({{ url_for('static', filename='images/background.jpg') }});
+            background: url("{{ url_for('static', filename='images/background.jpg') }}");
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-position: center;
         }
-        /* Add this style to animate the navbar-burger */
-        /* .navbar-burger span {
-            transition: all 0.3s;
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: auto;
         }
-        .navbar-burger.is-active span:nth-child(1) {
-            transform: translateY(7px) rotate(45deg);
+
+        .navbar-brand {
+            margin-right: 1rem;
         }
-        .navbar-burger.is-active span:nth-child(2) {
-            opacity: 0;
+
+        .navbar-end {
+            justify-content: flex-end;
         }
-        .navbar-burger.is-active span:nth-child(3) {
-            transform: translateY(-7px) rotate(-45deg);
-        } */
     </style>
 </head>
 <body>
@@ -87,30 +91,25 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-        
-          // Get all "navbar-burger" elements
-          const navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-        
-          // Check if there are any navbar burgers
-          if (navbarBurgers.length > 0) {
-        
+        // Get all "navbar-burger" elements
+        const navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+        // Check if there are any navbar burgers
+        if (navbarBurgers.length > 0) {
             // Add a click event on each of them
-            navbarBurgers.forEach( el => {
-              el.addEventListener('click', () => {
-        
+            navbarBurgers.forEach(el => {
+            el.addEventListener('click', () => {
                 // Get the target from the "data-target" attribute
                 const target = el.dataset.target;
                 const targetElement = document.getElementById(target);
-        
+
                 // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
                 el.classList.toggle('is-active');
                 targetElement.classList.toggle('is-active');
-        
-              });
             });
-          }
-        
-        });
+          });
+        }
+    });
         </script>
         
 </body>
