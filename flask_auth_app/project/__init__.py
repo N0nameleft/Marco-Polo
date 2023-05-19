@@ -1,7 +1,7 @@
+import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
-
 
 db = SQLAlchemy()
 
@@ -23,14 +23,12 @@ def create_app():
     def load_user(user_id):
         return User.query.get(int(user_id))
 
-    #auth routes blueprint
+    # auth routes blueprint
     from .auth import auth as auth_blueprint
     app.register_blueprint(auth_blueprint)
 
-    #non-auth routes blueprint
+    # non-auth routes blueprint
     from .main import main as main_blueprint
     app.register_blueprint(main_blueprint)
 
     return app
-
-

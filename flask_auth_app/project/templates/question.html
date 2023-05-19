@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styling.css') }}">
+<div class="content">
+    <div class="text-box">
+        <div class="question">
+            <h1 id="question-text">Question</h1>
+            <input type="hidden" id="characteristic" value="">
+        </div>
+        <div id="countries-left"></div>
+        <div class="game-buttons">
+            <button class="btn" id="yes">Yes</button>
+            <button class="btn" id="no">No</button>
+        </div>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        // When the user clicks on a button...
+        $('.btn').click(function() {
+            // Get the user's response ('yes' or 'no') based on the button they clicked
+            var user_response = $(this).attr('id');
+            var prev_characteristic = $('#characteristic').val();
+    
+            // Send an AJAX request to the '/get_question' route
+            $.ajax({
+                url: '/get_question',
+                method: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({ 'user_response': user_response, 'prev_characteristic': prev_characteristic }),
+                success: function(response) {
+                    // Update the question text and the number of countries left
+                    $('#question-text').text(response.next_question_text);
+                    $('#characteristic').val(response.next_characteristic);
+                    $('#countries-left').text(response.countries_left + ' countries left');
+                }
+            });
+        });
+    });
+</script>
+{% endblock %}

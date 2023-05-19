@@ -6,7 +6,12 @@
     Welcome, {{name}}!
   </h1>
   <div class="button-container">
-    <button class="custom-button">Now Go Hide</button>
+    <button id="myButton" class="custom-button">Now Go Hide</button>
   </div>
 </div>
+<script>
+  document.getElementById("myButton").onclick = function () {
+      location.href = "/question";
+  };
+  </script>  
 {% endblock %}

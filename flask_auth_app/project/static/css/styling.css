@@ -126,3 +126,19 @@ body {
         transform: translateX(0);
     }
 }
+.btn {
+    background-color: #fff; /* White background */
+    color: #000; /* Black text */
+    border: none; /* No border */
+    border-radius: 15px; /* Rounded corners */
+    padding: 12px 24px; /* Some padding */
+    cursor: pointer; /* Change cursor when hovering over the button */
+    text-decoration: none; /* No underline */
+    font-size: 16px; /* Adjust size as needed */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.btn:hover {
+    background-color: #eee; /* Light grey background when hovering */
+}
+
