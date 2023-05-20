@@ -101,32 +101,32 @@ def get_next_question(user_response=None, prev_characteristic=None):
 
 
 
-def guess_country(country_code):
-    # convert the country code to a country name
-    country = pycountry.countries.get(alpha_2=country_code.upper())
-    country_name = country.name if country else country_code
+# def guess_country(country_code):
+#     # convert the country code to a country name
+#     country = pycountry.countries.get(alpha_2=country_code.upper())
+#     country_name = country.name if country else country_code
 
-    while True:
-        # ask the user if this is their country
-        print(f"Is your country {country_name}? (yes/no)")
+#     while True:
+#         # ask the user if this is their country
+#         print(f"Is your country {country_name}? (yes/no)")
         
-        # get the user's response
-        user_response = input().strip().lower()
+#         # get the user's response
+#         user_response = input().strip().lower()
 
-        # check if the response is valid
-        if user_response in ('yes', 'no'):
-            break
-        else:
-            print("Invalid input. Please respond with 'yes' or 'no'.")
+#         # check if the response is valid
+#         if user_response in ('yes', 'no'):
+#             break
+#         else:
+#             print("Invalid input. Please respond with 'yes' or 'no'.")
 
-    # if the user said 'yes', return True
-    if user_response == 'yes':
-        return True
-    # if the user said 'no', return False
-    elif user_response == 'no':
-        return False
+#     # if the user said 'yes', return True
+#     if user_response == 'yes':
+#         return True
+#     # if the user said 'no', return False
+#     elif user_response == 'no':
+#         return False
 
-def guessCountry(db='./countries.db', table='completedata'): #3 countries or less left
+def guess_country(db='./countries.db', table='completedata'): #3 countries or less left
     conn = sqlite3.connect(db)
     cursor = conn.cursor()
     query = "SELECT COUNT(*) FROM %s" % table
