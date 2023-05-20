@@ -1,5 +1,6 @@
 import sqlite3
 import pycountry
+import secrets
 
 # define all the characteristics/column names
 characteristics = [
@@ -124,15 +125,63 @@ def guess_country(country_code):
     # if the user said 'no', return False
     elif user_response == 'no':
         return False
-    
-def percentage(db='./countries.db', table='completedata'):
-    # connect to db
+
+def guessCountry(db='./countries.db', table='completedata'): #3 countries or less left
     conn = sqlite3.connect(db)
     cursor = conn.cursor()
-    # get number of rows
+    query = "SELECT COUNT(*) FROM %s" % table
+    cursor.execute(query)
+    r = secrets.randbelow(cursor.fetchone()[0])
+
+    query = "SELECT countryname FROM countrycode JOIN %s ON countrycode.countrycode = %s.countrycode" % (table, table)
+    cursor.execute(query)
+    country = cursor.fetchall()[r][0]
+
+    while True:
+        # ask the user if this is their country
+        print(f"Are you in {country}? (yes/no)")
+        
+        # get the user's response
+        user_response = input().strip().lower()
+
+        # check if the response is valid
+        if user_response in ('yes', 'no'):
+            break
+        else:
+            print("Invalid input. Please respond with 'yes' or 'no'.")
+
+    # if the user said 'yes', return True
+    if user_response == 'yes':
+        return True
+    # if the user said 'no', return False
+    elif user_response == 'no':
+        return False
+
+    
+    
+
+def getQuestion(db='./countries.db', table='completedata'):
+    conn = sqlite3.connect(db)
+    cursor = conn.cursor()
     countQuery = "SELECT COUNT(*) FROM %s" % table
     cursor.execute(countQuery)
     rowCount = cursor.fetchone()[0]
+
+    if rowCount > 200:
+        r = secrets.randbelow(3)
+        c = percentage(db, table, rowCount)[r][0]
+    else:
+        c = percentage(db, table, rowCount)[0][0]
+    formatC = c.replace("_"," ") + "?"
+    question = "Is your country " + formatC
+
+    return question
+
+
+def percentage(db='./countries.db', table='completedata', rowCount=217):
+    # connect to db
+    conn = sqlite3.connect(db)
+    cursor = conn.cursor()
     # get column names
     columnNames = getColumnNames(db, table)
     pList = []
@@ -160,7 +209,7 @@ def countOne(db='./countries.db', table='completedata', column='in_oceania'):
     return count
 
 
-print(percentage())
+print(guessCountry())
 
 
 
