@@ -9,9 +9,18 @@
     <button id="myButton" class="custom-button">Now Go Hide</button>
   </div>
 </div>
+
+<button id="history" class="custom-button">History</button>
+
+<script>
+  document.getElementById("history").onclick = function () {
+      location.href = "/history";
+  };
+  </script> 
+
 <script>
   document.getElementById("myButton").onclick = function () {
       location.href = "/question";
   };
-  </script>  
+</script>  
 {% endblock %}
