@@ -70,6 +70,8 @@ def get_next_question(user_response=None, prev_characteristic=None):
     if user_response is not None and prev_characteristic is not None:
         if user_response == "yes":
             where_clause += f" AND {prev_characteristic} = 1"
+        else:  # handle 'no' response
+            where_clause += f" AND {prev_characteristic} = 0"
 
     # Execute a SQL query to get the current list of possible countries
     cur.execute(f"SELECT countrycode FROM completedata WHERE {where_clause}")
@@ -95,6 +97,7 @@ def get_next_question(user_response=None, prev_characteristic=None):
         'countries_left': len(countries),
         'countries': countries
     }
+
 
 
 def guess_country(country_code):
