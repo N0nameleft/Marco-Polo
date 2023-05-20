@@ -1,5 +1,5 @@
 import sqlite3
-import pycountry 
+import pycountry
 
 # define all the characteristics/column names
 characteristics = [
@@ -61,7 +61,7 @@ characteristic_questions = {
 
 def get_next_question(user_response=None, prev_characteristic=None):
     # Connect to the SQLite database
-    conn = sqlite3.connect('/Users/thomasrigby/Desktop/marcopolo_agile/Akinator-clone/flask_auth_app/project/countries.db')
+    conn = sqlite3.connect('countries.db')
     cur = conn.cursor()
 
     # Start with an empty WHERE clause
