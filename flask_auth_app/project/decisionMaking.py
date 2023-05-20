@@ -124,6 +124,16 @@ def guess_country(country_code):
     # if the user said 'no', return False
     elif user_response == 'no':
         return False
+    
+def percentage(db='./countries.db', table='completedata'):
+    conn = sqlite3.connect(db)
+    cursor = conn.cursor()
+    countQuery = "SELECT Count() FROM %s" % table
+    cursor.execute(countQuery)
+    rowCount = cursor.fetchone()[0]
+    return rowCount 
+
+print(percentage())
 # # connect to the SQLite database
 # conn = sqlite3.connect('countries.db')
 # cur = conn.cursor()
