@@ -126,14 +126,42 @@ def guess_country(country_code):
         return False
     
 def percentage(db='./countries.db', table='completedata'):
+    # connect to db
     conn = sqlite3.connect(db)
     cursor = conn.cursor()
-    countQuery = "SELECT Count() FROM %s" % table
+    # get number of rows
+    countQuery = "SELECT COUNT(*) FROM %s" % table
     cursor.execute(countQuery)
     rowCount = cursor.fetchone()[0]
-    return rowCount 
+    # get column names
+    columnNames = getColumnNames(db, table)
+    pList = []
+    for c in columnNames:
+        percentageOne(db,table,c)
 
-print(percentage())
+    return pList
+
+def getColumnNames(db='./countries.db', table='completedata'):
+    conn = sqlite3.connect(db)
+    cursor = conn.cursor()
+    query = "SELECT * FROM %s" % table
+    cursor.execute(query)
+    names = [i[0] for i in cursor.description[2:]]
+    return names
+
+def percentageOne(db='./countries.db', table='completedata', column='in_oceania'):
+    conn = sqlite3.connect(db)
+    cursor = conn.cursor()
+    query = "SELECT COUNT(*) FROM %s WHERE %s=1" % (table, column)
+    cursor.execute(query)
+    count = cursor.fetchone()[0]
+    return count
+
+
+print(type(percentageOne()))
+
+
+
 # # connect to the SQLite database
 # conn = sqlite3.connect('countries.db')
 # cur = conn.cursor()
