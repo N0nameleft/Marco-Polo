@@ -126,6 +126,11 @@ def get_next_question(user_response=None, prev_characteristic=None):
 #     elif user_response == 'no':
 #         return False
 
+
+
+
+
+
 def guess_country(db='./countries.db', table='completedata'): #3 countries or less left
     conn = sqlite3.connect(db)
     cursor = conn.cursor()
@@ -209,7 +214,8 @@ def countOne(db='./countries.db', table='completedata', column='in_oceania'):
     return count
 
 
-print(guessCountry())
+
+
 
 
 
