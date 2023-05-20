@@ -137,9 +137,11 @@ def percentage(db='./countries.db', table='completedata'):
     columnNames = getColumnNames(db, table)
     pList = []
     for c in columnNames:
-        percentageOne(db,table,c)
-
-    return pList
+        count = countOne(db,table,c)
+        p = round(count/rowCount, 4)
+        pList.append((c, p))
+    sortedP = sorted(pList, key=lambda tup: tup[1], reverse=True)
+    return sortedP
 
 def getColumnNames(db='./countries.db', table='completedata'):
     conn = sqlite3.connect(db)
@@ -149,7 +151,7 @@ def getColumnNames(db='./countries.db', table='completedata'):
     names = [i[0] for i in cursor.description[2:]]
     return names
 
-def percentageOne(db='./countries.db', table='completedata', column='in_oceania'):
+def countOne(db='./countries.db', table='completedata', column='in_oceania'):
     conn = sqlite3.connect(db)
     cursor = conn.cursor()
     query = "SELECT COUNT(*) FROM %s WHERE %s=1" % (table, column)
@@ -158,7 +160,7 @@ def percentageOne(db='./countries.db', table='completedata', column='in_oceania'
     return count
 
 
-print(type(percentageOne()))
+print(percentage())
 
 
 
