@@ -218,7 +218,6 @@ def countOne(db='./countries.db', table='completedata', column='in_oceania'):
 
 
 
-
 # # connect to the SQLite database
 # conn = sqlite3.connect('countries.db')
 # cur = conn.cursor()
