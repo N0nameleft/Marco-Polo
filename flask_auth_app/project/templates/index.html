@@ -14,6 +14,7 @@
     }
 </style>
 <!-- Wrap your text in a div with the class "text-box" -->
+{% if not current_user.is_authenticated %}
 <div class="text-box">
     <h1 class="title" style="font-size: 26px;">Marco Polo</h1>
     <h2 class="subtitle" style="font-size: 20px;font-weight: 400;">Can you hide from one of the greatest explorers in history?</h2>
@@ -25,15 +26,27 @@
     </p>
     <br>
     <p class="subtitle">
-        But hold on, you’ll need an account before you can play. Click on log in or sign up down below to
-        proceed to the game.
+        But hold on, you’ll need an account before you can play. Click on log in or sign up down below to proceed to the game.
     </p>
     <br>
     <a href="{{ url_for('auth.login') }}"><button class="button">Login</button></a>
     <a href="{{ url_for('auth.signup') }}"><button class="button">Sign Up</button></a>
     <br>
     <br>
-    <p class="subtitle">Are you ready to set sail?</p>
+    
 </div>
-
+{% endif %}
+{% if current_user.is_authenticated %}
+<div class="text-box">
+    <p class="subtitle">Are you ready to set sail?</p>
+    <div class="button-container">
+        <button id="start" class="custom-button">Now Go Hide</button>
+    </div>
+</div>
+{% endif %}
+<script>
+    document.getElementById("start").onclick = function () {
+        location.href = "/question";
+    };
+</script>  
 {% endblock %}

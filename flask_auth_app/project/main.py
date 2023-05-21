@@ -1,7 +1,8 @@
 from flask import Blueprint, render_template, request, jsonify, session
 from flask_login import login_required, current_user
-from .decisionMaking import guess_country, get_next_question
+from .decisionMaking import *
 from .database import get_db  # Don't forget to import your database connection function
+import sqlite3
 
 main = Blueprint("main", __name__)
 
@@ -26,6 +27,8 @@ def new_page():
 @main.route('/start_game', methods=['POST'])
 def start_game():
     # Get the database connection
+    # cur = conn.cursor()
+    # conn = sqlite3.connect('countries.db')
     conn = get_db()
     cur = conn.cursor()
 
@@ -36,12 +39,12 @@ def start_game():
     # Save the initial game state in the user's session
     session['current_countries'] = all_countries
 
+    # Get the first question
+    result = get_next_question(cur)
+
     # Close the cursor and database connection
     cur.close()
     conn.close()
-
-    # Get the first question
-    result = get_next_question(None, None)  # Passing only two arguments which match the function definition
 
     return jsonify(result)
 
@@ -52,10 +55,17 @@ def get_question():
     user_response = data.get('user_response')
     prev_characteristic = data.get('prev_characteristic')
 
+    # test
+    conn = get_db()
+    cur = conn.cursor()
+
     # Retrieve the game state from the user's session
     current_countries = session.get('current_countries', [])
 
-    result = get_next_question(user_response, prev_characteristic)
+    # temp
+    table = 'completedata'
+
+    result = get_next_question(cur, table,user_response, prev_characteristic)
 
     if 'countries_left' in result and result['countries_left'] <= 5:
         countries_to_guess = result.get('countries_to_guess', [])
@@ -68,6 +78,10 @@ def get_question():
 
     # Save the updated game state in the user's session
     session['current_countries'] = result.get('countries', [])
+
+    # test
+    cur.close()
+    conn.close()
 
     return jsonify(result)
 
