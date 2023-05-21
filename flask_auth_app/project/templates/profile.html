@@ -1,12 +1,27 @@
 {% extends "base.html" %}
 
 {% block content %}
+<style>
+  * {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+  }
+
+  .title {
+    font-size: 26px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    /* Added margin at the bottom */
+  }
+</style>
 <div class="text-box">
   <h1 class="title">
     Welcome, {{name}}!
   </h1>
   <div class="button-container">
-    <button id="myButton" class="custom-button">Now Go Hide</button>
+    <button id="myButton" class="custom-button">Go Hide</button>
   </div>
 </div>
 
@@ -14,13 +29,13 @@
 
 <script>
   document.getElementById("history").onclick = function () {
-      location.href = "/history";
+    location.href = "/history";
   };
-  </script> 
+</script>
 
 <script>
   document.getElementById("myButton").onclick = function () {
-      location.href = "/question";
+    location.href = "/question";
   };
-</script>  
+</script>
 {% endblock %}
