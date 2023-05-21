@@ -1,18 +1,48 @@
 {% extends "base.html" %}
 
 {% block content %}
+<style>
+  * {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+  }
+
+  .title {
+    font-size: 26px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    /* Added margin at the bottom */
+  }
+</style>
 <div class="text-box">
   <h1 class="title">
     Welcome, {{name}}!
   </h1>
+<<<<<<< HEAD
+=======
+  <div class="button-container">
+    <button id="myButton" class="custom-button">Go Hide</button>
+  </div>
+>>>>>>> e0096e0a504dcb83733ff5431f83760d48d47131
 </div>
 
 <button id="history" class="custom-button">History</button>
 
 <script>
   document.getElementById("history").onclick = function () {
-      location.href = "/history";
+    location.href = "/history";
   };
-  </script> 
+</script>
 
+<<<<<<< HEAD
 {% endblock %}
+=======
+<script>
+  document.getElementById("myButton").onclick = function () {
+    location.href = "/question";
+  };
+</script>
+{% endblock %}
+>>>>>>> e0096e0a504dcb83733ff5431f83760d48d47131

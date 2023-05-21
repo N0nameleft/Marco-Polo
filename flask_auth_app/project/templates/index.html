@@ -3,12 +3,21 @@
 {% block content %}
 <style>
     .button {
-        font-size: 1em; /* Decreased the font size */
-        padding: 8px 15px; /* Decreased padding */
-        border-radius: 10px; /* Rounded corners */
-        margin-top: 10px; /* Added margin at the top */
+        font-size: 1em;
+        /* Decreased the font size */
+        padding: 8px 15px;
+        /* Decreased padding */
+        border-radius: 10px;
+        /* Rounded corners */
+        margin-top: 10px;
+        /* Added margin at the top */
+        border: none;
+        cursor: pointer;
+        /* Change cursor when hovering over the button */
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        /*  Shadows for depth */
     }
-    
+
     .text-box {
         position: relative;
     }
@@ -17,7 +26,8 @@
 {% if not current_user.is_authenticated %}
 <div class="text-box">
     <h1 class="title" style="font-size: 26px;">Marco Polo</h1>
-    <h2 class="subtitle" style="font-size: 20px;font-weight: 400;">Can you hide from one of the greatest explorers in history?</h2>
+    <h2 class="subtitle" style="font-size: 20px;font-weight: 400;">Can you hide from one of the greatest explorers in
+        history?</h2>
     <br>
     <p class="subtitle">
         Start by thinking of a country to hide in.
@@ -35,6 +45,7 @@
     <br>
     
 </div>
+<<<<<<< HEAD
 {% endif %}
 {% if current_user.is_authenticated %}
 <div class="text-box">
@@ -50,3 +61,7 @@
     };
 </script>  
 {% endblock %}
+=======
+
+{% endblock %}
+>>>>>>> e0096e0a504dcb83733ff5431f83760d48d47131

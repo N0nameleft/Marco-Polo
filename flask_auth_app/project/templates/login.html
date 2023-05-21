@@ -12,34 +12,64 @@
 
     /* Style for the login box */
     .box {
-        background: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
-        border-radius: 15px; /* Rounded corners */
-        padding: 20px; /* Decreased padding */
+        background: rgba(255, 255, 255, 0.8);
+        /* Semi-transparent white */
+        border-radius: 15px;
+        /* Rounded corners */
+        padding: 20px;
+        /* Decreased padding */
         text-align: center;
-        width: 100%; /* Increased width */
+        width: 100%;
+        /* Increased width */
         margin: auto;
+        border: 1.25px solid rgb(248, 248, 248);
+        /* Border highlight */
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        /* Shadows for depth */
     }
 
     /* Style for the title */
     .title {
-        font-size: 1.5em; /* Decreased the font size */
-        margin-bottom: 10px; /* Added margin at the bottom */
+        font-size: 1.5em;
+        /* Decreased the font size */
+        margin-bottom: 10px;
+        /* Added margin at the bottom */
     }
 
     /* Style for the input */
     .input {
-        font-size: 1em; /* Decreased the font size */
-        padding: 8px; /* Decreased padding */
-        border-radius: 10px; /* Rounded corners */
-        margin-bottom: 10px; /* Added margin at the bottom */
+        font-size: 1em;
+        /* Decreased the font size */
+        padding: 8px;
+        /* Decreased padding */
+        border-radius: 10px;
+        /* Rounded corners */
+        margin-bottom: 10px;
+        /* Added margin at the bottom */
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+        /*  Shadows for some depth */
+        border: none;
+        border-style: outset;
+        /* Outset border style */
+        outline: none;
+        /* Stop yellow highlighting when clicked on */
     }
 
     /* Style for the button */
     .button {
-        font-size: 1em; /* Decreased the font size */
-        padding: 8px 15px; /* Decreased padding */
-        border-radius: 10px; /* Rounded corners */
-        margin-top: 10px; /* Added margin at the top */
+        font-size: 1em;
+        /* Decreased the font size */
+        padding: 8px 15px;
+        /* Decreased padding */
+        border-radius: 10px;
+        /* Rounded corners */
+        margin-top: 10px;
+        /* Added margin at the top */
+        border: none;
+        cursor: pointer;
+        /* Change cursor when hovering over the button */
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        /*  Shadows for some depth */
     }
 </style>
 
@@ -48,9 +78,9 @@
         <h3 class="title">Login</h3>
         {% with messages = get_flashed_messages() %}
         {% if messages %}
-            <div class="notification is-danger">
-                {{ messages[0] }}. 
-             </div>
+        <div class="notification is-danger">
+            {{ messages[0] }}.
+        </div>
         {% endif %}
         {% endwith %}
         <form method="POST" action="/login">
