@@ -48,16 +48,28 @@
 {% endif %}
 {% if current_user.is_authenticated %}
 <div class="text-box">
-    <p class="subtitle">Are you ready to set sail?</p>
+    <p id="start_text" class="subtitle">Are you ready to set sail?</p>
     <div class="button-container">
-        <button id="start" class="custom-button">Now Go Hide</button>
+        <button id="start_button" class="custom-button">Now Go Hide</button>
     </div>
 </div>
 {% endif %}
 <script>
-    document.getElementById("start").onclick = function () {
+    document.getElementById("start_button").onclick = function (){
+        e = document.getElementById('start_button')
+        if (e.innerText == 'Start!'){
+            redirect();
+        }
+        e.innerText = 'Start!';
+        document.getElementById('start_text').innerText = "Imagine you are in a country, hit the button when you ready!"
+    };
+</script>
+
+<script>
+    function redirect() {
         location.href = "/question";
     };
 </script>  
+
 {% endblock %}
 

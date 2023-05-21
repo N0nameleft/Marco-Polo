@@ -40,7 +40,8 @@ def start_game():
     session['current_countries'] = all_countries
 
     # Get the first question
-    result = get_next_question(cur)
+    table = 'completedata'
+    result = get_next_question(cur, table)
 
     # Close the cursor and database connection
     cur.close()
