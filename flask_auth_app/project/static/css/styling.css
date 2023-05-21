@@ -3,18 +3,16 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
     line-height: 1.5;
-    background: url({{ url_for('static', filename='images/background.jpg')
-}
-});
-background-size: cover;
-background-repeat: no-repeat;
-background-attachment: fixed;
-background-position: center;
-display: flex;
-align-items: center;
-justify-content: center;
-min-height: 100vh;
-}
+    background: url({{ url_for('static', filename='images/background.jpg')}});
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    }
 
 /* Navbar styles */
 .navbar {
