@@ -20,9 +20,9 @@ def profile():
 def history():
     return render_template("history.html")
 
-@main.route("/question")
+@main.route("/game")
 def new_page():
-    return render_template("question.html")
+    return render_template("game.html")
 
 @main.route('/start_game', methods=['POST'])
 def start_game():
