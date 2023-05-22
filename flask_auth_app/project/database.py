@@ -1,6 +1,7 @@
 import sqlite3
 from flask import g
 import os
+from .decisionMaking import *
 
 
 def get_db():
@@ -48,10 +49,21 @@ def update_game_db(conn, table, user_response, prev_characteristic):
     cur = conn.cursor()
     if user_response == "yes":
         q = "DELETE FROM %s WHERE %s = 0" % (table, prev_characteristic)
-
     else:  # handle 'no' response
         q = "DELETE FROM %s WHERE %s = 1" % (table, prev_characteristic)
     cur.execute(q)
+
+    # delete columns with all same value
+    columnNames = getColumnNames(cur, table)
+    for c in columnNames:
+        query = "SELECT COUNT( distinct %s) FROM %s" % (c, table)
+        cur.execute(query)
+        count = cur.fetchone()[0]
+        if count == 1:
+            q = "ALTER TABLE %s DROP COLUMN %s" % (table, c)
+            cur.execute(q)
+            conn.commit()
+
     conn.commit()
     
 def close_db(exception=None):

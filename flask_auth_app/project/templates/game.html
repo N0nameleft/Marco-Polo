@@ -34,7 +34,7 @@
         // Get the user's response ('yes' or 'no') based on the button they clicked
         var user_response = $(this).attr('id');
         var prev_characteristic = $('#characteristic').val();
-
+    
         // Send an AJAX request to the '/get_question' route
         $.ajax({
             url: '/get_question',
