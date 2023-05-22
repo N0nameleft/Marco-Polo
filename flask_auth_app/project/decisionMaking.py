@@ -18,7 +18,7 @@ def get_next_question(cur, table, user_response=None, prev_characteristic=None):
             'next_question_text': "I am now guessing your country",
             'countries_left': len(countries),
             'countries_to_guess': countries,
-            'next_characteristic': None
+            'next_characteristic': None,
         }
 
     # Pick the next characteristic to ask about
@@ -28,7 +28,7 @@ def get_next_question(cur, table, user_response=None, prev_characteristic=None):
         'next_question_text': next_question_text,
         'next_characteristic': next_characteristic,
         'countries_left': len(countries),
-        'countries': countries
+        'countries': countries,
     }
 
 def get_all_country(cur, table):

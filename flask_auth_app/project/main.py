@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, request, jsonify, session
 from flask_login import login_required, current_user
 from .decisionMaking import *
-from .database import *  # Don't forget to import your database connection function
+from .database import *
 import sqlite3
 
 main = Blueprint("main", __name__)
@@ -27,16 +27,17 @@ def new_page():
 @main.route('/start_game', methods=['POST'])
 def start_game():
     # Get the database connection
-    conn = get_db()
-    cur = conn.cursor()
+    # conn = get_db()
+    # cur = conn.cursor()
 #   tempconn = temp_game_db(current_user.id)
 #   tempcur = tempconn.cursor()
 #   add_temp(tempcur)
+
     temp, table = new_game_db(current_user.id)
     tempcur = temp.cursor()
 
-    cur.close()
-    conn.close()
+    # cur.close()
+    # conn.close()
 
     # Get all countries to start the game
     tempcur.execute("SELECT countrycode FROM %s" % table)
@@ -47,6 +48,7 @@ def start_game():
 
     # Get the first question
     result = get_next_question(tempcur, table)
+    
 
     # Close the cursor and database connection
     tempcur.close()
@@ -62,15 +64,12 @@ def get_question():
     prev_characteristic = data.get('prev_characteristic')
     conn = get_game_db(current_user.id)
     cur = conn.cursor()
-    table = get_table_name()
-    update_game_db(cur, table, user_response, prev_characteristic)
-
-
+    t  = "tem"
+    update_game_db(conn, t, user_response, prev_characteristic)
 
     # Retrieve the game state from the user's session
     current_countries = session.get('current_countries', [])
-
-    result = get_next_question(cur, table,user_response, prev_characteristic)
+    result = get_next_question(cur, t, user_response, prev_characteristic)
 
     if 'countries_left' in result and result['countries_left'] <= 3:
         countries_to_guess = result.get('countries_to_guess', [])
