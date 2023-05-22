@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, request, jsonify, session
 from flask_login import login_required, current_user
 from .decisionMaking import *
-from .database import get_db  # Don't forget to import your database connection function
+from .database import *  # Don't forget to import your database connection function
 import sqlite3
 
 main = Blueprint("main", __name__)
@@ -27,25 +27,27 @@ def new_page():
 @main.route('/start_game', methods=['POST'])
 def start_game():
     # Get the database connection
-    # cur = conn.cursor()
-    # conn = sqlite3.connect('countries.db')
     conn = get_db()
     cur = conn.cursor()
-
+# tempconn = temp_game_db(current_user.id)
+#     tempcur = tempconn.cursor()
+#     add_temp(tempcur)
+    temp = temp_game_db(current_user.id)
     # Get all countries to start the game
-    cur.execute("SELECT countrycode FROM completedata")
+    table = 'completedata'
+    cur.execute("SELECT countrycode FROM %s" % table)
     all_countries = [row[0] for row in cur.fetchall()]
 
     # Save the initial game state in the user's session
     session['current_countries'] = all_countries
 
     # Get the first question
-    table = 'completedata'
     result = get_next_question(cur, table)
 
     # Close the cursor and database connection
     cur.close()
     conn.close()
+    temp.close()
 
     return jsonify(result)
 
