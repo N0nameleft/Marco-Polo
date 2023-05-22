@@ -71,14 +71,20 @@ def get_question():
     current_countries = session.get('current_countries', [])
     result = get_next_question(cur, t, user_response, prev_characteristic)
 
+
+    
     if 'countries_left' in result and result['countries_left'] <= 3:
         countries_to_guess = result.get('countries_to_guess', [])
-        for country in countries_to_guess:
-            if guess_country(country):  # Here is where we call guess_country in your web app
-                result['next_question_text'] = f"Your country is {country}!"
-                break
-        else:
-            result['next_question_text'] = "I couldn't guess your country. Let's try again."
+    
+
+
+
+        # for i in range(result["countries_left"]):
+        #     if guess_country(cur, t):  # Here is where we call guess_country in your web app
+        #         result['next_question_text'] = f"Your country is {country}!"
+        #         break
+        # else:
+        #     result['next_question_text'] = "I couldn't guess your country. Let's try again."
 
     # Save the updated game state in the user's session
     session['current_countries'] = result.get('countries', [])
