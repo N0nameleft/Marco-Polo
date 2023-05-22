@@ -29,24 +29,27 @@ def start_game():
     # Get the database connection
     conn = get_db()
     cur = conn.cursor()
-# tempconn = temp_game_db(current_user.id)
-#     tempcur = tempconn.cursor()
-#     add_temp(tempcur)
-    temp = temp_game_db(current_user.id)
+#   tempconn = temp_game_db(current_user.id)
+#   tempcur = tempconn.cursor()
+#   add_temp(tempcur)
+    temp, table = temp_game_db(current_user.id)
+    tempcur = temp.cursor()
+
+    cur.close()
+    conn.close()
+
     # Get all countries to start the game
-    table = 'completedata'
-    cur.execute("SELECT countrycode FROM %s" % table)
-    all_countries = [row[0] for row in cur.fetchall()]
+    tempcur.execute("SELECT countrycode FROM %s" % table)
+    all_countries = [row[0] for row in tempcur.fetchall()]
 
     # Save the initial game state in the user's session
     session['current_countries'] = all_countries
 
     # Get the first question
-    result = get_next_question(cur, table)
+    result = get_next_question(tempcur, table)
 
     # Close the cursor and database connection
-    cur.close()
-    conn.close()
+    tempcur.close()
     temp.close()
 
     return jsonify(result)
@@ -59,14 +62,14 @@ def get_question():
     prev_characteristic = data.get('prev_characteristic')
 
     # test
-    conn = get_db()
+    conn = get_game_db()
     cur = conn.cursor()
 
     # Retrieve the game state from the user's session
     current_countries = session.get('current_countries', [])
 
     # temp
-    table = 'completedata'
+    table = get_table_name()
 
     result = get_next_question(cur, table,user_response, prev_characteristic)
 

@@ -7,8 +7,8 @@ def get_db():
     if 'db' not in g:
         g.db = sqlite3.connect('countries.db')
     return g.db
-
-def temp_game_db(userId):
+time = ""
+def new_game_db(userId):
     name = '%s.db' % userId
     g.temp = sqlite3.connect(name)
 
@@ -17,7 +17,7 @@ def temp_game_db(userId):
     origin = get_db()
     cur = origin.cursor()
     cur.execute("SELECT sql FROM sqlite_master WHERE type='table' AND name='completedata'")
-
+    
     now = datetime.now()
     time = now.strftime("User%d%m%Y%H%M%S")
     q = cur.fetchone()[0]
@@ -30,11 +30,16 @@ def temp_game_db(userId):
     cur.execute("INSERT INTO destination.%s SELECT * FROM completedata" % time)
     g.temp.commit()
     # cur.execute("DETACH destination")
-
     
+    return g.temp, time
 
+def get_game_db(userId):
+    name = '%s.db' % userId
+    g.temp = sqlite3.connect(name)
     return g.temp
 
+def get_table_name():
+    return time
 
 def add_temp(cur):
     return cur  
