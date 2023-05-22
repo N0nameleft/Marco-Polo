@@ -27,7 +27,13 @@
             position: fixed;
             top: 0;
             right: 0;
-            left: auto;
+            left: 0;
+            background-color: rgba(255, 255, 255, 0.8);
+            transition: background-color 0.3s ease;
+            z-index: 1000;
+        }
+        .navbar:hover {
+            background-color: rgba(255, 255, 255, 1);
         }
         .navbar-brand {
             margin-right: 1rem;
@@ -35,10 +41,22 @@
         .navbar-end {
             justify-content: flex-end;
         }
+        .navbar-item {
+            color: black;
+        }
+        .text-box {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            padding: 40px;
+            max-width: 80%;
+            text-align: center;
+            margin: 0 auto;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
     </style>
 </head>
 <body>
-    <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+    <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
                 <span aria-hidden="true"></span>
@@ -46,7 +64,7 @@
                 <span aria-hidden="true"></span>
             </a>
         </div>
-
+    
         <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-end">
                 <a href="{{ url_for('main.index') }}" class="navbar-item">
@@ -76,6 +94,7 @@
             </div>
         </div>
     </nav>
+    
   
     <section class="hero is-primary is-fullheight">
         <div class="hero-body">
