@@ -3,29 +3,76 @@
 {% block content %}
 <style>
   body {
-   background-image: url("{{ url_for('static', filename='images/seafaring.jpg') }}");
+    background-image: url("{{ url_for('static', filename='images/seafaring.jpg') }}");
   }
 
- .wrapper {
-   background-image: url("{{ url_for('static', filename='images/paper.jpg') }}");
-   background-repeat: no-repeat;
-   width: 990px;
-   height: 743px;
-   display: flex;
- }
+  .bg {
+    background-image: url("{{ url_for('static', filename='images/paper.jpg') }}");
+    background-repeat: no-repeat;
+    width: 990px;
+    height: 743px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .table-container {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+  }
+
+  .table-header {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th, td {
+    padding: 8px;
+    text-align: left;
+  }
+
+  th {
+    background-color: #f2f2f2;
+  }
+
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
 </style>
 
 <div class="bg">
-  <div class="wrapper">
-    <h1 class="title">
-      Gaming History
-    </h1>
+  <div class="table-container">
+    <h1 class="table-header">Gaming History</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Country</th>
+          <th>Result</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2023-05-01</td>
+          <td>United States</td>
+          <td>Guessed correctly</td>
+        </tr>
+        <tr>
+          <td>2023-05-03</td>
+          <td>Canada</td>
+          <td>Guessed incorrectly</td>
+        </tr>
+        <!-- Add more rows for additional game results -->
+      </tbody>
+    </table>
   </div>
 </div>
-
-<!-- connect to db -->
-<!-- read from db
-display time date country of history games
-href for each game
-read db again to show full chat -->
 {% endblock %}
