@@ -86,12 +86,18 @@
         <form method="POST" action="/login">
             <div class="field">
                 <div class="control">
+                    <span class="icon">
+                        <ion-icon name="mail-outline"></ion-icon>
+                    </span>
                     <input class="input is-large" type="email" name="email" placeholder="Email" autofocus="">
                 </div>
             </div>
 
             <div class="field">
                 <div class="control">
+                    <span class="icon">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                    </span>
                     <input class="input is-large" type="password" name="password" placeholder="Password">
                 </div>
             </div>
@@ -105,4 +111,8 @@
         </form>
     </div>
 </div>
+
+<!-- Icons -->
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 {% endblock %}
