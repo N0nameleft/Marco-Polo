@@ -60,22 +60,32 @@ def guess_country(cur, table): #3 countries or less left
     countries = get_all_country(cur, table)
     random_guess = True
     next_q = ""
-    for c in column:
-        q = "SELECT COUNT(distinct %s) FROM %s WHERE %s = 1" % (c, table, c)
-        cur.execute(q)
-        count = cur.fetchone()[0]
-        if count != 1:
-            random_guess = False
-            next_q = c
-    if random_guess:
-        query = "SELECT COUNT(*) FROM %s" % table
+    
+    cur.execute("SELECT COUNT * FROM %s" % table)
+    coun_left = cur.fetchone()[0]
+    if coun_left == 1:
+        query = "SELECT countrycode FROM %s" % table
         cur.execute(query)
-        code = cur.fetchone()[1]
-        Qu = "Are you in " + get_country_name(code) + "?"
+        code = cur.fetchone()[0]
+        name = get_country_name(code)
+        Qu = "You are in " + name + "!"
     else:
-        formatQ = next_q.replace("_"," ") + "?"
-        Qu = "Is your country " + formatQ
-
+        for c in column:
+            q = "SELECT COUNT(distinct %s) FROM %s WHERE %s = 1" % (c, table, c)
+            cur.execute(q)
+            count = cur.fetchone()[0]
+            if count != 1:
+                random_guess = False
+                next_q = c
+        if random_guess:
+            query = "SELECT countrycode FROM %s" % table
+            cur.execute(query)
+            code = cur.fetchone()[0]
+            Qu = "Are you in " + get_country_name(code) + "?"
+        else:
+            formatQ = next_q.replace("_"," ") + "?"
+            Qu = "Is your country " + formatQ
+    
     return {
             'next_question_text': Qu,
             'countries_left': len(countries),

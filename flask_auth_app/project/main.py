@@ -74,8 +74,13 @@ def get_question():
 
     
     if 'countries_left' in result and result['countries_left'] <= 3:
-        countries_to_guess = result.get('countries_to_guess', [])
-    
+        # if result['countries_left'] == 1:
+        #     guess_country(cur, table)
+        # # countries_to_guess = result.get('countries_to_guess', [])
+        # else:
+        f_r = guess_country(cur, t)
+        result['next_question_text'] = f_r['next_question_text']
+
 
 
 
