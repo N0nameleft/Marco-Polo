@@ -32,7 +32,7 @@ def start_game():
 #   tempconn = temp_game_db(current_user.id)
 #   tempcur = tempconn.cursor()
 #   add_temp(tempcur)
-    temp, table = temp_game_db(current_user.id)
+    temp, table = new_game_db(current_user.id)
     tempcur = temp.cursor()
 
     cur.close()
