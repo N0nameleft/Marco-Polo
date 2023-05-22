@@ -1,9 +1,28 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1 class="title">
-  Gaming History
-</h1>
+<style>
+  body {
+   background-image: url("{{ url_for('static', filename='images/seafaring.jpg') }}");
+  }
+
+ .wrapper {
+   background-image: url("{{ url_for('static', filename='images/paper.jpg') }}");
+   background-repeat: no-repeat;
+   width: 990px;
+   height: 743px;
+   display: flex;
+ }
+</style>
+
+<div class="bg">
+  <div class="wrapper">
+    <h1 class="title">
+      Gaming History
+    </h1>
+  </div>
+</div>
+
 <!-- connect to db -->
 <!-- read from db
 display time date country of history games
