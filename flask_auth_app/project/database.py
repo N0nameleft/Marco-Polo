@@ -28,11 +28,9 @@ def temp_game_db(userId):
     g.temp = sqlite3.connect(name)
     cur.execute("ATTACH DATABASE '%s' AS destination" % name)
     cur.execute("INSERT INTO destination.%s SELECT * FROM completedata" % time)
+    g.temp.commit()
+    # cur.execute("DETACH destination")
 
-    
-    
-
-    
     
 
     return g.temp
