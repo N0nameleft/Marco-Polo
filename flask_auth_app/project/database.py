@@ -44,6 +44,19 @@ def get_table_name():
 def add_temp(cur):
     return cur  
 
+def update_game_db(cur, table, user_response, prev_characteristic):
+    q = "DELETE FROM %s WHERE " %table
+
+    if user_response == "yes":
+        where_clause += " AND %s = 0" %prev_characteristic
+    else:  # handle 'no' response
+        where_clause += " AND %s = 1" %prev_characteristic
+
+    cur.execute(q)
+    
+
+
+
 def close_db(exception=None):
     db = g.pop('db', None)
     if db is not None:

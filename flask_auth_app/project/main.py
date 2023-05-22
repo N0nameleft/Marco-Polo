@@ -60,20 +60,19 @@ def get_question():
     data = request.get_json()
     user_response = data.get('user_response')
     prev_characteristic = data.get('prev_characteristic')
-
-    # test
-    conn = get_game_db()
+    conn = get_game_db(current_user.id)
     cur = conn.cursor()
+    table = get_table_name()
+    update_game_db(cur, table, user_response, prev_characteristic)
+
+
 
     # Retrieve the game state from the user's session
     current_countries = session.get('current_countries', [])
 
-    # temp
-    table = get_table_name()
-
     result = get_next_question(cur, table,user_response, prev_characteristic)
 
-    if 'countries_left' in result and result['countries_left'] <= 5:
+    if 'countries_left' in result and result['countries_left'] <= 3:
         countries_to_guess = result.get('countries_to_guess', [])
         for country in countries_to_guess:
             if guess_country(country):  # Here is where we call guess_country in your web app
