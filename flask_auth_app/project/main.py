@@ -43,7 +43,11 @@ def start_game():
     tempcur.execute("SELECT countrycode FROM %s" % table)
     all_countries = [row[0] for row in tempcur.fetchall()]
 
+    countQuery = "SELECT COUNT(*) FROM %s" % table
+    tempcur.execute(countQuery)
+    rowCount = tempcur.fetchone()[0]
     # Save the initial game state in the user's session
+    session['countries_count'] = rowCount
     session['current_countries'] = all_countries
 
     # Get the first question
@@ -68,19 +72,18 @@ def get_question():
     update_game_db(conn, t, user_response, prev_characteristic)
 
     # Retrieve the game state from the user's session
-    current_countries = session.get('current_countries', [])
-    result = get_next_question(cur, t, user_response, prev_characteristic)
-
-
-    
-    if 'countries_left' in result and result['countries_left'] <= 3:
+    # current_countries = session.get('current_countries', [])
+    countries_count = session.get('countries_count')
+    if countries_count <=5:
+    # if 'countries_left' in result and result['countries_left'] <= 3:
         # if result['countries_left'] == 1:
         #     guess_country(cur, table)
         # # countries_to_guess = result.get('countries_to_guess', [])
         # else:
         f_r = guess_country(cur, t)
-        result['next_question_text'] = f_r['next_question_text']
-
+        session['countries_count'] = f_r.get('countries_left')
+        session['current_countries'] = f_r.get('countries', [])
+        return jsonify(f_r)
 
 
 
@@ -90,9 +93,11 @@ def get_question():
         #         break
         # else:
         #     result['next_question_text'] = "I couldn't guess your country. Let's try again."
-
+    else:
+        result = get_next_question(cur, t, user_response, prev_characteristic)
     # Save the updated game state in the user's session
-    session['current_countries'] = result.get('countries', [])
+        session['countries_count'] = result.get('countries_left')
+        session['current_countries'] = result.get('countries', [])
 
     # test
     cur.close()

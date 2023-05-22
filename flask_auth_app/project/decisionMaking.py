@@ -41,9 +41,9 @@ def get_all_country(cur, table):
 def get_country_name(code):
     conn = sqlite3.connect('countries.db')
     cur = conn.cursor()
-    query = "SELECT countryname FROM countrycode WHERE countrycode = %s" % code
+    query = "SELECT countryname FROM countrycode WHERE countrycode.countrycode = '%s'" % code
     cur.execute(query)
-    name = cur.fetchall()[0]
+    name = cur.fetchall()[0][0]
     cur.close()
     conn.close()
     return name
@@ -60,8 +60,8 @@ def guess_country(cur, table): #3 countries or less left
     countries = get_all_country(cur, table)
     random_guess = True
     next_q = ""
-    
-    cur.execute("SELECT COUNT * FROM %s" % table)
+    t_q= "SELECT COUNT (*) FROM %s" % table
+    cur.execute(t_q)
     coun_left = cur.fetchone()[0]
     if coun_left == 1:
         query = "SELECT countrycode FROM %s" % table
@@ -124,6 +124,7 @@ def getQuestion(cur, table):
         r = secrets.randbelow(3)
         c = percentage(cur, table, rowCount)[r][0]
     else:
+        
         c = percentage(cur, table, rowCount)[0][0]
     formatC = c.replace("_"," ") + "?"
     question = "Is your country " + formatC

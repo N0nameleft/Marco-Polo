@@ -15,6 +15,7 @@
     </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 <script>
     $(document).ready(function() {
     // Start a new game when the page loads
@@ -51,5 +52,22 @@
     });
 });
 
+document.getElementById("yes").onclick = function (){
+    e = document.getElementById('question-text')
+    if (e.value.includes('You are in')){
+            redirect();
+    }
+}
+
+document.getElementById("no").onclick = function (){
+    e = document.getElementById('question-text')
+    if (e.value.includes('You are in')){
+            redirect();
+    }
+}
+
+function redirect() {
+    location.href = "/index";
+};
 </script>
 {% endblock %}
