@@ -23,7 +23,6 @@
     }
 </style>
 <!-- Wrap your text in a div with the class "text-box" -->
-{% if not current_user.is_authenticated %}
 <div class="text-box">
     <h1 class="title" style="font-size: 26px;">Marco Polo</h1>
     <h2 class="subtitle" style="font-size: 20px;font-weight: 400;">Can you hide from one of the greatest explorers in
@@ -45,31 +44,8 @@
     <br>
     
 </div>
-{% endif %}
-{% if current_user.is_authenticated %}
-<div class="text-box">
-    <p id="start_text" class="subtitle">Are you ready to set sail?</p>
-    <div class="button-container">
-        <button id="start_button" class="custom-button">Now Go Hide</button>
-    </div>
-</div>
-{% endif %}
-<script>
-    document.getElementById("start_button").onclick = function (){
-        e = document.getElementById('start_button')
-        if (e.innerText == 'Start!'){
-            redirect();
-        }
-        e.innerText = 'Start!';
-        document.getElementById('start_text').innerText = "Imagine you are in a country, hit the button when you ready!"
-    };
-</script>
 
-<script>
-    function redirect() {
-        location.href = "/game";
-    };
-</script>  
+
 
 {% endblock %}
 

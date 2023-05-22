@@ -17,17 +17,13 @@
   }
 </style>
 <div class="text-box">
-  <h1 class="title">
-    Welcome, {{name}}!
-  </h1>
+  <p id="start_text" class="subtitle">Welcome, {{name}}!</p>
+  <p>Are you ready to set sail?</p>
+  <div class="button-container">
+      <a href="{{ url_for('main.new_page') }}"><button id="start_button" class="custom-button">Now Go Hide</button></a>
+  </div>
 </div>
 
-<button id="history" class="custom-button">History</button>
-
-<script>
-  document.getElementById("history").onclick = function () {
-    location.href = "/history";
-  };
-</script>
+ 
 
 {% endblock %}
