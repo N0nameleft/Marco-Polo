@@ -9,45 +9,45 @@ def get_db():
     if 'db' not in g:
         g.db = sqlite3.connect('countries.db')
         # Create the user_responses table if it doesn't exist
-        create_responses_db()
+        # create_responses_db()
     return g.db
 
 
-def create_responses_db():
-    # Connect to the database
-    conn = get_db()
-    cur = conn.cursor()
+# def create_responses_db():
+#     # Connect to the database
+#     conn = get_db()
+#     cur = conn.cursor()
 
-    # Create the user_responses table if it doesn't exist
-    cur.execute("""
-        CREATE TABLE IF NOT EXISTS user_responses (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            user_id INTEGER,
-            session_id INTEGER,
-            question TEXT,
-            response TEXT
-        )
-    """)
+#     # Create the user_responses table if it doesn't exist
+#     cur.execute("""
+#         CREATE TABLE IF NOT EXISTS user_responses (
+#             id INTEGER PRIMARY KEY AUTOINCREMENT,
+#             user_id INTEGER,
+#             session_id INTEGER,
+#             question TEXT,
+#             response TEXT
+#         )
+#     """)
 
-    # Commit changes and close connection
-    conn.commit()
-    cur.close()
+#     # Commit changes and close connection
+#     conn.commit()
+#     cur.close()
 
 
-def insert_response(user_id, session_id, question, response):
-    # Connect to the database
-    conn = get_db()
-    cur = conn.cursor()
+# def insert_response(user_id, session_id, question, response):
+#     # Connect to the database
+#     conn = get_db()
+#     cur = conn.cursor()
 
-    # Insert the user's response into the user_responses table
-    cur.execute("""
-        INSERT INTO user_responses (user_id, session_id, question, response)
-        VALUES (?, ?, ?, ?)
-    """, (user_id, session_id, question, response))
+#     # Insert the user's response into the user_responses table
+#     cur.execute("""
+#         INSERT INTO user_responses (user_id, session_id, question, response)
+#         VALUES (?, ?, ?, ?)
+#     """, (user_id, session_id, question, response))
 
-    # Commit changes and close connection
-    conn.commit()
-    cur.close()
+#     # Commit changes and close connection
+#     conn.commit()
+#     cur.close()
 
 
 def new_game_db(user_id):
