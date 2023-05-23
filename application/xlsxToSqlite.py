@@ -1,5 +1,4 @@
 import sqlite3
-import openpyxl
 from openpyxl import load_workbook
 import re
 
@@ -11,9 +10,9 @@ def slugify(text, lower=1):
 	return text
 
 #Replace with a database name
-con = sqlite3.connect('/Users/zach/Desktop/Aus/UWA/CITS3403/Project/Project 2/Akinator-clone/flask_auth_app/countries.db')
+con = sqlite3.connect('test2.db')
 #replace with the complete path to youe excel workbook
-filename="/Users/zach/Desktop/Aus/UWA/CITS3403/Project/Project 2/Akinator-clone/flask_auth_app/backupdb.xlsx"
+filename="backupdb.xlsx"
 wb = load_workbook(filename)
 
 sheets = wb.get_sheet_names()
