@@ -35,13 +35,15 @@
         // Get the user's response ('yes' or 'no') based on the button they clicked
         var user_response = $(this).attr('id');
         var prev_characteristic = $('#characteristic').val();
+        var current_question = document.getElementById("question-text").value;
+
     
         // Send an AJAX request to the '/get_question' route
         $.ajax({
             url: '/get_question',
             method: 'POST',
             contentType: 'application/json',
-            data: JSON.stringify({ 'user_response': user_response, 'prev_characteristic': prev_characteristic }),
+            data: JSON.stringify({ 'user_response': user_response, 'prev_characteristic': prev_characteristic, 'current_question': current_question }),
             success: function(response) {
                 // Update the question text and the number of countries left
                 $('#question-text').text(response.next_question_text);

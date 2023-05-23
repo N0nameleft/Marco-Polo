@@ -63,18 +63,20 @@ def guess_country(cur, table): #3 countries or less left
     t_q= "SELECT COUNT (*) FROM %s" % table
     cur.execute(t_q)
     coun_left = cur.fetchone()[0]
-    if coun_left == 1:
+
+    if coun_left == 1 or len(column) == 0:
         query = "SELECT countrycode FROM %s" % table
         cur.execute(query)
         code = cur.fetchone()[0]
         name = get_country_name(code)
-        Qu = "You are in " + name + "!"
+        Qu = "Are you in " + name + "?"
+        Ch = None
     else:
         for c in column:
             q = "SELECT COUNT(distinct %s) FROM %s WHERE %s = 1" % (c, table, c)
             cur.execute(q)
             count = cur.fetchone()[0]
-            if count != 1:
+            if count >= 1:
                 random_guess = False
                 next_q = c
         if random_guess:
@@ -82,15 +84,17 @@ def guess_country(cur, table): #3 countries or less left
             cur.execute(query)
             code = cur.fetchone()[0]
             Qu = "Are you in " + get_country_name(code) + "?"
+            Ch = None
         else:
-            formatQ = next_q.replace("_"," ") + "?"
-            Qu = "Is your country " + formatQ
+            formatQ = next_q.replace("_"," ")
+            Qu = "Is your country " + formatQ + "?"
+            Ch = next_q
     
     return {
             'next_question_text': Qu,
             'countries_left': len(countries),
             'countries_to_guess': countries,
-            'next_characteristic': None,
+            'next_characteristic': Ch,
         }
 
 
@@ -124,7 +128,6 @@ def getQuestion(cur, table):
         r = secrets.randbelow(3)
         c = percentage(cur, table, rowCount)[r][0]
     else:
-        
         c = percentage(cur, table, rowCount)[0][0]
     formatC = c.replace("_"," ") + "?"
     question = "Is your country " + formatC
