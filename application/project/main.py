@@ -119,15 +119,17 @@ def game_session(session_id):
 def history():
     conn = sqlite3.connect('instance/history/{}.db'.format(current_user.id))
     cur = conn.cursor()
-
+    new_table = "CREATE TABLE IF NOT EXISTS game_result (id INTEGER PRIMARY KEY, time INTEGER, result INTEGER)"
+    cur.execute(new_table)
+    conn.commit()
     cur.execute("SELECT * FROM game_result")
     r = cur.fetchall()
-    attempts = [ [i[1], format_time(i[1]), i[2].capitalize()if i[2] is not None else "Incomplete"] for i in r]
+    attempts = [ [i[1], format_time(i[1]), i[2].capitalize()if i[2] is not None else "Incomplete"] for i in reversed(r)]
 
     cur.close()
     conn.close()
 
-    return render_template("history.html", attempts=reversed(attempts))
+    return render_template("history.html", attempts=attempts)
 
 @main.route("/get_attempts")
 @login_required

@@ -86,7 +86,13 @@
 <div class="chat-container" style="margin-bottom: 2px;">
     <h2>Game History</h2>
 </div>
-  <div class="chat-container">
+<div class="chat-container">
+  {% if attempts|length == 0 %}
+    <p>No gaming record yet.</p>
+    <div class="button-container">
+      <a href="{{ url_for('main.index') }}"><button id="start_button" class="custom-button">Start Game</button></a>
+  </div>
+  {% else %}
     <table>
       <thead>
         <tr>
@@ -104,6 +110,7 @@
         {% endfor %}
       </tbody>
     </table>
+  {% endif %}
   </div>
 
 
