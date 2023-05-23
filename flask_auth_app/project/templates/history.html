@@ -10,24 +10,23 @@
     background-image: url("{{ url_for('static', filename='images/paper.jpg') }}");
     background-repeat: no-repeat;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    flex-direction: row;
   }
 
   .table-container {
     background-color: rgba(255, 255, 255, 0.7);
     padding: 20px;
     border-radius: 10px;
-    width: 300%;
-    max-width: 990px;
-    height:300px;
-    overflow-x: auto;
+    width: 60%; /* Adjusted to 60% for a wider table */
+    max-width: 1200px; /* Adjusted max-width as per your preference */
+    margin-bottom: 20px;
   }
 
-  .table-header {
-    font-weight: bold;
-    font-size: 20px;
-    margin-bottom: 10px;
+  .scrollable-table {
+    max-height: 200px; /* Adjust the height as per your preference */
+    overflow: auto;
   }
 
   table {
@@ -35,7 +34,8 @@
     border-collapse: collapse;
   }
 
-  th, td {
+  th,
+  td {
     padding: 8px;
     text-align: left;
   }
@@ -48,53 +48,81 @@
     background-color: #dddddd;
   }
 
-  /* Responsive styles */
-  @media screen and (max-width: 600px) {
-    .table-container {
-      width: 90%;
-    }
-  }
-
-  @media screen and (max-width: 400px) {
-    .table-container {
-      width: 100%;
-    }
+  .fixed-header {
+    position: sticky;
+    top: 0;
+    background-color: #f2f2f2;
+    z-index: 1;
   }
 </style>
 
 <div class="bg">
-  <div class="table-container">
+  <div class="table-container" style="margin-right: 20px;">
+    <h1 class="table-header">Leaderboard</h1>
+    <div class="scrollable-table">
+      <table>
+        <thead class="fixed-header">
+          <tr>
+            <th>Player</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Player 1</td>
+            <td>100</td>
+          </tr>
+          <tr>
+            <td>Player 2</td>
+            <td>95</td>
+          </tr>
+          <!-- Add more rows for additional leaderboard entries -->
+          <!-- For testing purposes, adding 50 more rows -->
+          {% for i in range(50) %}
+          <tr>
+            <td>Player {{ i+3 }}</td>
+            <td>{{ i+3 }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="table-container" style="margin-left: 20px;">
     <h1 class="table-header">Gaming History</h1>
-    <table>
-      <thead>
-        <tr>
-          <th>Session ID</th>
-          <th>Date</th>
-          <th>Country</th>
-          <th>Guess Result</th>
-          <th>Guess Result</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- Mock data -->
-        <tr style="cursor: pointer;" onclick="location.href='{{ url_for('main.game_session') }}'">
-          <td>1</td>
-          <td>2023-05-01</td>
-          <td>United States</td>
-          <td>Guessed correctly</td>
-          <td>United States</td>
-        </tr>
-        <tr style="cursor: pointer;" onclick="location.href='{{ url_for('main.game_session') }}'">
-          <td>2</td>
-          <td>2023-05-03</td>
-          <td>Canada</td>
-          <td>Guessed incorrectly</td>
-          <td>Brazil</td>
-        </tr>
-        
-        <!-- Add more mock data as needed -->
-      </tbody>
-    </table>
+    <div class="scrollable-table">
+      <table>
+        <thead class="fixed-header">
+          <tr>
+            <th>Date</th>
+            <th>Country</th>
+            <th>Guess Result</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2023-05-01</td>
+            <td>United States</td>
+            <td>Guessed correctly</td>
+          </tr>
+          <tr>
+            <td>2023-05-03</td>
+            <td>Canada</td>
+            <td>Guessed incorrectly</td>
+          </tr>
+          <!-- Add more rows for additional game results -->
+          <!-- For testing purposes, adding 50 more rows -->
+          {% for i in range(50) %}
+          <tr>
+            <td>2023-05-01</td>
+            <td>United States</td>
+            <td>Guessed correctly</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
 {% endblock %}
