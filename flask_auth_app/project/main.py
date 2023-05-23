@@ -3,7 +3,7 @@ from flask_login import login_required, current_user
 from .decisionMaking import *
 from .database import *
 import sqlite3
-
+from .database import get_game_db
 main = Blueprint("main", __name__)
 
 @main.route("/")
@@ -15,10 +15,6 @@ def index():
 def profile():
     return render_template("profile.html", name=current_user.username)
 
-@main.route("/history")
-@login_required
-def history():
-    return render_template("history.html")
 
 @main.route("/game")
 def new_page():
@@ -105,6 +101,71 @@ def get_question():
 
     return jsonify(result)
 
-@main.route("/game_session")
-def game_session():
-    return render_template("game_session.html")
+# Python code in Flask route
+
+
+@main.route('/game_session/<session_id>')
+def game_session(session_id):
+    # Connect to the user_id.db database
+    
+    conn = sqlite3.connect('%s.db' % current_user.id)
+    print('%s.db' % current_user.id)
+    cursor = conn.cursor()
+
+    try:
+        # Retrieve data from the specified table
+        cursor.execute(f"SELECT * FROM game{session_id}")
+        data = cursor.fetchall()
+
+        # Prepare chat_entries based on the retrieved data
+        chat_entries = [{'question': row[0], 'answer': row[1]} for row in data]
+
+        # Render the game_session.html template and pass the chat_entries
+        return render_template('game_session.html', chat_entries=chat_entries)
+
+    except sqlite3.Error as e:
+        # Handle any errors that may occur
+        print("An error occurred:", e)
+
+    finally:
+        # Close the database connection
+        conn.close()
+
+    # Add a fallback
+    return "Error: Game session not found"
+
+
+
+@main.route("/history")
+@login_required
+def history():
+    # Get the database connection
+    conn = sqlite3.connect('instance/history/{}.db'.format(current_user.id))
+    cur = conn.cursor()
+
+    # Retrieve all attempts for the logged-in user
+    cur.execute("SELECT * FROM game_result")
+    attempts = cur.fetchall()
+
+    # Close the cursor and database connection
+    cur.close()
+    conn.close()
+
+    return render_template("history.html", attempts=attempts)
+
+@main.route("/get_attempts")
+@login_required
+def get_attempts():
+    # Get the database connection
+    conn = sqlite3.connect('instance/history/{}.db'.format(current_user.id))
+    cur = conn.cursor()
+
+    # Retrieve all attempts for the logged-in user
+    cur.execute("SELECT * FROM game_result")
+    attempts = cur.fetchall()
+
+    # Close the cursor and database connection
+    cur.close()
+    conn.close()
+
+    return jsonify(attempts)
