@@ -74,6 +74,7 @@ def get_question():
     # Retrieve the game state from the user's session
     # current_countries = session.get('current_countries', [])
     countries_count = session.get('countries_count')
+
     if countries_count <=5:
     # if 'countries_left' in result and result['countries_left'] <= 3:
         # if result['countries_left'] == 1:
