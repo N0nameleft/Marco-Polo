@@ -2,26 +2,7 @@ import sqlite3
 import secrets
 
 def get_next_question(cur, table):
-    # Start with an empty WHERE clause
-    # where_clause = "1"
-
-    # if user_response is not None and prev_characteristic is not None:
-    #     if user_response == "yes":
-    #         where_clause += f" AND {prev_characteristic} = 1"
-    #     else:  # handle 'no' response
-    #         where_clause += f" AND {prev_characteristic} = 0"
-
     countries = get_all_country(cur, table)
-    # If we're down to 3 or fewer countries, start guessing
-    # if len(countries) <= 3:
-    #     return {
-    #         'next_question_text': "I am now guessing your country",
-    #         'countries_left': len(countries),
-    #         'countries_to_guess': countries,
-    #         'next_characteristic': None,
-    #     }
-
-    # Pick the next characteristic to ask about
     next_question_text, next_characteristic = getQuestion(cur, table)
 
     return {
@@ -48,14 +29,7 @@ def get_country_name(code):
     conn.close()
     return name
 
-def guess_country(cur, table): #3 countries or less left
-    # query = "SELECT COUNT(*) FROM %s" % table
-    # cur.execute(query)
-    # r = secrets.randbelow(cur.fetchone()[0])
-
-    # query = "SELECT countryname FROM countrycode JOIN %s ON countrycode.countrycode = %s.countrycode" % (table, table)
-    # cur.execute(query)
-    # country = cur.fetchall()[r][0]
+def guess_country(cur, table): 
     column = getColumnNames(cur, table)
     countries = get_all_country(cur, table)
     random_guess = True

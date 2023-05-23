@@ -22,19 +22,8 @@ def new_page():
 
 @main.route('/start_game', methods=['POST'])
 def start_game():
-    # Get the database connection
-    # conn = get_db()
-    # cur = conn.cursor()
-#   tempconn = temp_game_db(current_user.id)
-#   tempcur = tempconn.cursor()
-#   add_temp(tempcur)
-
     temp, table = new_game_db(current_user.id)
     tempcur = temp.cursor()
-
-    # cur.close()
-    # conn.close()
-
     # Get all countries to start the game
     tempcur.execute("SELECT countrycode FROM %s" % table)
     all_countries = [row[0] for row in tempcur.fetchall()]
@@ -49,7 +38,6 @@ def start_game():
     # Get the first question
     result = get_next_question(tempcur, table)
     
-
     # Close the cursor and database connection
     tempcur.close()
     temp.close()
@@ -83,37 +71,18 @@ def get_question():
     update_game_db(conn, t, user_response, prev_characteristic, current_user.id)
 
     # Retrieve the game state from the user's session
-    # current_countries = session.get('current_countries', [])
     cur.execute("SELECT COUNT(*) FROM %s" % t)
     countries_count = cur.fetchone()[0]
     columnLeft = len(getColumnNames(cur, t))
 
-    #  or columnLeft <=1
-    # if countries_count ==1:
-
     if countries_count <=5 or columnLeft == 0:
-    # if 'countries_left' in result and result['countries_left'] <= 3:
-        # if result['countries_left'] == 1:
-        #     guess_country(cur, table)
-        # # countries_to_guess = result.get('countries_to_guess', [])
-        # else:
         f_r = guess_country(cur, t)
         session['countries_count'] = f_r.get('countries_left')
         session['current_countries'] = f_r.get('countries', [])
         return jsonify(f_r)
-    
-
-
-        # for i in range(result["countries_left"]):
-        #     if guess_country(cur, t):  # Here is where we call guess_country in your web app
-        #         result['next_question_text'] = f"Your country is {country}!"
-        #         break
-        # else:
-        #     result['next_question_text'] = "I couldn't guess your country. Let's try again.
 
     else:
         result = get_next_question(cur, t)
-    # Save the updated game state in the user's session
         session['countries_count'] = result.get('countries_left')
         session['current_countries'] = result.get('countries', [])
 
@@ -123,36 +92,24 @@ def get_question():
 
     return jsonify(result)
 
-# Python code in Flask route
-
-
 @main.route('/game_session/<session_id>')
 def game_session(session_id):
-    # Connect to the user_id.db database
     
     conn = sqlite3.connect('instance/history/%s.db' % current_user.id)
     cursor = conn.cursor()
 
     try:
-        # Retrieve data from the specified table
         cursor.execute(f"SELECT * FROM game{session_id}")
         data = cursor.fetchall()
-
-        # Prepare chat_entries based on the retrieved data
         chat_entries = [{'question': 'Is your country ' + row[1].replace('_', ' ') + '?', 'answer': row[2].capitalize()} for row in data]
-
-        # Render the game_session.html template and pass the chat_entries
         return render_template('game_session.html', chat_entries=chat_entries)
 
     except sqlite3.Error as e:
-        # Handle any errors that may occur
         print("An error occurred:", e)
 
     finally:
-        # Close the database connection
         conn.close()
 
-    # Add a fallback
     return "Error: Game session not found"
 
 
@@ -160,16 +117,13 @@ def game_session(session_id):
 @main.route("/history")
 @login_required
 def history():
-    # Get the database connection
     conn = sqlite3.connect('instance/history/{}.db'.format(current_user.id))
     cur = conn.cursor()
 
-    # Retrieve all attempts for the logged-in user
     cur.execute("SELECT * FROM game_result")
     r = cur.fetchall()
     attempts = [ [i[1], format_time(i[1]), i[2]] for i in r]
 
-    # Close the cursor and database connection
     cur.close()
     conn.close()
 
