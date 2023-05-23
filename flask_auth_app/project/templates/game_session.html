@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    .chat-container {
+        width: 60%;
+        margin: auto;
+        background-color: #f2f2f2;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .chat-entry {
+        margin-bottom: 10px;
+    }
+    .chat-entry p {
+        margin: 0;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    .bot {
+        text-align: left;
+    }
+    .bot p {
+        background-color: #ffffff;
+    }
+    .user {
+        text-align: right;
+    }
+    .user p {
+        background-color: #dddddd;
+    }
+</style>
+
+<div class="chat-container">
+    <h2>Game Session</h2>
+
+    {% for entry in game_data.questions %}
+    <div class="chat-entry bot">
+        <p>{{ entry.question }}</p>
+    </div>
+    <div class="chat-entry user">
+        <p>{{ entry.answer }}</p>
+    </div>
+    {% endfor %}
+
+    <div class="chat-entry bot">
+        <p>
+        {% if game_data.correct %}
+            I guessed correctly! Your country is {{ game_data.guess }}.
+        {% else %}
+            I guessed incorrectly. I guessed {{ game_data.guess }}.
+        {% endif %}
+        </p>
+    </div>
+</div>
+{% endblock %}

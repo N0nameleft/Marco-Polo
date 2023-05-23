@@ -37,7 +37,7 @@ body {
 }
 
 .navbar-item {
-    color: #fff;
+    color: black;
     padding: 1rem;
     text-decoration: none;
 }
@@ -61,7 +61,7 @@ body {
     display: block;
     width: 25px;
     height: 3px;
-    background-color: #fff;
+    background-color: black;
     margin-bottom: 5px;
     transition: none;
     /* Remove the transition */
