@@ -5,7 +5,7 @@
     .chat-container {
         width: 60%;
         margin: auto;
-        background-color: rgba(255, 255, 255, 0.8);
+        background-color: #f2f2f2;
         padding: 20px;
         border-radius: 10px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -20,10 +20,14 @@
     }
     .bot {
         text-align: left;
-        background-color: #f2f2f2;
+    }
+    .bot p {
+        background-color: #ffffff;
     }
     .user {
         text-align: right;
+    }
+    .user p {
         background-color: #dddddd;
     }
 </style>
@@ -31,36 +35,13 @@
 <div class="chat-container">
     <h2>Game Session</h2>
 
+    {% for entry in chat_entries %}
     <div class="chat-entry bot">
-        <p>Is your country in Europe?</p>
+        <p>{{ entry.question }}</p>
     </div>
     <div class="chat-entry user">
-        <p>No</p>
+        <p>{{ entry.answer }}</p>
     </div>
-
-    <div class="chat-entry bot">
-        <p>Is your country in Africa?</p>
-    </div>
-    <div class="chat-entry user">
-        <p>No</p>
-    </div>
-
-    <div class="chat-entry bot">
-        <p>Is your country in Asia?</p>
-    </div>
-    <div class="chat-entry user">
-        <p>Yes</p>
-    </div>
-
-    <div class="chat-entry bot">
-        <p>Is your country an island?</p>
-    </div>
-    <div class="chat-entry user">
-        <p>No</p>
-    </div>
-
-    <div class="chat-entry bot">
-        <p>I guessed incorrectly. I guessed China.</p>
-    </div>
+    {% endfor %}
 </div>
 {% endblock %}

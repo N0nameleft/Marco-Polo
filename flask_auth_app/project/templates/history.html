@@ -4,125 +4,70 @@
 <style>
   body {
     background-image: url("{{ url_for('static', filename='images/seafaring.jpg') }}");
-  }
-
-  .bg {
-    background-image: url("{{ url_for('static', filename='images/paper.jpg') }}");
-    background-repeat: no-repeat;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.5;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    flex-direction: row;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
   }
 
-  .table-container {
+  .text-box {
     background-color: rgba(255, 255, 255, 0.7);
-    padding: 20px;
     border-radius: 10px;
-    width: 60%; /* Adjusted to 60% for a wider table */
-    max-width: 1200px; /* Adjusted max-width as per your preference */
-    margin-bottom: 20px;
-  }
-
-  .scrollable-table {
-    max-height: 200px; /* Adjust the height as per your preference */
-    overflow: auto;
+    padding: 20px;
+    width: 100%;
+    max-width: 1000px; /* Adjust the maximum width as per your preference */
+    font-size: 16px;
   }
 
   table {
     width: 100%;
-    border-collapse: collapse;
+    font-size: inherit;
   }
 
   th,
   td {
-    padding: 8px;
+    padding: 12px;
     text-align: left;
   }
 
-  th {
-    background-color: #f2f2f2;
+  /* Adjust the font size for smaller screens */
+  @media screen and (max-width: 768px) {
+    .text-box {
+      font-size: 14px;
+      padding: 10px;
+    }
   }
 
-  tr:nth-child(even) {
-    background-color: #dddddd;
-  }
-
-  .fixed-header {
-    position: sticky;
-    top: 0;
-    background-color: #f2f2f2;
-    z-index: 1;
+  /* Make the table smaller when window decreases */
+  @media screen and (max-width: 1200px) {
+    table {
+      font-size: 14px;
+    }
   }
 </style>
 
-<div class="bg">
-  <div class="table-container" style="margin-right: 20px;">
-    <h1 class="table-header">Leaderboard</h1>
-    <div class="scrollable-table">
-      <table>
-        <thead class="fixed-header">
-          <tr>
-            <th>Player</th>
-            <th>Score</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Player 1</td>
-            <td>100</td>
-          </tr>
-          <tr>
-            <td>Player 2</td>
-            <td>95</td>
-          </tr>
-          <!-- Add more rows for additional leaderboard entries -->
-          <!-- For testing purposes, adding 50 more rows -->
-          {% for i in range(50) %}
-          <tr>
-            <td>Player {{ i+3 }}</td>
-            <td>{{ i+3 }}</td>
-          </tr>
-          {% endfor %}
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <div class="table-container" style="margin-left: 20px;">
-    <h1 class="table-header">Gaming History</h1>
-    <div class="scrollable-table">
-      <table>
-        <thead class="fixed-header">
-          <tr>
-            <th>Date</th>
-            <th>Country</th>
-            <th>Guess Result</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>2023-05-01</td>
-            <td>United States</td>
-            <td>Guessed correctly</td>
-          </tr>
-          <tr>
-            <td>2023-05-03</td>
-            <td>Canada</td>
-            <td>Guessed incorrectly</td>
-          </tr>
-          <!-- Add more rows for additional game results -->
-          <!-- For testing purposes, adding 50 more rows -->
-          {% for i in range(50) %}
-          <tr>
-            <td>2023-05-01</td>
-            <td>United States</td>
-            <td>Guessed correctly</td>
-          </tr>
-          {% endfor %}
-        </tbody>
-      </table>
-    </div>
-  </div>
+<div class="text-box">
+  <h1 class="table-header">Gaming History</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Game Attempt</th>
+        <th>Result</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for attempt in attempts %}
+      <tr onclick="location.href='{{ url_for('main.game_session', session_id=attempt[1]) }}';" style="cursor: pointer;">
+        <td>{{ attempt[1] }}</td>
+        <td>{{ attempt[2] }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 </div>
 {% endblock %}
