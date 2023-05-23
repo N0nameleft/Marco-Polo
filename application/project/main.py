@@ -58,13 +58,7 @@ def get_question():
     
     if "Are you" in current_question:
         result = game_finish(user_response)
-        print(result)
-        write_chat_result(userId, user_response)
-        if "Are you" in current_question:
-            result = game_finish(user_response)
-            print(result)
-            write_chat_result(userId, user_response)
-
+        write_chat_result(userId, user_response, current_question)
         return jsonify(result)
    
 
@@ -124,7 +118,7 @@ def history():
     conn.commit()
     cur.execute("SELECT * FROM game_result")
     r = cur.fetchall()
-    attempts = [ [i[1], format_time(i[1]), i[2].capitalize()if i[2] is not None else "Incomplete"] for i in reversed(r)]
+    attempts = [ [i[1], format_time(i[1]), i[2], i[3].capitalize()if i[3] is not None else "Incomplete"] for i in reversed(r)]
 
     cur.close()
     conn.close()

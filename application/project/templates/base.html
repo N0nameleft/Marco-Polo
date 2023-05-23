@@ -8,54 +8,13 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styling.css') }}">
 
     <!-- Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet"> -->
 
     <!-- Favicon -->
     <link rel="Shortcut Icon" href="{{ url_for('static', filename='images/favicon.png') }}">
 
-    <style>
-        body {
-            background: url("{{ url_for('static', filename='images/background.jpg') }}");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-position: center;
-        }
-        .navbar {
-            position: fixed;
-            top: 0;
-            right: 0;
-            left: 0;
-            background-color: rgba(255, 255, 255, 0.8);
-            transition: background-color 0.3s ease;
-            z-index: 1000;
-            padding: 10px 0; /* Adjust the top and bottom padding as needed */
-        }
-        .navbar:hover {
-            background-color: rgba(255, 255, 255, 1);
-        }
-        .navbar-brand {
-            margin-right: 1rem;
-        }
-        .navbar-end {
-            justify-content: flex-end;
-        }
-        .navbar-item {
-            color: #333333; /* Adjust the text color as needed */
-        
-        }
-        .text-box {
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 15px;
-            padding: 40px;
-            max-width: 80%;
-            text-align: center;
-            margin: 0 auto;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-        }
-    </style>
 </head>
 <body>
     <nav class="navbar" aria-label="main navigation">

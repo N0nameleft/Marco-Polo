@@ -3,7 +3,7 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
     line-height: 1.5;
-    background: url({{ url_for('static', filename='images/background.jpg')}});
+    background: url(../images/background.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -13,18 +13,19 @@ body {
     justify-content: center;
 }
 
-/* Navbar styles */
 .navbar {
-    background-color: transparent;
-    color: #fff;
     position: fixed;
-    width: 100%;
     top: 0;
     right: 0;
-    left: auto;
-    z-index: 100;
-    transition: none;
-    /* Remove the transition */
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+    padding: 10px 0; /* Adjust the top and bottom padding as needed */
+}
+
+.navbar:hover {
+    background-color: rgba(255, 255, 255, 1);
 }
 
 .navbar-brand {
@@ -39,6 +40,9 @@ body {
     color: black;
     padding: 1rem;
     text-decoration: none;
+    font-family: 'Comic Sans MS', cursive;
+    font-weight: 500px;
+    font-size: 20;
 }
 
 .navbar-item:hover {
@@ -90,6 +94,8 @@ body {
     max-width: 80%;
     text-align: center;
     margin: 0 auto;
+    box-shadow: 2px 2px #bab5b5;
+    position: relative;
 }
 
 .button-container {
@@ -167,4 +173,49 @@ body {
 .btn:hover {
     background-color: #eee;
     /* Light grey background when hovering */
+}
+
+.chat-container {
+    width: 60%;
+    margin: auto;
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-height: 400px; /* Adjust the maximum height as needed */
+    overflow-y: auto;
+}
+.chat-title-container {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+}
+.chat-title {
+    margin: 0;
+    font-weight: bold;
+}
+.chat-entry {
+    margin-bottom: 10px;
+}
+.chat-entry p {
+    margin: 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+.bot {
+    text-align: left;
+}
+.bot p {
+    background-color: #ffffff;
+}
+.user {
+    text-align: right;
+}
+.user p {
+    background-color: #dddddd;
+}
+.question {
+    font-weight: 500;
+    word-wrap: break-word;
 }

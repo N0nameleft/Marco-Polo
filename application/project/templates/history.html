@@ -3,7 +3,7 @@
 {% block content %}
 <style>
   body {
-    background-image: url("{{ url_for('static', filename='images/seafaring.jpg') }}");
+
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
     line-height: 1.5;
@@ -97,6 +97,7 @@
       <thead>
         <tr>
           <th>Game Attempt</th>
+          <th>Bot-guessed Country</th>
           <th>Result</th>
         </tr>
       </thead>
@@ -106,6 +107,7 @@
         <tr onclick="location.href='{{ url_for('main.game_session', session_id=attempt[0]) }}';" style="cursor: pointer;">
           <td>{{ attempt[1] }}</td>
           <td>{{ attempt[2] }}</td>
+          <td>{{ attempt[3] }}</td>
         </tr>
         {% endfor %}
       </tbody>
