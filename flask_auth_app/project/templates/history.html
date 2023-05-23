@@ -77,20 +77,21 @@
       </thead>
       <tbody>
         <!-- Mock data -->
-        <tr style="cursor: pointer;" onclick="location.href='{{ url_for('main.game_session', session_id=1) }}'">
+        <tr style="cursor: pointer;" onclick="location.href='{{ url_for('main.game_session') }}'">
           <td>1</td>
           <td>2023-05-01</td>
           <td>United States</td>
           <td>Guessed correctly</td>
           <td>United States</td>
         </tr>
-        <tr style="cursor: pointer;" onclick="location.href='{{ url_for('main.game_session', session_id=2) }}'">
+        <tr style="cursor: pointer;" onclick="location.href='{{ url_for('main.game_session') }}'">
           <td>2</td>
           <td>2023-05-03</td>
           <td>Canada</td>
           <td>Guessed incorrectly</td>
           <td>Brazil</td>
         </tr>
+        
         <!-- Add more mock data as needed -->
       </tbody>
     </table>

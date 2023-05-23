@@ -5,7 +5,7 @@
     .chat-container {
         width: 60%;
         margin: auto;
-        background-color: #f2f2f2;
+        background-color: rgba(255, 255, 255, 0.8);
         padding: 20px;
         border-radius: 10px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -20,14 +20,10 @@
     }
     .bot {
         text-align: left;
-    }
-    .bot p {
-        background-color: #ffffff;
+        background-color: #f2f2f2;
     }
     .user {
         text-align: right;
-    }
-    .user p {
         background-color: #dddddd;
     }
 </style>
@@ -35,23 +31,36 @@
 <div class="chat-container">
     <h2>Game Session</h2>
 
-    {% for entry in game_data.questions %}
     <div class="chat-entry bot">
-        <p>{{ entry.question }}</p>
+        <p>Is your country in Europe?</p>
     </div>
     <div class="chat-entry user">
-        <p>{{ entry.answer }}</p>
+        <p>No</p>
     </div>
-    {% endfor %}
 
     <div class="chat-entry bot">
-        <p>
-        {% if game_data.correct %}
-            I guessed correctly! Your country is {{ game_data.guess }}.
-        {% else %}
-            I guessed incorrectly. I guessed {{ game_data.guess }}.
-        {% endif %}
-        </p>
+        <p>Is your country in Africa?</p>
+    </div>
+    <div class="chat-entry user">
+        <p>No</p>
+    </div>
+
+    <div class="chat-entry bot">
+        <p>Is your country in Asia?</p>
+    </div>
+    <div class="chat-entry user">
+        <p>Yes</p>
+    </div>
+
+    <div class="chat-entry bot">
+        <p>Is your country an island?</p>
+    </div>
+    <div class="chat-entry user">
+        <p>No</p>
+    </div>
+
+    <div class="chat-entry bot">
+        <p>I guessed incorrectly. I guessed China.</p>
     </div>
 </div>
 {% endblock %}

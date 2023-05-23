@@ -105,26 +105,6 @@ def get_question():
 
     return jsonify(result)
 
-# This is the function to render game logs in game_session.html
-# @main.route("/game_session/<session_id>")
-# @login_required
-# def game_session(session_id):
-#     # # Get the database connection
-#     # conn = get_db()
-#     # cur = conn.cursor()
-
-#     # # Query the database for the game session with the provided id
-#     # cur.execute("SELECT * FROM game_sessions WHERE session_id = ?", (session_id,))
-
-#     # # Fetch the results
-#     # game_session_data = cur.fetchall()
-
-#     # # Close the cursor and database connection
-#     # cur.close()
-#     # conn.close()
-
-#     # Render the game_session template with the game session data
-#     return render_template("game_session.html") #game_session_data=game_session_data)
-@main.route("/game_session/<session_id>")
-def game_session(session_id):
-    return render_template("game_session.html", session_id=session_id)
+@main.route("/game_session")
+def game_session():
+    return render_template("game_session.html")
