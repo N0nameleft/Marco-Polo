@@ -1,7 +1,6 @@
 Thomas Rigby (22973756)
 Xinze Feng (23163302)
 
-
 Marcopolo 
 An akinator-esque website which allows users to pick a country and our program will guess your country 
 

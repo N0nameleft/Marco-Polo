@@ -122,7 +122,7 @@ def history():
 
     cur.execute("SELECT * FROM game_result")
     r = cur.fetchall()
-    attempts = [ [i[1], format_time(i[1]), i[2]] for i in r]
+    attempts = [ [i[1], format_time(i[1]), i[2].capitalize()if i[2] is not None else "Incomplete"] for i in r]
 
     cur.close()
     conn.close()
