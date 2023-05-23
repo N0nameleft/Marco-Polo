@@ -2,6 +2,9 @@
 
 {% block content %}
 <style>
+    body{
+        background-image: url("{{ url_for('static', filename='images/seafaring.jpg') }}");
+    }
     .chat-container {
         width: 60%;
         margin: auto;
@@ -9,6 +12,18 @@
         padding: 20px;
         border-radius: 10px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-height: 400px; /* Adjust the maximum height as needed */
+        overflow-y: auto;
+    }
+    .chat-title-container {
+        margin-bottom: 10px;
+        padding: 10px;
+        background-color: #f2f2f2;
+        border-radius: 10px;
+    }
+    .chat-title {
+        margin: 0;
+        font-weight: bold;
     }
     .chat-entry {
         margin-bottom: 10px;
@@ -30,14 +45,20 @@
     .user p {
         background-color: #dddddd;
     }
+    .question {
+        font-weight: 500;
+        word-wrap: break-word;
+    }
 </style>
 
+<div class="chat-container" style="margin-bottom: 2px;">
+    <h2 class="chat-title">Game Session</h2>
+</div>
 <div class="chat-container">
-    <h2>Game Session</h2>
 
     {% for entry in chat_entries %}
     <div class="chat-entry bot">
-        <p>{{ entry.question }}</p>
+        <p class="question">{{ entry.question }}</p>
     </div>
     <div class="chat-entry user">
         <p>{{ entry.answer }}</p>

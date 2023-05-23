@@ -138,3 +138,18 @@ def close_db(exception=None):
     db = g.pop('db', None)
     if db is not None:
         db.close()
+
+
+
+def write_chat_result(userId, user_response):
+    name = '%s.db' % userId
+    conn = sqlite3.connect('instance/history/%s' %name)
+    cur = conn.cursor()
+    q_name = "SELECT time FROM game_result ORDER BY id DESC LIMIT 1"
+    cur.execute(q_name)
+    table = "%s" % cur.fetchone()[0]
+    q= "UPDATE game_result SET result ='%s' WHERE time = %s " %(user_response, table)
+    cur.execute(q)
+    conn.commit()
+    cur.close()
+    conn.close()

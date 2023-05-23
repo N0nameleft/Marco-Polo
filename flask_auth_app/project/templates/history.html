@@ -14,14 +14,29 @@
     margin: 0;
     padding: 0;
   }
-
-  .text-box {
-    background-color: rgba(255, 255, 255, 0.7);
-    border-radius: 10px;
-    padding: 20px;
+  .chat-container {
     width: 100%;
-    max-width: 1000px; /* Adjust the maximum width as per your preference */
-    font-size: 16px;
+    margin: auto;
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-height: 400px; /* Adjust the maximum height as needed */
+    overflow-y: auto;
+  }
+
+  .header {
+    margin-bottom: 2px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .table-container {
+    max-height: 300px; /* Adjust the maximum height as needed */
+    overflow-y: auto;
+    max-width: 800px;
   }
 
   table {
@@ -35,9 +50,25 @@
     text-align: left;
   }
 
+  tr:nth-child(even) {
+    background-color: #f9f9f9; /* Adjust the background color as needed */
+  }
+
+  tr:nth-child(odd) {
+    background-color: #eaeaea; /* Adjust the background color for odd rows */
+  }
+
+  tr:hover {
+    background-color: #f2f2f2; /* Adjust the hover background color as needed */
+  }
+
+  tr td:not(:last-child) {
+    border-bottom: 1px solid #dddddd; /* Adjust the border color as needed */
+  }
+
   /* Adjust the font size for smaller screens */
   @media screen and (max-width: 768px) {
-    .text-box {
+    .container {
       font-size: 14px;
       padding: 10px;
     }
@@ -51,23 +82,36 @@
   }
 </style>
 
-<div class="text-box">
-  <h1 class="table-header">Gaming History</h1>
-  <table>
-    <thead>
-      <tr>
-        <th>Game Attempt</th>
-        <th>Result</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for attempt in attempts %}
-      <tr onclick="location.href='{{ url_for('main.game_session', session_id=attempt[1]) }}';" style="cursor: pointer;">
-        <td>{{ attempt[1] }}</td>
-        <td>{{ attempt[2] }}</td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+
+<div class="chat-container" style="margin-bottom: 2px;">
+    <h2>Game History</h2>
 </div>
+  <div class="chat-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Game Attempt</th>
+          <th>Result</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for attempt in attempts %}
+        <tr onclick="location.href='{{ url_for('main.game_session', session_id=attempt[0]) }}';" style="cursor: pointer;">
+          <td>{{ attempt[1] }}</td>
+          <td>{{ attempt[2] }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+
+<script>
+  // Enable scrolling after 6 entries
+  const tableContainer = document.querySelector('.table-container');
+  if (tableContainer && tableContainer.scrollHeight > tableContainer.clientHeight) {
+    tableContainer.style.overflowY = 'scroll';
+  }
+</script>
 {% endblock %}

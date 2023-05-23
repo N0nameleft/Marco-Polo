@@ -63,10 +63,22 @@ def get_question():
     user_response = data.get('user_response')
     prev_characteristic = data.get('prev_characteristic')
     current_question = data.get('current_question')
-    conn = get_game_db(current_user.id)
+    userId = current_user.id
+    conn = get_game_db(userId)
     cur = conn.cursor()
     t  = "tem"
-    # if "Are you" in current_question:
+    
+    if "Are you" in current_question:
+        result = game_finish(user_response)
+        print(result)
+        write_chat_result(userId, user_response)
+        if "Are you" in current_question:
+            result = game_finish(user_response)
+            print(result)
+            write_chat_result(userId, user_response)
+
+        return jsonify(result)
+   
 
     update_game_db(conn, t, user_response, prev_characteristic, current_user.id)
 
@@ -118,8 +130,7 @@ def get_question():
 def game_session(session_id):
     # Connect to the user_id.db database
     
-    conn = sqlite3.connect('%s.db' % current_user.id)
-    print('%s.db' % current_user.id)
+    conn = sqlite3.connect('instance/history/%s.db' % current_user.id)
     cursor = conn.cursor()
 
     try:
@@ -128,7 +139,7 @@ def game_session(session_id):
         data = cursor.fetchall()
 
         # Prepare chat_entries based on the retrieved data
-        chat_entries = [{'question': row[0], 'answer': row[1]} for row in data]
+        chat_entries = [{'question': 'Is your country ' + row[1].replace('_', ' ') + '?', 'answer': row[2].capitalize()} for row in data]
 
         # Render the game_session.html template and pass the chat_entries
         return render_template('game_session.html', chat_entries=chat_entries)
@@ -155,13 +166,14 @@ def history():
 
     # Retrieve all attempts for the logged-in user
     cur.execute("SELECT * FROM game_result")
-    attempts = cur.fetchall()
+    r = cur.fetchall()
+    attempts = [ [i[1], format_time(i[1]), i[2]] for i in r]
 
     # Close the cursor and database connection
     cur.close()
     conn.close()
 
-    return render_template("history.html", attempts=attempts)
+    return render_template("history.html", attempts=reversed(attempts))
 
 @main.route("/get_attempts")
 @login_required
@@ -179,3 +191,9 @@ def get_attempts():
     conn.close()
 
     return jsonify(attempts)
+
+@main.route("/new_game")
+def new_game():
+    # Code to start a new game
+    return render_template("game.html")
+
