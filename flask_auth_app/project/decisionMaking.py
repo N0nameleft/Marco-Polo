@@ -1,7 +1,7 @@
 import sqlite3
 import secrets
 
-def get_next_question(cur, table, user_response=None, prev_characteristic=None):
+def get_next_question(cur, table):
     # Start with an empty WHERE clause
     # where_clause = "1"
 

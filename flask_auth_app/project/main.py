@@ -69,7 +69,7 @@ def get_question():
     conn = get_game_db(current_user.id)
     cur = conn.cursor()
     t  = "tem"
-    update_game_db(conn, t, user_response, prev_characteristic)
+    update_game_db(conn, t, user_response, prev_characteristic, current_user.id)
 
     # Retrieve the game state from the user's session
     # current_countries = session.get('current_countries', [])
@@ -94,7 +94,7 @@ def get_question():
         # else:
         #     result['next_question_text'] = "I couldn't guess your country. Let's try again."
     else:
-        result = get_next_question(cur, t, user_response, prev_characteristic)
+        result = get_next_question(cur, t)
     # Save the updated game state in the user's session
         session['countries_count'] = result.get('countries_left')
         session['current_countries'] = result.get('countries', [])
