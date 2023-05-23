@@ -103,6 +103,7 @@ def update_game_db(conn, table, user_response, prev_characteristic, user_id):
         q = "DELETE FROM %s WHERE %s = 0" % (table, prev_characteristic)
     else:  # handle 'no' response
         q = "DELETE FROM %s WHERE %s = 1" % (table, prev_characteristic)
+
     cur.execute(q)
 
     # delete columns with all same value

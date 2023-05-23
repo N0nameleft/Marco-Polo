@@ -62,16 +62,24 @@ def get_question():
     data = request.get_json()
     user_response = data.get('user_response')
     prev_characteristic = data.get('prev_characteristic')
+    current_question = data.get('current_question')
     conn = get_game_db(current_user.id)
     cur = conn.cursor()
     t  = "tem"
+    # if "Are you" in current_question:
+
     update_game_db(conn, t, user_response, prev_characteristic, current_user.id)
 
     # Retrieve the game state from the user's session
     # current_countries = session.get('current_countries', [])
-    countries_count = session.get('countries_count')
+    cur.execute("SELECT COUNT(*) FROM %s" % t)
+    countries_count = cur.fetchone()[0]
+    columnLeft = len(getColumnNames(cur, t))
 
-    if countries_count <=5:
+    #  or columnLeft <=1
+    # if countries_count ==1:
+
+    if countries_count <=5 or columnLeft == 0:
     # if 'countries_left' in result and result['countries_left'] <= 3:
         # if result['countries_left'] == 1:
         #     guess_country(cur, table)
@@ -81,7 +89,7 @@ def get_question():
         session['countries_count'] = f_r.get('countries_left')
         session['current_countries'] = f_r.get('countries', [])
         return jsonify(f_r)
-
+    
 
 
         # for i in range(result["countries_left"]):
@@ -89,7 +97,8 @@ def get_question():
         #         result['next_question_text'] = f"Your country is {country}!"
         #         break
         # else:
-        #     result['next_question_text'] = "I couldn't guess your country. Let's try again."
+        #     result['next_question_text'] = "I couldn't guess your country. Let's try again.
+
     else:
         result = get_next_question(cur, t)
     # Save the updated game state in the user's session
