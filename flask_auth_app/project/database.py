@@ -14,7 +14,7 @@ def new_game_db(user_id):
     if os.path.exists(name):
         os.remove(name)
     g.temp = sqlite3.connect(name)
-
+    get_history_db(user_id)
     tcur = g.temp.cursor()
     table = "tem"
     tcur.execute("DROP TABLE IF EXISTS %s" % table)
@@ -31,6 +31,10 @@ def new_game_db(user_id):
     
     return g.temp, table
 
+def get_history_db(user_id):
+    name = '%s.db' % user_id
+    conn = sqlite3.connect('instance/history/%s' %name)
+    conn.close()
 
 
 def get_game_db(user_id):

@@ -141,7 +141,6 @@ def percentage(cur, table, rowCount=217):
         p = round(count/rowCount, 4)
         pList.append((c, p))
     sortedP = sorted(pList, key=lambda tup: abs(0.5 - tup[1]), reverse=False)
-    print(sortedP)
     return sortedP
 
 def getColumnNames(cur, table):
