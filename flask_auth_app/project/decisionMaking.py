@@ -1,7 +1,7 @@
 import sqlite3
 import secrets
 
-def get_next_question(cur, table, user_response=None, prev_characteristic=None):
+def get_next_question(cur, table):
     # Start with an empty WHERE clause
     # where_clause = "1"
 
@@ -140,7 +140,7 @@ def percentage(cur, table, rowCount=217):
         count = countOne(cur,table,c)
         p = round(count/rowCount, 4)
         pList.append((c, p))
-    sortedP = sorted(pList, key=lambda tup: tup[1], reverse=True)
+    sortedP = sorted(pList, key=lambda tup: abs(0.5 - tup[1]), reverse=False)
     return sortedP
 
 def getColumnNames(cur, table):
