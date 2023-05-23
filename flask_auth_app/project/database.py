@@ -10,7 +10,9 @@ def get_db():
     return g.db
 
 def new_game_db(user_id):
-    name = '%s.db' % user_id
+    name = '%s_temp.db' % user_id
+    if os.path.exists(name):
+        os.remove(name)
     g.temp = sqlite3.connect(name)
 
     tcur = g.temp.cursor()
@@ -32,7 +34,7 @@ def new_game_db(user_id):
 
 
 def get_game_db(user_id):
-    name = '%s.db' % user_id
+    name = '%s_temp.db' % user_id
     g.temp = sqlite3.connect(name)
     return g.temp
 
