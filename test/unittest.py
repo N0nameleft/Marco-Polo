@@ -1,6 +1,6 @@
 import unittest, os
-from application.project import app, db, models
-from application.project.models import User
+from app import app, db, models
+from app.models import User
 
 class UserModelCase(unittest.TestCase):
     def setUp(self) -> None:
