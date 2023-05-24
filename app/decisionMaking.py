@@ -10,9 +10,9 @@ def get_next_question(cur, table):
     next_question_text, next_characteristic = getQuestion(cur, table)
 
     return {
-        'next_question_text': next_question_text,
-        'next_characteristic': next_characteristic,
-        'countries': countries,
+        "next_question_text": next_question_text,
+        "next_characteristic": next_characteristic,
+        "countries": countries,
     }
 
 # takes cursor and table as parameter
@@ -30,7 +30,7 @@ def get_all_country(cur, table):
 # use code to get name from countrycode table which is in countries.db
 # and return the converted country name for the given code
 def get_country_name(code):
-    conn = sqlite3.connect('./data/countries.db')
+    conn = sqlite3.connect("./data/countries.db")
     cur = conn.cursor()
     query = "SELECT countryname FROM countrycode WHERE countrycode.countrycode = '%s'" % code
     cur.execute(query)
@@ -80,9 +80,9 @@ def guess_country(cur, table):
             Ch = next_q
     
     return {
-            'next_question_text': Qu,
-            'countries_to_guess': countries,
-            'next_characteristic': Ch,
+            "next_question_text": Qu,
+            "countries_to_guess": countries,
+            "next_characteristic": Ch,
         }
 
 # takes cursor and table as parameter
@@ -143,30 +143,30 @@ def format_time(time):
     year = s[:4]
     date = s[6:8]
     m = s[4:6]
-    if m == '01':
-        month = 'Jan'
-    elif m == '02':
-        month = 'Feb'
-    elif m == '03':
-        month = 'Mar'
-    elif m == '04':
-        month = 'Apr'
-    elif m == '05':
-        month = 'May'
-    elif m == '06':
-        month = 'Jun'
-    elif m == '07':
-        month = 'Jul'
-    elif m == '08':
-        month = 'Aug'
-    elif m == '09':
-        month = 'Sep'
-    elif m == '10':
-        month = 'Oct'
-    elif m == '11':
-        month = 'Nov'
-    elif m == '12':
-        month = 'Dec'
+    if m == "01":
+        month = "Jan"
+    elif m == "02":
+        month = "Feb"
+    elif m == "03":
+        month = "Mar"
+    elif m == "04":
+        month = "Apr"
+    elif m == "05":
+        month = "May"
+    elif m == "06":
+        month = "Jun"
+    elif m == "07":
+        month = "Jul"
+    elif m == "08":
+        month = "Aug"
+    elif m == "09":
+        month = "Sep"
+    elif m == "10":
+        month = "Oct"
+    elif m == "11":
+        month = "Nov"
+    elif m == "12":
+        month = "Dec"
     else:
         month = m
     hour = s[8:10]
@@ -184,7 +184,7 @@ def game_finish(answer):
         message = "You win! Sorry I can't find you.\nDo you want to start a new game?"
 
     return {
-        'next_question_text': message,
-        'countries_to_guess': None,
-        'next_characteristic': None,
+        "next_question_text": message,
+        "countries_to_guess": None,
+        "next_characteristic": None,
     }

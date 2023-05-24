@@ -9,12 +9,12 @@ from datetime import datetime
 
 # get preset db, contains all data of countries
 def get_db():
-    country = sqlite3.connect('./data/countries.db')
+    country = sqlite3.connect("./data/countries.db")
     return country
 
 # create a temporary db of this game for algo to access
 def new_game_db(user_id):
-    name = './data/%s_temp.db' % user_id
+    name = "./data/%s_temp.db" % user_id
     # if exist old one, delete
     if os.path.exists(name):
         os.remove(name)
@@ -41,7 +41,7 @@ def new_game_db(user_id):
     return temp, table
 
 def get_game_db(user_id):
-    name = './data/%s_temp.db' % user_id
+    name = "./data/%s_temp.db" % user_id
     temp = sqlite3.connect(name)
     return temp
 
@@ -53,7 +53,7 @@ def update_game_db(conn, table, user_response, prev_characteristic, user_id):
     # delete row where doesnt match prev answer
     if user_response == "yes":
         q = "DELETE FROM %s WHERE %s = 0" % (table, prev_characteristic)
-    else:  # handle 'no' response
+    else:  # handle "no" response
         q = "DELETE FROM %s WHERE %s = 1" % (table, prev_characteristic)
 
     cur.execute(q)
@@ -74,8 +74,8 @@ def update_game_db(conn, table, user_response, prev_characteristic, user_id):
 # create/connect history database named as user_id.db, create result table if doesnt exist
 # create table for the current game, to store chat history, for history function access to display chat history
 def get_history_db(user_id):
-    name = '%s.db' % user_id
-    conn = sqlite3.connect('instance/history/%s' %name)
+    name = "%s.db" % user_id
+    conn = sqlite3.connect("instance/history/%s" %name)
     cur = conn.cursor()
     new_table = "CREATE TABLE IF NOT EXISTS game_result (id INTEGER PRIMARY KEY, time INTEGER, guessing_country TEXT, result TEXT)"
     cur.execute(new_table)
@@ -91,8 +91,8 @@ def get_history_db(user_id):
 
 # write question and user answer into the current game table
 def update_chat_db(user_id, answer, question):
-    name = '%s.db' % user_id
-    conn = sqlite3.connect('instance/history/%s' %name)
+    name = "%s.db" % user_id
+    conn = sqlite3.connect("instance/history/%s" %name)
     cur = conn.cursor()
     q_name = "SELECT time FROM game_result ORDER BY id DESC LIMIT 1"
     cur.execute(q_name)
@@ -107,8 +107,8 @@ def update_chat_db(user_id, answer, question):
 # and write in user answer for whether its that country or not
 # if it is the the program succeeded, else failed
 def write_chat_result(userId, user_response, question):
-    name = '%s.db' % userId
-    conn = sqlite3.connect('instance/history/%s' %name)
+    name = "%s.db" % userId
+    conn = sqlite3.connect("instance/history/%s" %name)
     cur = conn.cursor()
     q_name = "SELECT time FROM game_result ORDER BY id DESC LIMIT 1"
     cur.execute(q_name)

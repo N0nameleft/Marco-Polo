@@ -1,6 +1,6 @@
 /* Global styles */
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-weight: 300;
     line-height: 1.5;
     background: url(../images/background.jpg);
@@ -48,7 +48,7 @@ body {
     color: black;
     padding: 1rem;
     text-decoration: none;
-    font-family: 'Comic Sans MS', cursive;
+    font-family: "Comic Sans MS", cursive;
     font-weight: 500px;
     font-size: 20;
 }

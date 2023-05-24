@@ -7,7 +7,7 @@ db = SQLAlchemy()
 
 def create_app():
     # set app and config
-    app = Flask(__name__, static_folder='static')
+    app = Flask(__name__, static_folder="static")
     app.config["SECRET_KEY"] = "thisIsASampleKey"
     app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db.sqlite"
 
@@ -15,7 +15,7 @@ def create_app():
 
     # set login manager
     login_manager = LoginManager()
-    login_manager.login_view = 'auth.login'
+    login_manager.login_view = "auth.login"
     login_manager.init_app(app)
 
     # import user for current session

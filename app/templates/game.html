@@ -6,7 +6,7 @@
 <style>
 
   body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-weight: 300;
     color: rgb(64, 58, 58);
     display: flex;
@@ -50,26 +50,26 @@
     $(document).ready(function() {
         function updateQuestion(response) {
             // Update the question text and the number of countries left
-            $('#question-text').text(response.next_question_text);
-            $('#characteristic').val(response.next_characteristic);
+            $("#question-text").text(response.next_question_text);
+            $("#characteristic").val(response.next_characteristic);
         }
 
         function handleGameFinish(response) {
             // Display the game finish message
-            $('#question-text').text(response.next_question_text);
+            $("#question-text").text(response.next_question_text);
             
             if (response.next_question_text.includes("start a new game")) {
                 // Ask the user to play again
-                $('#yes').html('Play Again');
-                $('#no').html('Home');
+                $("#yes").html("Play Again");
+                $("#no").html("Home");
 
             }
         }
 
         // Start a new game when the page loads
         $.ajax({
-            url: '/start_game',
-            method: 'POST',
+            url: "/start_game",
+            method: "POST",
             success: function(response) {
                 if (response.next_question_text.includes("start a new game")) {
                     handleGameFinish(response);
@@ -80,25 +80,25 @@
         });
 
         // When the user clicks on a button...
-        $(document).on('click', '.btn', function() {
-            if ($(this).text() === 'Play Again') {
+        $(document).on("click", ".btn", function() {
+            if ($(this).text() === "Play Again") {
                 // Redirect to the new game route
                 window.location.href = '{{ url_for("main.game") }}';
-            }   else if ($(this).text() === 'Home') {
+            }   else if ($(this).text() === "Home") {
                 // Redirect to the new game route
-                window.location.href = '{{  url_for('main.index') }}';
+                window.location.href = "{{  url_for('main.index') }}";
             } else {
                 // Get the user's response ('yes' or 'no') based on the button they clicked
-                var user_response = $(this).attr('id');
-                var prev_characteristic = $('#characteristic').val();
-                var current_question = $('#question-text').text();
+                var user_response = $(this).attr("id");
+                var prev_characteristic = $("#characteristic").val();
+                var current_question = $("#question-text").text();
                 
                 // Send an AJAX request to the '/get_question' route
                 $.ajax({
-                    url: '/get_question',
-                    method: 'POST',
-                    contentType: 'application/json',
-                    data: JSON.stringify({ 'user_response': user_response, 'prev_characteristic': prev_characteristic, 'current_question': current_question }),
+                    url: "/get_question",
+                    method: "POST",
+                    contentType: "application/json",
+                    data: JSON.stringify({ "user_response": user_response, "prev_characteristic": prev_characteristic, "current_question": current_question }),
                     success: function(response) {
                         if (response.next_question_text.includes("start a new game")) {
                             handleGameFinish(response);

@@ -20,7 +20,7 @@ def profile():
 # supported country page
 @main.route("/support")
 def support():
-    conn = sqlite3.connect('instance/support_countries.sqlite')
+    conn = sqlite3.connect("instance/support_countries.sqlite")
     cur = conn.cursor()
     cur.execute("SELECT supported FROM support_country")
     s = cur.fetchall()
@@ -34,7 +34,7 @@ def game():
 # game start, get temporary database for current game, get countries list in table
 # count how many countries in the table
 # use get_next_question function to get the next question to ask and other variables
-@main.route('/start_game', methods=['POST'])
+@main.route("/start_game", methods=["POST"])
 def start_game():
     temp, table = new_game_db(current_user.id)
     tempcur = temp.cursor()
@@ -45,9 +45,9 @@ def start_game():
     countQuery = "SELECT COUNT(*) FROM %s" % table
     tempcur.execute(countQuery)
     rowCount = tempcur.fetchone()[0]
-    # Save the initial game state in the user's session
-    session['countries_count'] = rowCount
-    session['current_countries'] = all_countries
+    # Save the initial game state in the user"s session
+    session["countries_count"] = rowCount
+    session["current_countries"] = all_countries
 
     # Get the first question
     result = get_next_question(tempcur, table)
@@ -62,12 +62,12 @@ def start_game():
 # get user response and previous question to update temp database
 # get current question to determine whether its the last guessing question or not
 # get next question and return to front (game.html)
-@main.route('/get_question', methods=['POST'])
+@main.route("/get_question", methods=["POST"])
 def get_question():
     data = request.get_json()
-    user_response = data.get('user_response')
-    prev_characteristic = data.get('prev_characteristic')
-    current_question = data.get('current_question')
+    user_response = data.get("user_response")
+    prev_characteristic = data.get("prev_characteristic")
+    current_question = data.get("current_question")
     userId = current_user.id
     conn = get_game_db(userId)
     cur = conn.cursor()
@@ -81,19 +81,19 @@ def get_question():
 
     update_game_db(conn, t, user_response, prev_characteristic, current_user.id)
 
-    # Retrieve the game state from the user's session
+    # Retrieve the game state from the user"s session
     cur.execute("SELECT COUNT(*) FROM %s" % t)
     countries_count = cur.fetchone()[0]
     columnLeft = len(getColumnNames(cur, t))
 
     if countries_count <=5 or columnLeft == 0:
         f_r = guess_country(cur, t)
-        session['current_countries'] = f_r.get('countries', [])
+        session["current_countries"] = f_r.get("countries", [])
         return jsonify(f_r)
 
     else:
         result = get_next_question(cur, t)
-        session['current_countries'] = result.get('countries', [])
+        session["current_countries"] = result.get("countries", [])
 
     cur.close()
     conn.close()
@@ -101,17 +101,17 @@ def get_question():
     return jsonify(result)
 
 # read chat history for a specific game, and return the question and answer list
-@main.route('/game_session/<session_id>')
+@main.route("/game_session/<session_id>")
 def game_session(session_id):
     
-    conn = sqlite3.connect('instance/history/%s.db' % current_user.id)
+    conn = sqlite3.connect("instance/history/%s.db" % current_user.id)
     cursor = conn.cursor()
 
     try:
         cursor.execute(f"SELECT * FROM game{session_id}")
         data = cursor.fetchall()
-        chat_entries = [{'question': 'Is your country ' + row[1].replace('_', ' ') + '?', 'answer': row[2].capitalize()} for row in data]
-        return render_template('game_session.html', chat_entries=chat_entries)
+        chat_entries = [{"question": "Is your country " + row[1].replace("_", " ") + "?", "answer": row[2].capitalize()} for row in data]
+        return render_template("game_session.html", chat_entries=chat_entries)
 
     except sqlite3.Error as e:
         print("An error occurred:", e)
@@ -126,7 +126,7 @@ def game_session(session_id):
 @main.route("/history")
 @login_required
 def history():
-    conn = sqlite3.connect('instance/history/{}.db'.format(current_user.id))
+    conn = sqlite3.connect("instance/history/{}.db".format(current_user.id))
     cur = conn.cursor()
     new_table = "CREATE TABLE IF NOT EXISTS game_result (id INTEGER PRIMARY KEY, time INTEGER, guessing_country TEXT, result TEXT)"
     cur.execute(new_table)

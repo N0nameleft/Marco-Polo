@@ -1,11 +1,6 @@
 import unittest, os
 from os.path import dirname
-from app import app
-from app.models import User
 from werkzeug.security import generate_password_hash, check_password_hash
-from flask_login import LoginManager
-from flask import Flask
-from flask import g
 import sqlite3
 from app.decisionMaking import *
 

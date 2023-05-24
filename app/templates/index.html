@@ -43,7 +43,6 @@
   {% endif %}
   {% if current_user.is_authenticated %}
     <div class="button-container">
-      <!-- <a href="{{ url_for('main.game') }}"><button id="start_button" class="btn">Start!</button></a> -->
       <form action="{{ url_for('main.game') }}" method="get">
         <button id="start-button" style="font-family: 'Trebuchet MS', sans-serif; font-size: 25px;" class="btn">Start!</button>
       </form>
