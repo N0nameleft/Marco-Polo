@@ -1,3 +1,15 @@
 background image: https://pixabay.com/illustrations/seafaring-sailing-ships-antique-3709708/
 paper(in game) image: https://pixabay.com/illustrations/paper-stationery-parchment-antique-68833/
 marco poloc cartoon(cropped from original): https://as1.ftcdn.net/v2/jpg/03/32/08/38/1000_F_332083838_MtnTpf062ZHsck7KkASUJDIugjEvcSMp.jpg
+basic structur of the app: https://www.digitalocean.com/community/tutorials/how-to-add-authentication-to-your-app-with-flask-login
+favicon: https://www.flaticon.com/free-icon/compass_795653
+
+no external font is used 
+
+Ajax, Jquery were used
+
+countries.db created base on https://www.worldbank.org
+
+xlsxToSqlite.py created based on https://gist.github.com/antiproblemist/0c2694cc17d7e39e9d12
+xlsxToSqlite is not used in the app, the only purose is to convert backupdb.xlsc countries.db  
+
