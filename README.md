@@ -49,11 +49,17 @@ Noted that a supported country list is available at the bottom of home page. Our
 
 ## Required packages
 
-Python 3.11.3  <br/>[Python package](./application/requirements.txt)
+Python 3.11.3  <br/>[Python requirements](./application/requirements.txt)
 
-
+## Testing
 
 ## Authors
 Thomas Rigby (22973756)
 Xinze Feng (23163302)
+
+## Contribution
+
+## License
+See the [ LICENSE ](./LICENSE.txt) file for license rights and limitations (MIT).
+
 
