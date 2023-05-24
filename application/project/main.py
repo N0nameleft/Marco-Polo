@@ -79,13 +79,11 @@ def get_question():
 
     if countries_count <=5 or columnLeft == 0:
         f_r = guess_country(cur, t)
-        session['countries_count'] = f_r.get('countries_left')
         session['current_countries'] = f_r.get('countries', [])
         return jsonify(f_r)
 
     else:
         result = get_next_question(cur, t)
-        session['countries_count'] = result.get('countries_left')
         session['current_countries'] = result.get('countries', [])
 
     cur.close()

@@ -2,7 +2,7 @@
 
 {% block content %}
 
-
+<!-- this is the main game page content, user ajax to send data from back to front, as well as get data from back and display ot as question -->
 <div class="text-box">
     <div class="question">
         <h1 id="question-text">Imagine you are in a country, hit the button when you're ready!</h1>
@@ -22,13 +22,11 @@
             // Update the question text and the number of countries left
             $('#question-text').text(response.next_question_text);
             $('#characteristic').val(response.next_characteristic);
-            $('#countries-left').text(response.countries_left + ' countries left');
         }
 
         function handleGameFinish(response) {
             // Display the game finish message
             $('#question-text').text(response.next_question_text);
-            $('#countries-left').text(response.countries_left + ' countries left');
             
             if (response.next_question_text.includes("start a new game")) {
                 // Ask the user to play again

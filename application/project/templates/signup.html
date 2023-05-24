@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
+<!-- this is the signup page, will show hyperlink for login page if email trying to register already exist -->
     <div class="auth-box">
         <h3 class="title">Sign Up</h3>
         {% with messages = get_flashed_messages() %}

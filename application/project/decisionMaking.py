@@ -12,7 +12,6 @@ def get_next_question(cur, table):
     return {
         'next_question_text': next_question_text,
         'next_characteristic': next_characteristic,
-        'countries_left': len(countries),
         'countries': countries,
     }
 
@@ -82,7 +81,6 @@ def guess_country(cur, table):
     
     return {
             'next_question_text': Qu,
-            'countries_left': len(countries),
             'countries_to_guess': countries,
             'next_characteristic': Ch,
         }
@@ -187,7 +185,6 @@ def game_finish(answer):
 
     return {
         'next_question_text': message,
-        'countries_left': 0,
         'countries_to_guess': None,
         'next_characteristic': None,
     }

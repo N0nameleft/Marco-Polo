@@ -2,11 +2,11 @@
 
 {% block content %}
 
+<!-- page to display chat detail for current user selected game, entry is sent from main.py-->
 <div class="chat-container" style="margin-bottom: 2px;">
     <h2 class="chat-title">Game Session</h2>
 </div>
 <div class="chat-container">
-
     {% for entry in chat_entries %}
     <div class="chat-entry bot">
         <p class="question">{{ entry.question }}</p>
