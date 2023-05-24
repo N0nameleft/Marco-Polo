@@ -17,6 +17,15 @@ def index():
 def profile():
     return render_template("profile.html", name=current_user.username)
 
+# supported country page
+@main.route("/support")
+def support():
+    conn = sqlite3.connect('instance/support_countries.sqlite')
+    cur = conn.cursor()
+    cur.execute("SELECT supported FROM support_country")
+    s = cur.fetchall()
+    return render_template("support.html", support = s)
+
 # game page
 @main.route("/game")
 def game():

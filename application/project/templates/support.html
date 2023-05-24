@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- page to display supported country-->
+
+<div class="history-box" style="margin-bottom: 1px;">
+    <h2>Supported country</h2>
+</div>
+<div class="text-box">
+    <table>
+      <thead>
+        <tr>
+          <th>May guess the country</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for country in support %}
+                <td>{{ country[0] }}</td>
+                </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+</div>
+
+
+<script>
+  // Enable scrolling after 6 entries
+  const tableContainer = document.querySelector('.table-container');
+  if (tableContainer && tableContainer.scrollHeight > tableContainer.clientHeight) {
+    tableContainer.style.overflowY = 'scroll';
+  }
+</script>
+{% endblock %}
