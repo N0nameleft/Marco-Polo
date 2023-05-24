@@ -30,7 +30,7 @@ def get_all_country(cur, table):
 # use code to get name from countrycode table which is in countries.db
 # and return the converted country name for the given code
 def get_country_name(code):
-    conn = sqlite3.connect('countries.db')
+    conn = sqlite3.connect('./data/countries.db')
     cur = conn.cursor()
     query = "SELECT countryname FROM countrycode WHERE countrycode.countrycode = '%s'" % code
     cur.execute(query)

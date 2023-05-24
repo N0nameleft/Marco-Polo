@@ -11,12 +11,12 @@ from datetime import datetime
 # get preset db, contains all data of countries
 def get_db():
     if 'db' not in g:
-        g.db = sqlite3.connect('countries.db')
+        g.db = sqlite3.connect('./data/countries.db')
     return g.db
 
 # create a temporary db of this game for algo to access
 def new_game_db(user_id):
-    name = '%s_temp.db' % user_id
+    name = './data/%s_temp.db' % user_id
     # if exist old one, delete
     if os.path.exists(name):
         os.remove(name)
@@ -30,7 +30,7 @@ def new_game_db(user_id):
     table = "tem"
     tcur.execute("DROP TABLE IF EXISTS %s" % table)
     # Attach the original database to the temp database
-    tcur.execute("ATTACH DATABASE 'countries.db' AS origin_db")
+    tcur.execute("ATTACH DATABASE './data/countries.db' AS origin_db")
 
     # Create a new table in the temp database with the same structure as completedata
     tcur.execute(f"CREATE TABLE {table} AS SELECT * FROM origin_db.completedata")
@@ -43,7 +43,7 @@ def new_game_db(user_id):
     return g.temp, table
 
 def get_game_db(user_id):
-    name = '%s_temp.db' % user_id
+    name = './data/%s_temp.db' % user_id
     g.temp = sqlite3.connect(name)
     return g.temp
 

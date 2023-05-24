@@ -1,0 +1,11 @@
+brew install git-extras
+git summary --line
+
+ project     : Marco-Polo
+ lines       :     1564
+ authors     :
+1199 Zach                      76.7%
+ 304 thomas rigby              19.4%
+  60 xlaurel                   3.8%
+   1 Jessica Lovensia Christy  0.1%
+   
