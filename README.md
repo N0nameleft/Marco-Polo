@@ -2,25 +2,37 @@
 An akinator-esque website which allows users to pick a country and our program will guess your country by asking you some simple questions.
 
 ## How To Start Game
-Clone this repo.
+1. Clone this repo to your desired destination:
+`$ git clone https://github.com/N0nameleft/Marco-Polo.git`
 
-Navigate to the project directory:
-`$ cd ./application`
+2. Navigate to the top directory:
+`$ cd ./Marco-Polo`
 
-Create a python virtual environment named as "venv":
+3. Check if you are running Python ver3.11.3:
+`$ cd ./Marco-Polo`
+
+3. Navigate to the project directory:
+`$ python3 --version`
+
+4. If Python version is lower than 3.11.3,[install Python](https://www.python.org/downloads/release/python-3113/)
+
+5. Install python virtual environment:
+`$ pip3 install virtualenv`
+
+6. Create a python virtual environment named as "venv":
 `$ python3 -m venv venv`
 
-Activate the venv:
+7. Activate the venv:
 `$ source ./venv/bin/activate`
 
-Install prerequisites:
+8. Install prerequisites:
 `$ python3 -m pip install -r requirements.txt`
 
-Export project:
+9. Export project:
 `$ export FLASK_APP=project`
 `$ export FLASK_DEBUG=1`
 
-Run the app in local host:
+10. Run the app in local host:
 `$ flask run`
 
 To exit:
