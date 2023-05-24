@@ -1,14 +1,41 @@
 {% extends "base.html" %}
 
 {% block content %}
+<style>
+  body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
 
-<!-- this is the main game page content, user ajax to send data from back to front, as well as get data from back and display ot as question -->
+  .text-box {
+    background-image: url("{{ url_for('static', filename='images/paper.png') }}");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    border-radius: 10px;
+    height: 200px;
+    background-color: transparent;
+    border: none; /* Remove the border */
+    box-sizing: border-box; /* Include border in width and height calculation */
+    background-origin: border-box; /* Start the background from the border edge */
+    box-shadow: none;
+  }
+</style>
+
 <div class="text-box">
     <div class="question">
         <h1 id="question-text">Imagine you are in a country, hit the button when you're ready!</h1>
         <input type="hidden" id="characteristic" value="">
     </div>
-    <div >
+    <div>
         <button class="btn" id="yes">Yes</button>
         <button class="btn" id="no">No</button>
     </div>
@@ -82,3 +109,4 @@
     });
 </script>
 {% endblock %}
+
