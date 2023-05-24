@@ -1,96 +1,15 @@
 {% extends "base.html" %}
 
 {% block content %}
-<style>
-  body {
 
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
-    line-height: 1.5;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
-  }
-  .chat-container {
-    width: 100%;
-    margin: auto;
-    background-color: #f2f2f2;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-height: 400px; /* Adjust the maximum height as needed */
-    overflow-y: auto;
-  }
-
-  .header {
-    margin-bottom: 2px;
-    padding: 10px;
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  }
-
-  .table-container {
-    max-height: 300px; /* Adjust the maximum height as needed */
-    overflow-y: auto;
-    max-width: 800px;
-  }
-
-  table {
-    width: 100%;
-    font-size: inherit;
-  }
-
-  th,
-  td {
-    padding: 12px;
-    text-align: left;
-  }
-
-  tr:nth-child(even) {
-    background-color: #f9f9f9; /* Adjust the background color as needed */
-  }
-
-  tr:nth-child(odd) {
-    background-color: #eaeaea; /* Adjust the background color for odd rows */
-  }
-
-  tr:hover {
-    background-color: #f2f2f2; /* Adjust the hover background color as needed */
-  }
-
-  tr td:not(:last-child) {
-    border-bottom: 1px solid #dddddd; /* Adjust the border color as needed */
-  }
-
-  /* Adjust the font size for smaller screens */
-  @media screen and (max-width: 768px) {
-    .container {
-      font-size: 14px;
-      padding: 10px;
-    }
-  }
-
-  /* Make the table smaller when window decreases */
-  @media screen and (max-width: 1200px) {
-    table {
-      font-size: 14px;
-    }
-  }
-</style>
-
-
-<div class="chat-container" style="margin-bottom: 2px;">
+<div class="history-box" style="margin-bottom: 1px;">
     <h2>Game History</h2>
 </div>
-<div class="chat-container">
+<div class="text-box">
   {% if attempts|length == 0 %}
     <p>No gaming record yet.</p>
     <div class="button-container">
-      <a href="{{ url_for('main.index') }}"><button id="start_button" class="custom-button">Start Game</button></a>
+      <a href="{{ url_for('main.index') }}"><button id="start_button" class="btn">Start Game</button></a>
   </div>
   {% else %}
     <table>

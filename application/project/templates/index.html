@@ -1,72 +1,31 @@
 {% extends "base.html" %}
 
 {% block content %}
-<style>
-    * {
-        font-weight: 300;
-        margin: 0;
-        padding: 0;
-    }
 
-    .title {
-        font-size: 26px;
-        font-weight: 500px;
-        margin-bottom: 10px;
-        /* Added margin at the bottom */
-    }
-
-    .button {
-        font-size: 1em;
-        /* Decreased the font size */
-        padding: 8px 15px;
-        /* Decreased padding */
-        border-radius: 10px;
-        /* Rounded corners */
-        margin: 10px 30px 0 30px;
-        /* Added space between two buttons */
-        border: none;
-        cursor: pointer;
-        /* Change cursor when hovering over the button */
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-        /*  Shadows for depth */
-        background-color: white;
-        transition: background-color 0.4s ease;
-        /* Smooth transition */
-    }
-
-    .button:hover {
-        background-color: #eee;
-    }
-
-    /* .text-box {
-        position: relative;
-    } */
-</style>
-<!-- Wrap your text in a div with the class "text-box" -->
 <div class="text-box">
     <h1 class="title" style="font-size: 26px;">Marco Polo</h1>
-    <h2 class="subtitle" style="font-size: 20px;font-weight: 400;">Can you hide from one of the greatest explorers in
+    <h2 style="font-size: 20px;font-weight: 400;">Can you hide from one of the greatest explorers in
         history?</h2>
     <br>
-    <p class="subtitle">
-        Start by thinking of a country to hide in.
-        Marco Polo will then ask you a few questions that you will have to answer as truthfully as possible.
+    <p>
+        Start by thinking of a country to hide in.<br>
+        Marco Polo will then ask you a few questions that you will have to answer as truthfully as possible.<br>
         After that, he will guess which country you were hiding in.
     </p>
     <br>
     {% if not current_user.is_authenticated %}
-    <p class="subtitle">
+    <p>
         But hold on, you will need an account before you can play. Click on log in or sign up down below to proceed to the game.
     </p>
     <br>
-    <a href="{{ url_for('auth.login') }}"><button class="button">Login</button></a>
-    <a href="{{ url_for('auth.signup') }}"><button class="button">Sign Up</button></a>
+    <a href="{{ url_for('auth.login') }}"><button class="btn">Login</button></a>
+    <a href="{{ url_for('auth.signup') }}"><button class="btn">Sign Up</button></a>
     <br>
     <br>
     {% endif %}
     {% if current_user.is_authenticated %}
   <div class="button-container">
-      <a href="{{ url_for('main.profile') }}"><button id="start_button" class="custom-button">Back to Game</button></a>
+      <a href="{{ url_for('main.profile') }}"><button id="start_button" class="btn">Back to Game</button></a>
   </div>
   {% endif %}
 </div>

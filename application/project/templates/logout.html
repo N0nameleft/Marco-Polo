@@ -2,8 +2,10 @@
 
 {% block content %}
 <meta http-equiv="refresh" content="5; URL={{ url_for('main.index') }}" />
-
-<h1 class="title">
-  Logout successfully! Redirecting to home page.
-</h1>
+<div class = "text-box">
+  <h1 class="title">
+    Logout successfully! Redirecting to home page in 5 seconds.
+  </h1>
+  <a href="{{ url_for('main.index') }}">Click here if doesn't redirect.</a>
+</div>
 {% endblock %}

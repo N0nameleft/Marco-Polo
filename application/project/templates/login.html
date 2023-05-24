@@ -1,138 +1,40 @@
 {% extends "base.html" %}
 
 {% block content %}
-<style>
-    * {
-        box-sizing: border-box;
-        font-family: 'Roboto', sans-serif;
-        font-weight: 300;
-        margin: 0;
-        padding: 0;
-    }
 
-    /* Style for the login box */
-    .box {
-        background: rgba(255, 255, 255, 0.8);
-        /* Semi-transparent white */
-        border-radius: 15px;
-        /* Rounded corners */
-        padding: 20px;
-        /* Decreased padding */
-        text-align: center;
-        width: 100%;
-        /* Increased width */
-        margin: auto;
-        border: 1.25px solid rgb(248, 248, 248);
-        /* Border highlight */
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-        /* Shadows for depth */
-    }
-
-    /* Style for the title */
-    .title {
-        font-size: 1.5em;
-        /* Decreased the font size */
-        margin-bottom: 10px;
-        /* Added margin at the bottom */
-    }
-
-    /* Style for the input */
-    .input {
-        font-size: 0.9em;
-        /* Decreased the font size */
-        width: 180px;
-        /* Increased width */
-        height: 30px;
-        padding: 8px;
-        /* Decreased padding */
-        border-radius: 10px;
-        /* Rounded corners */
-        margin-bottom: 15px;
-        /* Added margin at the bottom */
-        box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
-        /*  Shadows for some depth */
-        border: none;
-        /* No border */
-        outline: none;
-        /* Stop yellow highlighting when clicked on */
-        transition: 0.2s;
-    }
-
-    .input:hover{
-        border-style: outset;
-    }
-
-    .input:focus {
-        transition-timing-function: ease;
-        transition-duration: 0.6s;
-        border-style: none;
-        border: 1.5px solid rgb(224, 224, 224);
-    }
-
-    /* Style for the button */
-    .button {
-        font-size: 1em;
-        /* Decreased the font size */
-        padding: 8px 15px;
-        /* Decreased padding */
-        border-radius: 10px;
-        /* Rounded corners */
-        margin-top: 10px;
-        /* Added margin at the top */
-        border: none;
-        cursor: pointer;
-        /* Change cursor when hovering over the button */
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-        /*  Shadows for some depth */
-        background-color: white;
-        transition: background-color 0.4s ease;
-        /* Smooth transition */
-    }
-
-    .button:hover {
-        background-color: rgb(241, 241, 241);
-    }
-
-</style>
-
-<div class="column is-4 is-offset-4">
-    <div class="box">
-        <h3 class="title">Login</h3>
-        {% with messages = get_flashed_messages() %}
-        {% if messages %}
-        <div class="notification is-danger">
-            {{ messages[0] }}.
-        </div>
-        {% endif %}
-        {% endwith %}
-        <form method="POST" action="/login">
-            <div class="field">
-                <div class="control">
-                    <span class="icon">
-                        <ion-icon name="mail-outline"></ion-icon>
-                    </span>
-                    <input class="input is-large" type="email" name="email" placeholder="Email" autofocus="">
-                </div>
-            </div>
-
-            <div class="field">
-                <div class="control">
-                    <span class="icon">
-                        <ion-icon name="lock-closed-outline"></ion-icon>
-                    </span>
-                    <input class="input is-large" type="password" name="password" placeholder="Password">
-                </div>
-            </div>
-            <div class="field">
-                <label class="checkbox">
-                    <input type="checkbox" name="remember">
-                    Remember me
-                </label>
-            </div>
-            <button class="button is-block is-info is-large is-fullwidth">Login</button>
-        </form>
+<div class="auth-box">
+    <h3 class="title">Login</h3>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div class="notification">
+        {{ messages[0] }}
     </div>
+    {% endif %}
+    {% endwith %}
+    <form method="POST" action="/login">
+        <div class="control">
+            <span class="icon">
+                <ion-icon name="mail-outline"></ion-icon>
+            </span>
+            <input class="input" type="email" name="email" placeholder="Email" autofocus="">
+        </div>
+
+        <div class="control">
+            <span class="icon">
+                <ion-icon name="lock-closed-outline"></ion-icon>
+            </span>
+            <input class="input" type="password" name="password" placeholder="Password">
+        </div>
+
+        <label class="checkbox">
+            <input type="checkbox" name="remember">
+            Remember me
+        </label>
+        <br>
+        <button class="btn">Login</button>
+    </form>
 </div>
+
 
 <!-- Icons -->
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

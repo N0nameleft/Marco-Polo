@@ -113,7 +113,7 @@ def game_session(session_id):
 def history():
     conn = sqlite3.connect('instance/history/{}.db'.format(current_user.id))
     cur = conn.cursor()
-    new_table = "CREATE TABLE IF NOT EXISTS game_result (id INTEGER PRIMARY KEY, time INTEGER, result INTEGER)"
+    new_table = "CREATE TABLE IF NOT EXISTS game_result (id INTEGER PRIMARY KEY, time INTEGER, guessing_country TEXT, result TEXT)"
     cur.execute(new_table)
     conn.commit()
     cur.execute("SELECT * FROM game_result")
