@@ -14,7 +14,7 @@ An akinator-esque website which allows users to pick a country and our program w
 3. Navigate to the project directory:
 `$ python3 --version`
 
-4. If Python version is lower than 3.11.3, [install Python](https://www.python.org/downloads/release/python-3113/)
+4. If Python version is lower than 3.11.3, [ install Python](https://www.python.org/downloads/release/python-3113/)
 
 5. Install python virtual environment:
 `$ pip3 install virtualenv`
@@ -49,8 +49,7 @@ Noted that a supported country list is available at the bottom of home page. Our
 
 ## Required packages
 
-Python 3.11.3
-[Python package](./application/requirements.txt)
+Python 3.11.3  <br/>[Python package](./application/requirements.txt)
 
 
 
