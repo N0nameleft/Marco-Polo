@@ -3,16 +3,14 @@
 # including countries which has all data, temporary database for current game
 # chat history to store all question, answer, and final result
 import sqlite3
-from flask import g
 import os
 from .decisionMaking import *
 from datetime import datetime
 
 # get preset db, contains all data of countries
 def get_db():
-    if 'db' not in g:
-        g.db = sqlite3.connect('./data/countries.db')
-    return g.db
+    country = sqlite3.connect('./data/countries.db')
+    return country
 
 # create a temporary db of this game for algo to access
 def new_game_db(user_id):
@@ -21,12 +19,12 @@ def new_game_db(user_id):
     if os.path.exists(name):
         os.remove(name)
     # connect to db, if doesnt exist, will create one
-    g.temp = sqlite3.connect(name)
+    temp = sqlite3.connect(name)
     # create/connect history database, create table for this session
     get_history_db(user_id)
 
     # second check, if exist table, delete
-    tcur = g.temp.cursor()
+    tcur = temp.cursor()
     table = "tem"
     tcur.execute("DROP TABLE IF EXISTS %s" % table)
     # Attach the original database to the temp database
@@ -35,17 +33,17 @@ def new_game_db(user_id):
     # Create a new table in the temp database with the same structure as completedata
     tcur.execute(f"CREATE TABLE {table} AS SELECT * FROM origin_db.completedata")
     
-    g.temp.commit()
+    temp.commit()
 
     # Detach the original database
     tcur.execute("DETACH DATABASE origin_db")
     
-    return g.temp, table
+    return temp, table
 
 def get_game_db(user_id):
     name = './data/%s_temp.db' % user_id
-    g.temp = sqlite3.connect(name)
-    return g.temp
+    temp = sqlite3.connect(name)
+    return temp
 
 # delete column and rows based on previous question, and user answer, to narrow down the data in table
 # for easier algo process, and avoid asking the same question

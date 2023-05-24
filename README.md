@@ -17,11 +17,6 @@ $ cd ./Marco-Polo
 $ python3 --version
 ```
 
-3. Navigate to the project directory:
-```
-$ cd ./application
-```
-
 4. If Python version is lower than 3.11.3, [ install Python](https://www.python.org/downloads/release/python-3113/)
 
 5. Install python virtual environment:
@@ -46,7 +41,7 @@ $ python3 -m pip install -r requirements.txt
 
 9. Export project:
 ```
-$ export FLASK_APP=project
+$ export FLASK_APP=app
 $ export FLASK_DEBUG=1
 ```
 
