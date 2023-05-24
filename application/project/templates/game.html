@@ -53,7 +53,7 @@
         $(document).on('click', '.btn', function() {
             if ($(this).text() === 'Play Again') {
                 // Redirect to the new game route
-                window.location.href = '{{ url_for("main.new_page") }}';
+                window.location.href = '{{ url_for("main.game") }}';
             }   else if ($(this).text() === 'Home') {
                 // Redirect to the new game route
                 window.location.href = '{{  url_for('main.index') }}';

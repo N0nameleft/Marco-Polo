@@ -19,7 +19,7 @@ def profile():
 
 # game page
 @main.route("/game")
-def new_page():
+def game():
     return render_template("game.html")
 
 # game start, get temporary database for current game, get countries list in table
