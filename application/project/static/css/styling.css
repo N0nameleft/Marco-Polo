@@ -15,9 +15,10 @@ body {
     margin: 0;
     padding: 0;
 }
+
 .title {
     font-size: 26px;
-    font-weight: 500px;
+    font-weight: 600;
     margin-bottom: 10px;
 }
 .navbar {
@@ -103,6 +104,7 @@ body {
     box-shadow: 2px 2px #bab5b5;
     position: relative;
 }
+
 .history-box {
     background: rgba(255, 255, 255, 0.8);
     border-radius: 15px;
@@ -187,6 +189,7 @@ body {
     /*  Shadows for depth */
 }
 
+
 .btn:hover {
     background-color: #eee;
     /* Light grey background when hovering */
@@ -236,6 +239,7 @@ body {
 .question {
     font-weight: 500;
     word-wrap: break-word;
+    color: rgb(69, 64, 64);
 }
 
 

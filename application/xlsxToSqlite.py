@@ -9,9 +9,7 @@ def slugify(text, lower=1):
 	text = re.sub(r'[- ]+', '_', text)
 	return text
 
-#Replace with a database name
-con = sqlite3.connect('test2.db')
-#replace with the complete path to youe excel workbook
+con = sqlite3.connect('countries.db')
 filename="backupdb.xlsx"
 wb = load_workbook(filename)
 

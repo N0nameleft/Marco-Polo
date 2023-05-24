@@ -2,26 +2,7 @@
 
 {% block content %}
 <style>
-  body {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
-    line-height: 1.5;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
-  }
-
-  .text-box {
-    position: relative;
-    background-color: #f2f2f2;
-    padding: 20px;
-    border-radius: 10px;
-  }
-
-  .text-box::before {
+  .home-text::before {
     content: "";
     position: absolute;
     top: -120px;
@@ -33,46 +14,24 @@
     background-size: cover;
     z-index: 1;
   }
-
-  .title {
-    font-size: 26px;
-    font-weight: 500;
-    margin-bottom: 10px;
-  }
-
-  .btn {
-    font-size: 1em;
-    padding: 8px 15px;
-    border-radius: 10px;
-    margin: 10px 30px 0 30px;
-    border: none;
-    cursor: pointer;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    background-color: white;
-    transition: background-color 0.4s ease;
-  }
-
-  .btn:hover {
-    background-color: #eee;
-  }
-
 </style>
 
-<div class="text-box">
-    <h1 class="title" style="font-size: 26px;">Marco Polo</h1>
-    <h2 style="font-size: 20px;font-weight: 400;">Can you hide from one of the greatest explorers in
+<div class="text-box home-text" style="padding: 20px;">
+    <h1 class="title" style="font-size: 50px; font-family: 'Lucida Console', cursive;">Marco Polo</h1>
+    <h2 style="font-family: 'Trebuchet MS', sans-serif; font-size: 20px;font-weight: 400; margin-bottom: 7%;">Can you hide from one of the greatest explorers in
         history?</h2>
-    <br>
     <p>
         Start by thinking of a country to hide in.<br>
-        Marco Polo will then ask you a few questions that you will have to answer as truthfully as possible.<br>
-        After that, he will guess which country you were hiding in.
+        Marco Polo will then ask you a few yes/no questions that you will have to answer as truthfully as possible.<br>
+        He will try guess which country you were hiding in based on your answer!
     </p>
     <br>
     {% if not current_user.is_authenticated %}
-    <p>
-        But hold on, you will need an account before you can play. Click on log in or sign up down below to proceed to the game.
-    </p>
+    <div class="text-box" style="padding-top: 5px; padding-bottom: 5px; padding-right: 10px; padding-left: 10px; background: rgba(135, 206, 250, 0.637)">
+      <p style="font-family: 'Lucida Console', Monaco; margin: 1%">
+          But hold on, you will need an account before you can play. Click on log in or sign up down below to proceed to the game.
+      </p>
+    </div>
     <br>
     <a href="{{ url_for('auth.login') }}"><button class="btn">Login</button></a>
     <a href="{{ url_for('auth.signup') }}"><button class="btn">Sign Up</button></a>
