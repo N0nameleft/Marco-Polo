@@ -1,7 +1,63 @@
 {% extends "base.html" %}
 
 {% block content %}
-<!-- this is the home page, display rules of game, and login/signup button for not login user, start game for logged user -->
+<style>
+  body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+
+  .text-box {
+    position: relative;
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .text-box::before {
+    content: "";
+    position: absolute;
+    top: -150px;
+    left: -10px;
+    width: 200px;
+    height: 200px;
+    background-image: url("{{ url_for('static', filename='images/marco_half_body.png') }}");
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+  }
+
+  .title {
+    font-size: 26px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  .btn {
+    font-size: 1em;
+    padding: 8px 15px;
+    border-radius: 10px;
+    margin: 10px 30px 0 30px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    transition: background-color 0.4s ease;
+  }
+
+  .btn:hover {
+    background-color: #eee;
+  }
+
+</style>
+
 <div class="text-box">
     <h1 class="title" style="font-size: 26px;">Marco Polo</h1>
     <h2 style="font-size: 20px;font-weight: 400;">Can you hide from one of the greatest explorers in
@@ -31,7 +87,4 @@
     <a href="{{ url_for('main.support') }}">List of supported country.</a>
 </div>
 
-
-
 {% endblock %}
-
