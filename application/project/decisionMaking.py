@@ -1,6 +1,10 @@
+# this is the file contain all the function related to guessing which country user is in
 import sqlite3
 import secrets
 
+# takes cursor and table name as parameter
+# get the list of countries left to return
+# get what to ask for next question and return
 def get_next_question(cur, table):
     countries = get_all_country(cur, table)
     next_question_text, next_characteristic = getQuestion(cur, table)
@@ -12,6 +16,9 @@ def get_next_question(cur, table):
         'countries': countries,
     }
 
+# takes cursor and table as parameter
+# return a list contain all the countrycode in the conn that cursor is pointing to
+# return the list
 def get_all_country(cur, table):
      # Execute a SQL query to get the current list of possible countries
     q = "SELECT countrycode FROM %s" % table
