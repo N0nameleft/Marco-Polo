@@ -2,40 +2,36 @@
 
 {% block content %}
 <!-- this is the signup page, will show hyperlink for login page if email trying to register already exist -->
-    <div class="auth-box">
-        <h3 class="title">Sign Up</h3>
-        {% with messages = get_flashed_messages() %}
+<div class="auth-box">
+    <h3 class="title">Sign Up</h3>
+    {% with messages = get_flashed_messages() %}
         {% if messages %}
-        <div class="notification">
-            {{ messages[0] }} Please <a href="{{ url_for('auth.login') }}">login</a>.
-        </div>
+            <div class="notification">
+                {{ messages[0] }} Please <a href="{{ url_for('auth.login') }}">login</a>.
+            </div>
         {% endif %}
-        {% endwith %}
-        <form method="POST" action="/signup">
-            <div class="field">
-                <span class="icon">
-                    <ion-icon name="mail-outline"></ion-icon>
-                </span>
-                <input class="input" type="email" name="email" placeholder="Email" autofocus="">
-            </div>
-
-            <div class="field">
-                <span class="icon">
-                    <ion-icon name="person-outline"></ion-icon>
-                </span>
-                <input class="input" type="text" name="username" placeholder="Username" autofocus="">
-            </div>
-
-            <div class="field">
-                <span class="icon">
-                    <ion-icon name="lock-closed-outline"></ion-icon>
-                </span>
-                <input class="input" type="password" name="password" placeholder="Password">
-            </div>
-
-            <button class="btn">Sign Up</button>
-        </form>
-    </div>
+    {% endwith %}
+    <form method="POST" action="/signup">
+        <div class="field">
+            <span class="icon">
+                <ion-icon name="mail-outline"></ion-icon>
+            </span>
+            <input class="input" type="email" name="email" placeholder="Email" autofocus="">
+        </div>
+         <div class="field">
+            <span class="icon">
+                <ion-icon name="person-outline"></ion-icon>
+            </span>
+            <input class="input" type="text" name="username" placeholder="Username" autofocus="">
+        </div>
+        <div class="field">
+            <span class="icon">
+                <ion-icon name="lock-closed-outline"></ion-icon>
+            </span>
+            <input class="input" type="password" name="password" placeholder="Password">
+        </div>
+        <button class="btn">Sign Up</button>
+    </form>
 </div>
 
 <!-- Icons -->

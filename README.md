@@ -56,6 +56,8 @@ Python 3.11.3  <br/>[Python requirements](./application/requirements.txt)
 ## Authors
 Thomas Rigby (22973756)
 Xinze Feng (23163302)
+Laurel Chow (23387082)
+Jessica Lovensia Christy (23042584)
 
 ## Contribution
 

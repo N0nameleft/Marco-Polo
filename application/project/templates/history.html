@@ -10,8 +10,10 @@
   {% if attempts|length == 0 %}
     <p>No gaming record yet.</p>
     <div class="button-container">
-      <a href="{{ url_for('main.index') }}"><button id="start_button" class="btn">Start Game</button></a>
-  </div>
+      <form action="{{ url_for('main.index') }}" method="get">
+        <button id="start_button" class="btn">Start Game</button>
+      </form>
+    </div>
   {% else %}
     <div class="table-container">
       <table>

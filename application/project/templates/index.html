@@ -17,33 +17,40 @@
 </style>
 
 <div class="text-box home-text" style="padding: 20px;">
-    <h1 class="title" style="font-size: 50px; font-family: 'Lucida Console', cursive;">Marco Polo</h1>
-    <h2 style="font-family: 'Trebuchet MS', sans-serif; font-size: 20px;font-weight: 400; margin-bottom: 7%;">Can you hide from one of the greatest explorers in
-        history?</h2>
-    <p>
-        Start by thinking of a country to hide in.<br>
-        Marco Polo will then ask you a few yes/no questions that you will have to answer as truthfully as possible.<br>
-        He will try guess which country you were hiding in based on your answer!
-    </p>
-    <br>
-    {% if not current_user.is_authenticated %}
+  <h1 class="title" style="font-size: 50px; font-family: 'Lucida Console', cursive;">Marco Polo</h1>
+  <h2 style="font-family: 'Trebuchet MS', sans-serif; font-size: 20px;font-weight: 400; margin-bottom: 7%;">Can you hide from one of the greatest explorers in history?</h2>
+  <p>
+      Start by thinking of a country to hide in.<br>
+      Marco Polo will then ask you a few yes/no questions that you will have to answer as truthfully as possible.<br>
+      He will try guess which country you were hiding in based on your answer!
+  </p>
+  <br>
+  {% if not current_user.is_authenticated %}
     <div class="text-box" style="padding-top: 5px; padding-bottom: 5px; padding-right: 10px; padding-left: 10px; background: rgba(135, 206, 250, 0.637)">
-      <p style="font-family: 'Lucida Console', Monaco; margin: 1%">
-          But hold on, you will need an account before you can play. Click on log in or sign up down below to proceed to the game.
-      </p>
+    <p style="font-family: 'Lucida Console', Monaco; margin: 1%">
+        But hold on, you will need an account before you can play. Click on log in or sign up down below to proceed to the game.
+    </p>
     </div>
     <br>
-    <a href="{{ url_for('auth.login') }}"><button class="btn">Login</button></a>
-    <a href="{{ url_for('auth.signup') }}"><button class="btn">Sign Up</button></a>
+    <form action="{{ url_for('auth.login') }}" method="get">
+      <button class="btn" style="margin-bottom: 2%;">Login</button>
+    </form>
+    <form action="{{ url_for('auth.signup') }}" method="get">
+      <button class="btn">Sign Up</button>
+    </form>
     <br>
     <br>
-    {% endif %}
-    {% if current_user.is_authenticated %}
-  <div class="button-container">
-      <a href="{{ url_for('main.game') }}"><button id="start_button" class="btn">Start!</button></a>
-  </div>
-    {% endif %}
-    <a href="{{ url_for('main.support') }}">List of supported country.</a>
+  {% endif %}
+  {% if current_user.is_authenticated %}
+    <div class="button-container">
+      <!-- <a href="{{ url_for('main.game') }}"><button id="start_button" class="btn">Start!</button></a> -->
+      <form action="{{ url_for('main.game') }}" method="get">
+        <button id="start-button" style="font-family: 'Trebuchet MS', sans-serif; font-size: 25px;" class="btn">Start!</button>
+      </form>
+    </div>
+    <br>
+  {% endif %}
+  <a href="{{ url_for('main.support') }}">List of supported country.</a>
 </div>
 
 {% endblock %}

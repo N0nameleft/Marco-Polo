@@ -1,8 +1,6 @@
-import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
-import datetime
 
 # create db for later use
 db = SQLAlchemy()
