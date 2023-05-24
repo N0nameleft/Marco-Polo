@@ -2,7 +2,7 @@
 
 {% block content %}
 <!-- page to display game summary for current user, attempts is sent from main.py-->
-<!-- if attempts length is 0, means the user hasnt played a game yet, ask to start game -->
+<!-- if attempts length is 0, means the user hasn't played a game yet, ask to start game -->
 <div class="history-box" style="margin-bottom: 1px;">
     <h2>Game History</h2>
 </div>
@@ -13,27 +13,29 @@
       <a href="{{ url_for('main.index') }}"><button id="start_button" class="btn">Start Game</button></a>
   </div>
   {% else %}
-    <table>
-      <thead>
-        <tr>
-          <th>Game Attempt</th>
-          <th>Bot-guessed Country</th>
-          <th>Result</th>
-        </tr>
-      </thead>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Game Attempt</th>
+            <th>Bot-guessed Country</th>
+            <th>Result</th>
+          </tr>
+        </thead>
 
-      <tbody>
-        {% for attempt in attempts %}
-        <tr onclick="location.href='{{ url_for('main.game_session', session_id=attempt[0]) }}';" style="cursor: pointer;">
-          <td>{{ attempt[1] }}</td>
-          <td>{{ attempt[2] }}</td>
-          <td>{{ attempt[3] }}</td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
+        <tbody>
+          {% for attempt in attempts %}
+          <tr onclick="location.href='{{ url_for('main.game_session', session_id=attempt[0]) }}';" style="cursor: pointer;">
+            <td>{{ attempt[1] }}</td>
+            <td>{{ attempt[2] }}</td>
+            <td>{{ attempt[3] }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
   {% endif %}
-  </div>
+</div>
 
 
 <script>
