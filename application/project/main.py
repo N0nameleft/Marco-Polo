@@ -6,20 +6,25 @@ import sqlite3
 from .database import get_game_db
 main = Blueprint("main", __name__)
 
+# home page
 @main.route("/")
 def index():
     return render_template("index.html")
 
+# profile page
 @main.route("/profile")
 @login_required
 def profile():
     return render_template("profile.html", name=current_user.username)
 
-
+# game page
 @main.route("/game")
 def new_page():
     return render_template("game.html")
 
+# game start, get temporary database for current game, get countries list in table
+# count how many countries in the table
+# use get_next_question function to get the next question to ask and other variables
 @main.route('/start_game', methods=['POST'])
 def start_game():
     temp, table = new_game_db(current_user.id)
@@ -44,7 +49,10 @@ def start_game():
 
     return jsonify(result)
 
-
+# updating game and database
+# get user response and previous question to update temp database
+# get current question to determine whether its the last guessing question or not
+# get next question and return to front (game.html)
 @main.route('/get_question', methods=['POST'])
 def get_question():
     data = request.get_json()
@@ -85,6 +93,7 @@ def get_question():
 
     return jsonify(result)
 
+# read chat history for a specific game, and return the question and answer list
 @main.route('/game_session/<session_id>')
 def game_session(session_id):
     
@@ -106,7 +115,7 @@ def game_session(session_id):
     return "Error: Game session not found"
 
 
-
+# read database, game result table to get the summary of each game
 @main.route("/history")
 @login_required
 def history():
@@ -124,23 +133,7 @@ def history():
 
     return render_template("history.html", attempts=attempts)
 
-@main.route("/get_attempts")
-@login_required
-def get_attempts():
-    # Get the database connection
-    conn = sqlite3.connect('instance/history/{}.db'.format(current_user.id))
-    cur = conn.cursor()
-
-    # Retrieve all attempts for the logged-in user
-    cur.execute("SELECT * FROM game_result")
-    attempts = cur.fetchall()
-
-    # Close the cursor and database connection
-    cur.close()
-    conn.close()
-
-    return jsonify(attempts)
-
+# refresh to start a new game
 @main.route("/new_game")
 def new_game():
     # Code to start a new game
