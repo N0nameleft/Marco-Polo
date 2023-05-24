@@ -4,9 +4,10 @@ marco poloc cartoon(cropped from original): https://as1.ftcdn.net/v2/jpg/03/32/0
 basic structur of the app: https://www.digitalocean.com/community/tutorials/how-to-add-authentication-to-your-app-with-flask-login
 favicon: https://www.flaticon.com/free-icon/compass_795653
 
-no external font is used 
+no external font was used 
 
 Ajax, Jquery were used
+flask, flask_login, flask_sqlalchemy were used
 
 countries.db created base on https://www.worldbank.org
 
