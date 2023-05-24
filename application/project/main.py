@@ -80,7 +80,6 @@ def get_question():
         session['countries_count'] = result.get('countries_left')
         session['current_countries'] = result.get('countries', [])
 
-    # test
     cur.close()
     conn.close()
 

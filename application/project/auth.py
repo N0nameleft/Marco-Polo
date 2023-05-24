@@ -29,7 +29,6 @@ def signup():
 
 @auth.route("/signup", methods=["POST"])
 def signup_post():
-    # validate and add user to database
     email = request.form.get("email")
     username = request.form.get("username")
     password = request.form.get("password")
