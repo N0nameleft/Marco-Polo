@@ -3,16 +3,18 @@ An akinator-esque website which allows users to pick a country and our program w
 
 ## How To Start Game
 1. Clone this repo to your desired destination:
-```$ git clone https://github.com/N0nameleft/Marco-Polo.git```
+```
+$ git clone https://github.com/N0nameleft/Marco-Polo.git
+```
 
 2. Navigate to the top directory:
 ```$ cd ./Marco-Polo```
 
 3. Check if you are running Python ver3.11.3:
-```$ cd ./Marco-Polo```
+```$ python3 --version```
 
 3. Navigate to the project directory:
-```$ python3 --version```
+```$ cd ./application```
 
 4. If Python version is lower than 3.11.3, [ install Python](https://www.python.org/downloads/release/python-3113/)
 
