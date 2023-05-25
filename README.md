@@ -152,7 +152,7 @@ Laurel Chow (23387082)<br/>
 Jessica Lovensia Christy (23042584)
 
 ## Contribution
-
+See [ contribution.txt ](./contribution.txt) for details.
 ## License
 See the [ LICENSE ](./LICENSE.txt) file for license rights and limitations (MIT).
 

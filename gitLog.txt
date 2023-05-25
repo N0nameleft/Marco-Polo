@@ -1,0 +1,996 @@
+* commit 1fe5de97eca6843fea72a083385c44514f6e5438 (HEAD -> main, origin/main, origin/HEAD)
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Thu May 25 08:48:14 2023 +0800
+| 
+|     system test and unit test
+| 
+* commit ca475aefc6e2b5311528ef5d07bb35d08348f50b
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Thu May 25 04:07:07 2023 +0800
+| 
+|     readme, clean up, db
+| 
+* commit 52ffc34b4867e7a492f3e0b29fdb2f96b7e18a01
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Thu May 25 03:30:14 2023 +0800
+| 
+|     unit test
+| 
+* commit 08c50184131a6530c9c1dab24696d31fe2e38fa0
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Thu May 25 03:29:15 2023 +0800
+| 
+|     unit test
+| 
+* commit c368d8fc07b6c4eb823d7f1a1f1efc817227ebb9
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Thu May 25 00:27:58 2023 +0800
+| 
+|     critical structure change
+| 
+* commit 3d1dce300676570176cecea03e845998b8935886
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Wed May 24 23:37:59 2023 +0800
+| 
+|     c
+| 
+* commit 7b603d3a003cb966cd2d563350e878fd024f061f
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Wed May 24 23:36:09 2023 +0800
+| 
+|     c
+| 
+* commit 5d7955ec57333a492060556938d54f82480e5a8b
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Wed May 24 23:33:14 2023 +0800
+| 
+|     c
+| 
+* commit 4c689bcdeb6bde1c48791ad935b75397d044e383
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Wed May 24 23:30:33 2023 +0800
+| 
+|     readme
+| 
+* commit bee9f732f14a7079b3b6bae259ab20b1adb500b0
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Wed May 24 22:56:43 2023 +0800
+| 
+|     css clean up
+| 
+* commit 9dc66707c63eae55f611348e39dcd0d2814e110c
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Wed May 24 22:44:42 2023 +0800
+| 
+|     db, clear up, validation
+| 
+* commit f8088fa3c328a3c6cf3937d58bb140eb5208a0ff
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Wed May 24 21:25:49 2023 +0800
+| 
+|     license
+| 
+* commit 45184d33155973e50570a28ac1bc57c3ab541e4a
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Wed May 24 21:14:14 2023 +0800
+| 
+|     c
+| 
+* commit 3a723581eec6bc4ccddde10b3bc2e8c71fa6f91f
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Wed May 24 21:13:21 2023 +0800
+| 
+|     readme
+| 
+* commit e0294fdb132eadf2e8424d3ded046de401ba34f3
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Wed May 24 21:09:03 2023 +0800
+| 
+|     requirement update
+| 
+* commit 807a3b2d425b54c7e2fc6dd1824069b8b98088ad
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Wed May 24 21:05:00 2023 +0800
+| 
+|     readme
+| 
+* commit a01ee60dae778dfe3f0f73a8311cb1046b3197b8
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Wed May 24 19:42:12 2023 +0800
+| 
+|     styling and db change
+| 
+* commit 3411cfb2c389d2a8f9b6bd06d03a049b45d33b19
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Wed May 24 18:43:50 2023 +0800
+| 
+|     commit
+| 
+* commit 19c7dad233081f7462506b31799c1310d06f0517
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Wed May 24 11:41:51 2023 +0800
+| 
+|     clear up and readme
+| 
+* commit 224602bcd84a761aeb4f88c84dc8bb68cf255f5d
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Wed May 24 11:19:35 2023 +0800
+| 
+|     clear up
+| 
+* commit 2ef5d8b58f075c05b30f5528cb5a24e95b24dfe6
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Wed May 24 11:12:50 2023 +0800
+| 
+|     reference
+| 
+* commit 86e216b485cef694819864c2b0c80ebfa9ef67bd
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Wed May 24 11:00:51 2023 +0800
+| 
+|     reference
+| 
+* commit 23fa9bd64d7d22125e8a064f90e774406b842c94
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Wed May 24 10:42:04 2023 +0800
+| 
+|     c
+| 
+* commit 147bad3de004238d7cfb67942cd7b5b2d9631f91
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Wed May 24 10:41:03 2023 +0800
+| 
+|     commit
+| 
+* commit 93f45f7b04ab5e4a418faf27db6b2b4effbc2edf
+| Author: thomas rigby <tomr0607@hotmail.com>
+| Date:   Wed May 24 10:24:16 2023 +0800
+| 
+|     history fix
+|   
+*   commit c5a9339619325804bf34eb0a7eadd94cab363b61
+|\  Merge: 3bd70d0 67930c0
+| | Author: Zach <bookie0097@gmail.com>
+| | Date:   Wed May 24 10:21:49 2023 +0800
+| | 
+| |     Merge branch 'main' of https://github.com/N0nameleft/Marco-Polo
+| | 
+| * commit 67930c017e377811164325695b8fb016c3c9981e
+| | Author: thomas rigby <tomr0607@hotmail.com>
+| | Date:   Wed May 24 10:14:04 2023 +0800
+| | 
+| |     after pull
+| | 
+* | commit 3bd70d080ceab2e3b78ad08527ff48bb41a30b73
+|/  Author: Zach <bookie0097@gmail.com>
+|   Date:   Wed May 24 10:21:24 2023 +0800
+|   
+|       supported countries
+| 
+* commit 66ab170551560a1678927f5c9ad434a872417681
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Wed May 24 09:58:50 2023 +0800
+| 
+|     redirect change
+| 
+* commit 1ff7a3e8b2f0f44dc4181fca1c00475c8f23e336
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Wed May 24 09:58:27 2023 +0800
+| 
+|     redirect change
+| 
+* commit de77de5bc497cf6dd1b2c1e6239278b9b061d47f
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Wed May 24 09:49:53 2023 +0800
+| 
+|     html file comment, main, history, decision update
+| 
+* commit 0998ae1f9b9b0b96a7171a6235887293394559af
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Wed May 24 09:33:59 2023 +0800
+| 
+|     py file comment done
+| 
+* commit b9c26ce6beee9f28d3832c2023727a5811dac490
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Wed May 24 09:26:42 2023 +0800
+| 
+|     comment in files
+| 
+* commit 151a75dbdaf3e39a008399d5d967eb26eda33b09
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Wed May 24 09:14:27 2023 +0800
+| 
+|     comment in files
+| 
+* commit d4fcb700bac257ba1634bafbd2a03fbdd1087b53
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Wed May 24 08:53:36 2023 +0800
+| 
+|     temp code clean up
+| 
+* commit e16c15dd34b24b3c86c2dd601eb2c6ec8fb779e5
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Wed May 24 08:52:21 2023 +0800
+| 
+|     css clean up
+| 
+* commit 41fc8612175ed69af0d9dde3bd53a8422df673ed
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Wed May 24 07:47:24 2023 +0800
+| 
+|     history db, page, write update
+| 
+* commit cc4eb2afb8e434ce895ed4e9a6be075deaa20f35
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Wed May 24 05:15:27 2023 +0800
+| 
+|     history debug
+| 
+* commit 7c6d3ac655863db871dc241e939d6eea9ecffce1
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Wed May 24 04:41:10 2023 +0800
+| 
+|     requirement
+| 
+* commit 197fff4b943a48b38520ec259b40372dc6d6c64a
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Wed May 24 04:35:21 2023 +0800
+| 
+|     commit
+| 
+* commit a7a85120265279626c8efec546ddb48ac5d0320c
+| Author: thomas rigby <tomr0607@hotmail.com>
+| Date:   Wed May 24 04:26:15 2023 +0800
+| 
+|     lowkey final push
+| 
+* commit 4a5d728db4c10c398b7a2e0ad1e980379caa243d
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Wed May 24 03:50:34 2023 +0800
+| 
+|     comments
+| 
+* commit f214cd60594972fc4971e8233ebc20c8c0584da2
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Wed May 24 03:47:40 2023 +0800
+| 
+|     commit
+|   
+*   commit 43651d167ce7e0cbee80188a9de94f701c2397f6
+|\  Merge: b439340 594923e
+| | Author: Zach <bookie0097@gmail.com>
+| | Date:   Tue May 23 23:05:48 2023 +0800
+| | 
+| |     Merge branch 'main' of https://github.com/N0nameleft/Akinator-clone
+| |   
+| *   commit 594923e8c30bc6f05dc795c2ae0db176d7f5675b
+| |\  Merge: fb0cba7 eb62629
+| | | Author: thomas rigby <tomr0607@hotmail.com>
+| | | Date:   Tue May 23 23:03:45 2023 +0800
+| | | 
+| | |     Merge branch 'main' of https://github.com/N0nameleft/Akinator-clone
+| | | 
+| * | commit fb0cba739eeba0e7477421175788ca18a5384847
+| | | Author: thomas rigby <tomr0607@hotmail.com>
+| | | Date:   Tue May 23 23:02:39 2023 +0800
+| | | 
+| | |     hello
+| | | 
+* | | commit b43934026e6afb9ca1483ff03eefec0f1a3fa8ca
+| |/  Author: Zach <bookie0097@gmail.com>
+|/|   Date:   Tue May 23 23:04:26 2023 +0800
+| |   
+| |       c
+| | 
+* | commit eb626291d807ab0dd4b4e71beed493a3ccf9d088
+|\| Merge: 435b218 b4e49d5
+| | Author: Zach <bookie0097@gmail.com>
+| | Date:   Tue May 23 23:01:30 2023 +0800
+| | 
+| |     Merge branch 'main' of https://github.com/N0nameleft/Akinator-clone
+| |   
+| *   commit b4e49d5cec906e606f1a7f942cec74bf80286919
+| |\  Merge: 5aef755 5727464
+| | | Author: thomas rigby <tomr0607@hotmail.com>
+| | | Date:   Tue May 23 22:59:42 2023 +0800
+| | | 
+| | |     Merge branch 'main' of https://github.com/N0nameleft/Akinator-clone
+| | | 
+| * | commit 5aef7551e64b64c4ab7933675e841fe9b839a3e2
+| | | Author: thomas rigby <tomr0607@hotmail.com>
+| | | Date:   Tue May 23 22:58:04 2023 +0800
+| | | 
+| | |     hello
+| | | 
+* | | commit 435b2185bb9d78740947765454b16f6ef0437b8d
+| |/  Author: Zach <bookie0097@gmail.com>
+|/|   Date:   Tue May 23 23:01:25 2023 +0800
+| |   
+| |       algo debug
+| | 
+* | commit 57274640afaa5cb0136a9c42eaaa1b45ef905810
+| | Author: Zach <bookie0097@gmail.com>
+| | Date:   Tue May 23 20:48:21 2023 +0800
+| | 
+| |     c
+| | 
+* | commit 920c8caa2e543e9de50fb51f1bbb0dd4c386f700
+|/  Author: Zach <bookie0097@gmail.com>
+|   Date:   Tue May 23 20:48:13 2023 +0800
+|   
+|       c
+| 
+* commit 1299d3c6cb820fba9ccda1844aa3f9645ec0809c
+| Author: Jessica Lovensia Christy <jessicalovensia@gmail.com>
+| Date:   Tue May 23 20:37:49 2023 +0800
+| 
+|     New update
+| 
+* commit 594402799d9e0214093c782e71002784c78740ee
+| Author: thomas rigby <tomr0607@hotmail.com>
+| Date:   Tue May 23 20:33:57 2023 +0800
+| 
+|     a
+|   
+*   commit 7d8ea000f0206e239a5a1ba1446bce29ae4cf01c
+|\  Merge: 1d12a20 8899dbc
+| | Author: thomas rigby <tomr0607@hotmail.com>
+| | Date:   Tue May 23 19:09:33 2023 +0800
+| | 
+| |     Merge branch 'main' of https://github.com/N0nameleft/Akinator-clone
+| | 
+| * commit 8899dbcbeac27b1aa3c7f827996621e42487ca99
+| | Author: Zach <bookie0097@gmail.com>
+| | Date:   Tue May 23 18:43:47 2023 +0800
+| | 
+| |     history db
+| | 
+| * commit 08cf505c211a505a4f3d4ce1403d7fe0c2a341b4
+| | Author: Zach <bookie0097@gmail.com>
+| | Date:   Tue May 23 18:04:27 2023 +0800
+| | 
+| |     historydb
+| | 
+| * commit 83a8345cac3e06286f5477355eb813a7d0b9b8de
+| | Author: Zach <bookie0097@gmail.com>
+| | Date:   Tue May 23 17:55:42 2023 +0800
+| | 
+| |     update algo, ask closest to 50% qs
+| | 
+| * commit 0c61b3a3afb16fcd3cdd6c9be1522131c7c9c471
+| | Author: Zach <bookie0097@gmail.com>
+| | Date:   Tue May 23 17:34:13 2023 +0800
+| | 
+| |     x
+| | 
+* | commit 1d12a206e466ada8df950754b604d0d7c9e7173f
+|/  Author: thomas rigby <tomr0607@hotmail.com>
+|   Date:   Tue May 23 19:08:33 2023 +0800
+|   
+|       poosh
+| 
+* commit 5632100306dad65947f2ec25db91ccd1ebd45c30
+| Author: thomas rigby <tomr0607@hotmail.com>
+| Date:   Tue May 23 14:43:31 2023 +0800
+| 
+|     eh
+| 
+* commit ce699f04ede2db9f7432696cd9adb9ebbb3aefbe
+| Author: Jessica Lovensia Christy <jessicalovensia@gmail.com>
+| Date:   Tue May 23 10:44:05 2023 +0800
+| 
+|     meh
+| 
+* commit 51d3ee267ac9d5b921b7caa679165f69a2e76ae6
+| Author: thomas rigby <tomr0607@hotmail.com>
+| Date:   Tue May 23 10:38:18 2023 +0800
+| 
+|     history
+| 
+* commit 7235e07c3fd19ea04bff10f0b6aade90d3e62d8b
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Tue May 23 00:35:09 2023 +0800
+| 
+|     c
+| 
+* commit 4932548cf07fe1da3b6250fa24e61c770ac70885
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Tue May 23 00:31:08 2023 +0800
+| 
+|     c
+|   
+*   commit 34aed843da6ae03728ce3e49ddcbe40eca02fc6d
+|\  Merge: ed881b2 44f0ffc
+| | Author: Zach <bookie0097@gmail.com>
+| | Date:   Tue May 23 00:29:57 2023 +0800
+| | 
+| |     Merge branch 'main' of https://github.com/N0nameleft/Akinator-clone
+| | 
+| * commit 44f0ffc99f4c5fd752e0af2adb8903033359cf80
+| | Author: thomas rigby <tomr0607@hotmail.com>
+| | Date:   Mon May 22 23:52:52 2023 +0800
+| | 
+| |     history basic and navbar fix
+| | 
+* | commit ed881b25952ce464a3af79796cf93675b2112bc6
+| | Author: Zach <bookie0097@gmail.com>
+| | Date:   Tue May 23 00:27:59 2023 +0800
+| | 
+| |     guess final
+| | 
+* | commit f3396336ef09a8c520b96fefcac62543a895ea9e
+|/  Author: Zach <bookie0097@gmail.com>
+|   Date:   Mon May 22 23:29:57 2023 +0800
+|   
+|       c
+| 
+* commit d64f1f60b6adf2fc2fa782ee7cb7dcf659dc55c2
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Mon May 22 23:10:12 2023 +0800
+| 
+|     c
+| 
+* commit 8e699b9d108f082187800ccbadc773a062ea66e2
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Mon May 22 20:27:12 2023 +0800
+| 
+|     c
+| 
+* commit ab56937b786526f4b9d462afa8bd3ebc075cf8cd
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Mon May 22 20:22:58 2023 +0800
+| 
+|     db, algo
+|   
+*   commit fdab97b3d138d19eec6330d8cec82757616a64a5
+|\  Merge: ea10927 5a68b72
+| | Author: Zach <bookie0097@gmail.com>
+| | Date:   Mon May 22 19:56:38 2023 +0800
+| | 
+| |     Merge branch 'main' of https://github.com/N0nameleft/Akinator-clone
+| | 
+| * commit 5a68b7292dbfcee4a2cac35c63d03eadfb2ec42c
+| | Author: xlaurel <laurelchow04@gmail.com>
+| | Date:   Mon May 22 18:55:11 2023 +0800
+| | 
+| |     buttons
+| | 
+* | commit ea10927f2e7ae304a0b167e669618c6ee83bc63e
+|/  Author: Zach <bookie0097@gmail.com>
+|   Date:   Mon May 22 19:56:34 2023 +0800
+|   
+|       c
+| 
+* commit 13405aa594ec6ab23d3e9cdf2be062723c5b2f2b
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Mon May 22 18:40:55 2023 +0800
+| 
+|     c
+|   
+*   commit 5e58cdb8cdbbf13e08c13b81b5c9e7c65b77ac82
+|\  Merge: 0921713 0b28660
+| | Author: thomas rigby <tomr0607@hotmail.com>
+| | Date:   Mon May 22 16:46:44 2023 +0800
+| | 
+| |     Merge branch 'main' of https://github.com/N0nameleft/Akinator-clone
+| | 
+| * commit 0b28660c66cc5b2d053aa03c510ecf993168e32a
+| | Author: Jessica Lovensia Christy <jessicalovensia@gmail.com>
+| | Date:   Mon May 22 16:42:47 2023 +0800
+| | 
+| |     Style added
+| | 
+* | commit 09217130efd41c3984e92926e589b05f65cdb126
+|/  Author: thomas rigby <tomr0607@hotmail.com>
+|   Date:   Mon May 22 16:46:24 2023 +0800
+|   
+|       fixed route for if authorised or not
+| 
+* commit 1adbc766df749a6c97f9b44cae08f712f0e691ae
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Mon May 22 15:41:35 2023 +0800
+| 
+|     c
+| 
+* commit ea38a12142f03821d919cca498f1e5595482b49d
+| Author: xlaurel <laurelchow04@gmail.com>
+| Date:   Mon May 22 15:09:26 2023 +0800
+| 
+|     icons
+| 
+* commit 74b131346c779d6f2645967e3661c986fc1a0819
+| Author: thomas rigby <tomr0607@hotmail.com>
+| Date:   Mon May 22 12:27:15 2023 +0800
+| 
+|     redirect changes and database connection
+| 
+* commit 620d3d13ad3e6bd42147261ecf69aadd1a46b087
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Mon May 22 11:03:15 2023 +0800
+| 
+|     c
+| 
+* commit 54e0758b63f9d7a85449d1d313b7eceb2bc4a920
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Mon May 22 10:42:03 2023 +0800
+| 
+|     c
+| 
+* commit 9f237a6c146c525f9b77c01eeac7006c2906d6c8
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Mon May 22 10:26:26 2023 +0800
+| 
+|     commit
+| 
+* commit 81ff524119e93be02dc769f814e446edd7ac6bfc
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Mon May 22 09:57:44 2023 +0800
+| 
+|     commit
+| 
+* commit 677c0c95fba1ef157ec24df20b7c63ddc4546ac5
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Mon May 22 09:38:57 2023 +0800
+| 
+|     history
+| 
+* commit baf93b093da1dc41a0e6659ea3da6bc5ed97a7b4
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Mon May 22 06:34:07 2023 +0800
+| 
+|     commit
+| 
+* commit be3788d323de6386a6969946b7c00f04e20d569a
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Mon May 22 06:29:24 2023 +0800
+| 
+|     game
+| 
+* commit 721a481c090a38d0495c230247e6b25409b10a79
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Mon May 22 05:15:42 2023 +0800
+| 
+|     commit
+| 
+* commit ad71900242b229aaf516a8936c711a8bd7437112
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Mon May 22 05:14:20 2023 +0800
+| 
+|     commit
+|   
+*   commit 061930c3df9fcb750cf553ef37b078accc106dad
+|\  Merge: 0303041 e0096e0
+| | Author: Zach <bookie0097@gmail.com>
+| | Date:   Mon May 22 05:07:06 2023 +0800
+| | 
+| |     Merge branch 'main' of https://github.com/N0nameleft/Akinator-clone
+| | 
+| * commit e0096e0a504dcb83733ff5431f83760d48d47131
+| | Author: xlaurel <laurelchow04@gmail.com>
+| | Date:   Mon May 22 02:11:20 2023 +0800
+| | 
+| |     formatting fix
+| | 
+| * commit b64d8a50cd6619790c3f707dd3e537fb7dbf88a7
+| | Author: xlaurel <laurelchow04@gmail.com>
+| | Date:   Mon May 22 02:09:11 2023 +0800
+| | 
+| |     styling
+| | 
+* | commit 030304196b4d94f0a1255c3d32e4192caa799725
+|/  Author: Zach <bookie0097@gmail.com>
+|   Date:   Mon May 22 05:06:14 2023 +0800
+|   
+|       algo
+| 
+* commit 684f673f2718da77873fc0ec6395042f94aa7d6c
+| Author: jessicalovensia <130718666+jessicalovensia@users.noreply.github.com>
+| Date:   Sun May 21 15:33:41 2023 +0800
+| 
+|     Create bird images' attribution
+| 
+* commit 62d3e8a1327c42dc7f74390a9539938db5c9a4f0
+| Author: jessicalovensia <130718666+jessicalovensia@users.noreply.github.com>
+| Date:   Sun May 21 15:30:59 2023 +0800
+| 
+|     Add files via upload
+| 
+* commit 8e47ef26a09d3c651fdf457f483d3799e6de2336
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Sat May 20 21:14:40 2023 +0800
+| 
+|     commit
+| 
+* commit 5f417dd55075378d99b5547e954a7d971d46a0b6
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Sat May 20 21:11:02 2023 +0800
+| 
+|     commit
+| 
+* commit 97162e8ed7fa49dcc2d13cc1da902835c9dd7562
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Sat May 20 21:10:54 2023 +0800
+| 
+|     commit
+| 
+* commit c0422fa19564fdf9201ec5bb8ecbae65e47800df
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Sat May 20 21:03:35 2023 +0800
+| 
+|     algo
+| 
+* commit 5d4b337659666ef4be600722cf5e3577f5fd4cbe
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Sat May 20 20:05:27 2023 +0800
+| 
+|     commit
+| 
+* commit d6b0f7eab9a257cbc01008fa893fc218a39bc1f1
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Sat May 20 19:52:40 2023 +0800
+| 
+|     commit
+| 
+* commit b7ac79665486054d93ae4776a315c5c411cf3ce8
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Sat May 20 19:13:30 2023 +0800
+| 
+|     commit
+| 
+* commit 83ffbba7333b3c1e826a03776c6d3363f8e11a49
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Sat May 20 18:39:48 2023 +0800
+| 
+|     commit
+| 
+* commit 8e5637baa4097409d38316f1e3c7b9cd45aba3d6
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Sat May 20 18:35:32 2023 +0800
+| 
+|     commit
+| 
+* commit 6d5a4a3f70c5be6a90e3db8805d09c1df14bf32f
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Sat May 20 18:34:26 2023 +0800
+| 
+|     draft
+| 
+* commit f5bea923cb13756aaeb5022e0e745e448529f7ca
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Sat May 20 18:06:10 2023 +0800
+| 
+|     commit
+| 
+* commit aab2aaa790b109194f4944fc7e80c35f3b5bd8a1
+| Author: thomas rigby <tomr0607@hotmail.com>
+| Date:   Sat May 20 17:54:38 2023 +0800
+| 
+|     Functionality:
+|     - posts random questions to page
+|     - stores each user for session
+|     - need to work on algo for database and
+|     dictionary collaboration to narrow questions
+| 
+* commit feaaee1c7d29628b683867b37401d25731131e6e
+| Author: jessicalovensia <130718666+jessicalovensia@users.noreply.github.com>
+| Date:   Sat May 20 07:57:04 2023 +0800
+| 
+|     Add files via upload
+| 
+* commit c21de47aba7de4202e50f2c4fe232bcecb46f610
+| Author: thomas rigby <tomr0607@hotmail.com>
+| Date:   Fri May 19 15:38:46 2023 +0800
+| 
+|     trying to get question to show
+|     database connection being a problem
+| 
+* commit cabc0fdbb5efa9a9c81e087a89b00a91ebb6646a
+| Author: thomas rigby <tomr0607@hotmail.com>
+| Date:   Thu May 18 20:00:03 2023 +0800
+| 
+|     pseudo code for algo and connecting db
+| 
+* commit d68af525fb7dd62ad07f4035cb14ae54c9ea1bc7
+| Author: thomas rigby <tomr0607@hotmail.com>
+| Date:   Thu May 18 17:50:42 2023 +0800
+| 
+|     update
+| 
+* commit 4d42b7c9ef8e1101682eea9e60b13e3648cfc083
+| Author: thomas rigby <tomr0607@hotmail.com>
+| Date:   Thu May 18 14:56:08 2023 +0800
+| 
+|     Edited welcome page.
+|   
+*   commit e981255871e8c5a22fa4d0cf4d423f73f0ed64bf
+|\  Merge: 9bfd26c 26618fa
+| | Author: thomas rigby <tomr0607@hotmail.com>
+| | Date:   Thu May 18 14:46:41 2023 +0800
+| | 
+| |     Merge branch 'main' of https://github.com/N0nameleft/Akinator-clone
+| |   
+| *   commit 26618faa3f737bf79058125f773ae2dc8ab9cb97
+| |\  Merge: c37b644 7da0368
+| | | Author: Zach <bookie0097@gmail.com>
+| | | Date:   Thu May 18 14:16:21 2023 +0800
+| | | 
+| | |     Merge branch 'main' of https://github.com/N0nameleft/Akinator-clone
+| | | 
+| * | commit c37b6441514eee0514d2e03830cefb62c44146e4
+| | | Author: Zach <bookie0097@gmail.com>
+| | | Date:   Thu May 18 14:15:16 2023 +0800
+| | | 
+| | |     commit
+| | | 
+* | | commit 9bfd26c2c4380d41a4993b34fd920e0ba4592e2b
+| |/  Author: thomas rigby <tomr0607@hotmail.com>
+|/|   Date:   Thu May 18 14:46:15 2023 +0800
+| |   
+| |       main page and login pretty much done
+| |       need minor aesthetic fixes
+| | 
+* | commit 7da0368b7893a4df75cff8452cb4cd274065959d
+| | Author: thomas rigby <tomr0607@hotmail.com>
+| | Date:   Thu May 18 14:04:09 2023 +0800
+| | 
+| |     updated
+| | 
+* | commit 3931a0866dbadc88a7735fd07deb0ef6bae988c9
+|\| Merge: 245303c 6c912dc
+| | Author: thomas rigby <tomr0607@hotmail.com>
+| | Date:   Thu May 18 14:01:17 2023 +0800
+| | 
+| |     Merge branch 'main' of https://github.com/N0nameleft/Akinator-clone
+| | 
+| * commit 6c912dc2c8fc9e78073d94e411cf4094adad4404
+| | Author: Jessica Lovensia Christy <jessicalovensia@gmail.com>
+| | Date:   Wed May 17 14:47:52 2023 +0800
+| | 
+| |     Changes
+| | 
+| * commit 38693a346538a6eb60ce81e6d1713cdbca147ac9
+| | Author: Jessica Lovensia Christy <jessicalovensia@gmail.com>
+| | Date:   Wed May 17 14:44:53 2023 +0800
+| | 
+| |     New updates
+| |   
+| *   commit 6b971ccb262c80535a2b90339748b63b0ee4567a
+| |\  Merge: 6b353f9 2e61ca9
+| | | Author: Zach <bookie0097@gmail.com>
+| | | Date:   Wed May 17 14:36:39 2023 +0800
+| | | 
+| | |     Merge branch 'main' of https://github.com/N0nameleft/Akinator-clone
+| | | 
+| | * commit 2e61ca9e4b87570d15d11e09dbcc0c9e50652b93
+| | | Author: jessicalovensia <130718666+jessicalovensia@users.noreply.github.com>
+| | | Date:   Wed May 17 14:31:17 2023 +0800
+| | | 
+| | |     Delete flask_auth_app/project/images directory
+| | | 
+| * | commit 6b353f9172a466a1920773029b7d968e0570a170
+| |/  Author: Zach <bookie0097@gmail.com>
+| |   Date:   Wed May 17 14:36:34 2023 +0800
+| |   
+| |       css
+| |   
+| *   commit 8d400ee63563214c730d42543df2191ce7a41dba
+| |\  Merge: 5ef1db6 e2e242a
+| | | Author: Zach <bookie0097@gmail.com>
+| | | Date:   Wed May 17 14:21:42 2023 +0800
+| | | 
+| | |     Merge branch 'main' of https://github.com/N0nameleft/Akinator-clone
+| | | 
+| * | commit 5ef1db6d040a1265ff2e2f00c10b8fa40b4ca6de
+| | | Author: Zach <bookie0097@gmail.com>
+| | | Date:   Wed May 17 10:47:02 2023 +0800
+| | | 
+| | |     style
+| | | 
+* | | commit 245303cf64cfed42b607b3f86f5c25a774fda94e
+| |/  Author: thomas rigby <tomr0607@hotmail.com>
+|/|   Date:   Thu May 18 08:51:26 2023 +0800
+| |   
+| |       login and base working
+| |       todo - fix signup look; profile page
+| |   
+* |   commit e2e242a69d888ef9c16bbf0e8d369abef11f5781
+|\ \  Merge: bec000a 2d6441f
+| | | Author: thomas rigby <tomr0607@hotmail.com>
+| | | Date:   Wed May 17 14:16:58 2023 +0800
+| | | 
+| | |     Merge branch 'main' of https://github.com/N0nameleft/Akinator-clone
+| | | 
+| * | commit 2d6441f840b708ecf553079735b0d91e8bab2d9b
+| |/  Author: jessicalovensia <130718666+jessicalovensia@users.noreply.github.com>
+| |   Date:   Wed May 17 14:04:50 2023 +0800
+| |   
+| |       Add files via upload
+| | 
+* | commit bec000a3721cd7b897b1830173a464844efaf313
+|/  Author: thomas rigby <tomr0607@hotmail.com>
+|   Date:   Wed May 17 14:16:39 2023 +0800
+|   
+|       base, index and styling
+| 
+* commit e97b4a4db39a9c563bf27c0c83a0fbd12b85625d
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Wed May 17 09:31:21 2023 +0800
+| 
+|     commit
+| 
+* commit 73edfa503f2b68ab71a70e3ab46d3ffcc1451e6e
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Tue May 16 20:52:07 2023 +0800
+| 
+|     db integer type
+| 
+* commit 28c30bf9e47ef563150462fea090b80efca40189
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Tue May 16 20:29:25 2023 +0800
+| 
+|     YN to 10
+| 
+* commit b2db10cfddf818ef424af79fc746a3a30cff6089
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Tue May 16 20:12:15 2023 +0800
+| 
+|     db update
+| 
+* commit f74c5fda58e8be06b9dc6998be2a9f09226c4b18
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Tue May 16 20:11:18 2023 +0800
+| 
+|     add data
+| 
+* commit 127a9663fbd93bf4f39f5ea7ae416090910f9080
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Tue May 16 17:10:34 2023 +0800
+| 
+|     excel to sqlite
+| 
+* commit 504d8d7ad99cf4d1822c68fba4b74c0581611459
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Tue May 16 14:00:57 2023 +0800
+| 
+|     debug
+| 
+* commit 4da87faf7693565b2425a596a93235bec3183d75
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Tue May 16 13:45:14 2023 +0800
+| 
+|     db update
+| 
+* commit c4662cd6e837c7ac594dcb6839405839d3d9dc14
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Tue May 16 13:07:37 2023 +0800
+| 
+|     draft db
+|   
+*   commit 1aae447331f76282f4bdbd3d467582bdaa11314c
+|\  Merge: c899fd7 2086996
+| | Author: thomas rigby <tomr0607@hotmail.com>
+| | Date:   Wed May 10 10:56:35 2023 +0800
+| | 
+| |     Merge branch 'main' of https://github.com/N0nameleft/Akinator-clone
+| | 
+| * commit 2086996b6f1666be0c6aa1d836c095bae6f59d3e
+| | Author: Jessica Lovensia Christy <jessicalovensia@gmail.com>
+| | Date:   Wed May 10 10:30:19 2023 +0800
+| | 
+| |     New updates
+| | 
+| * commit 27425e9a76a02bd5f67c5b3b97ab842c55edcb42
+| | Author: jessicalovensia <130718666+jessicalovensia@users.noreply.github.com>
+| | Date:   Wed May 10 10:12:40 2023 +0800
+| | 
+| |     Delete style2.css
+| | 
+| * commit 938a0b438b755f9e62867c9e4a309db460e706bb
+| | Author: jessicalovensia <130718666+jessicalovensia@users.noreply.github.com>
+| | Date:   Wed May 10 10:12:31 2023 +0800
+| | 
+| |     Delete style.css
+| | 
+| * commit 82084fe431ea76ff24f239482fa026c0c0a10dad
+| | Author: jessicalovensia <130718666+jessicalovensia@users.noreply.github.com>
+| | Date:   Wed May 10 10:12:21 2023 +0800
+| | 
+| |     Delete functionality.js
+| | 
+| * commit 4d152ecd43ca3896a4f32d3b834222677c827784
+| | Author: jessicalovensia <130718666+jessicalovensia@users.noreply.github.com>
+| | Date:   Wed May 10 10:11:25 2023 +0800
+| | 
+| |     Delete Front_end_updates  directory
+| | 
+| * commit ecd1f97c647a70a8c0db98753bbf0ad4d4a96b77
+| | Author: jessicalovensia <130718666+jessicalovensia@users.noreply.github.com>
+| | Date:   Wed May 10 10:09:51 2023 +0800
+| | 
+| |     Add files via upload
+| | 
+| * commit 0105a7f46d86514d3505d578f44ee1f06ec8e959
+| | Author: jessicalovensia <130718666+jessicalovensia@users.noreply.github.com>
+| | Date:   Wed May 10 10:09:07 2023 +0800
+| | 
+| |     Delete Front_end_updates directory
+| | 
+| * commit 0465b22b03846ff01ac3465a74f9be73a1b138ca
+| | Author: jessicalovensia <130718666+jessicalovensia@users.noreply.github.com>
+| | Date:   Wed May 10 10:03:35 2023 +0800
+| | 
+| |     Add files via upload
+| | 
+* | commit c899fd7fa7e6cdd148b502014ac7449284e97113
+|/  Author: thomas rigby <tomr0607@hotmail.com>
+|   Date:   Wed May 10 10:53:17 2023 +0800
+|   
+|       fixed home page
+|       tried fixing background image but struggled. Need to work on this
+| 
+* commit f0fe47e1b9504bfff5e23f747d51406772f53a16
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Tue May 9 20:40:33 2023 +0800
+| 
+|     front update (from laurel)
+| 
+* commit 86db1ea4aa7f6802c800d52be1bd828ec53ef609
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Tue May 9 20:06:32 2023 +0800
+| 
+|     test commit
+| 
+* commit 6bc996fa214fa7d6a713ca17eb0f1ce1e21b2ee3
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Tue May 9 20:02:06 2023 +0800
+| 
+|     front update (from Laurel)
+| 
+* commit 5d4b87c18f40bd2c953f88c8774bd133cc4a8297
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Tue May 9 19:56:16 2023 +0800
+| 
+|     update
+| 
+* commit 898a19d59d1648bd828587938b91ff7537105377
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Tue May 9 19:52:42 2023 +0800
+| 
+|     update
+| 
+* commit 577317cb0bc1b7ef6adf4ea3b92c18829224f1b8
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Tue May 9 19:46:59 2023 +0800
+| 
+|     update
+| 
+* commit aa26255b8db0341eead54cd52d77a6fa03948739
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Tue May 9 19:41:19 2023 +0800
+| 
+|     pages update(from laurel)
+| 
+* commit 6eda0bf733eebebd260677f0650e6dc98665180f
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Fri May 5 14:01:57 2023 +0800
+| 
+|     hidden menu
+| 
+* commit 3fe36065c3cc9424945dd8f9fc1adcc58421327c
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Fri May 5 13:44:43 2023 +0800
+| 
+|     user db clean up
+| 
+* commit 530b57ff033bbea985631fe62f18dce46b7fc6e3
+| Author: Zach <bookie0097@gmail.com>
+| Date:   Fri May 5 13:14:08 2023 +0800
+| 
+|     first commit
+| 
+* commit 630725799b48b614d013d2125caf6f8fc37b9cf8
+  Author: Zach <bookie0097@gmail.com>
+  Date:   Fri May 5 12:09:09 2023 +0800
+  
+      copied from local files
