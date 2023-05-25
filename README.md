@@ -139,6 +139,11 @@ Noted that root(main, auth) and database is not tested in the unit test, as it c
 Main focus of this test is desicionMaking.py.
 
 ### System test (Selenium test)
+To run system test, run the following code(still in the same venv as previous test):
+```
+$ python -m test.systemtest
+```
+
 
 ## Authors
 Thomas Rigby (22973756)<br/>

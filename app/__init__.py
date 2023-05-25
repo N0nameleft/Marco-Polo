@@ -1,13 +1,15 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
+# from .database import db
 
 # create db for later use
 db = SQLAlchemy()
 
+app = Flask(__name__, static_folder="static")
 def create_app():
     # set app and config
-    app = Flask(__name__, static_folder="static")
+    
     app.config["SECRET_KEY"] = "thisIsASampleKey"
     app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db.sqlite"
 
@@ -20,7 +22,6 @@ def create_app():
 
     # import user for current session
     from .models import User
-
     # load user info
     @login_manager.user_loader
     def load_user(user_id):
@@ -34,6 +35,7 @@ def create_app():
     from .main import main as main_blueprint
     app.register_blueprint(main_blueprint)
 
-    return app
+    with app.app_context():
+        db.create_all()
 
-app = create_app()
+    return app
