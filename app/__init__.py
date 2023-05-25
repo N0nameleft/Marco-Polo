@@ -6,10 +6,10 @@ from flask_login import LoginManager
 # create db for later use
 db = SQLAlchemy()
 
-app = Flask(__name__, static_folder="static")
+
 def create_app():
     # set app and config
-    
+    app = Flask(__name__, static_folder="static")
     app.config["SECRET_KEY"] = "thisIsASampleKey"
     app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db.sqlite"
 
